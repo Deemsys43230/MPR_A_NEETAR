@@ -1,0 +1,1 @@
+include ':app', ':licensing_lib', ':library'
