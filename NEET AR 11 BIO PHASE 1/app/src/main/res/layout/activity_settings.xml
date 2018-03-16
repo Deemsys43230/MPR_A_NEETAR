@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ar_white">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/settings_toolbar"
+        android:background="@color/ar_neet_theme">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/head_settings"
+            android:text="Settings"
+            android:layout_alignParentRight="true"
+            android:textSize="20sp"
+            android:textColor="@color/ar_white"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="left"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frame"
+            android:textColor="@color/ar_black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/frame_on_off"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"/>
+
+    </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#80909090"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/place_on_the_air_container"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/status_detection"
+            android:text="Place on air"
+            android:textSize="18sp"
+            android:textColor="@color/ar_black"/>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/plane_on_off"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"/>
+
+
+    </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#80909090"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reset_option"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/ar_black"/>
+    </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#80909090"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scale"
+            android:id="@+id/text_scale"
+            android:textSize="18sp"
+            android:textColor="@color/ar_black"
+            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iphon"
+                android:text="-"
+                android:layout_toRightOf="@+id/text_scale"
+                android:textSize="18sp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/ar_black"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dynamic_scale"
+                android:text="0.0"
+                android:textSize="18sp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/ar_black"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"/>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="35dp"
+              android:orientation="horizontal"
+              android:layout_below="@id/text_scale"
+              android:layout_marginTop="5dp"
+              android:layout_marginLeft="5dp"
+              android:layout_marginRight="5dp">
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/get_scale"
+            android:min="1"
+            android:max="6"
+            android:layout_gravity="center_vertical"
+            />
+          </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/zoom_detection"
+                    android:text="Zoom"
+                    android:textColor="@color/ar_black"
+                    android:textSize="18sp" />
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/zoom_on_off"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#80909090"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/doneButton"
+        android:text="Done"
+        android:layout_marginTop="40dp"
+        android:background="#27ae60"
+        android:textColor="@color/ar_white"
+        android:visibility="gone"/>
+
+
+
+
+</LinearLayout>

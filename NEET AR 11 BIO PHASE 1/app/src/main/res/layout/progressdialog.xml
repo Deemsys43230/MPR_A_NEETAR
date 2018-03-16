@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EEEEEE"
+    android:minHeight="145dp">
+
+    <TextView
+        android:id="@+id/textpercent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="0%"
+        android:textColor="#DD000000"
+        android:textSize="50sp"
+        android:textStyle="normal" />
+
+    <ProgressBar
+        android:id="@+id/downloaddialog"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textpercent"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/underdownloadtext"
+        android:layout_below="@+id/downloaddialog"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Downloading models..."
+        android:textColor="#80000000"
+        android:textSize="15sp"
+        android:visibility="gone"/>
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="30dp"
+        android:id="@+id/dialog_mount_button"
+        android:text="Downloading models..."
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/downloaddialog"
+        android:background="@color/ar_neet_theme"
+        android:textColor="@color/ar_white"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:visibility="visible"
+        android:layout_marginLeft="5dp"
+        android:textAllCaps="false"
+        android:textSize="16sp"/>
+
+</RelativeLayout>
