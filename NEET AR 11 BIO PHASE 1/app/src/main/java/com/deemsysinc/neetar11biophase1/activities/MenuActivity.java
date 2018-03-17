@@ -120,7 +120,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private static final MenuActivity.XAPKFile[] xAPKS = {
             new MenuActivity.XAPKFile(
                     true, // true signifies a main file
-                    2, // the version of the APK that the file was uploaded against
+                    1, // the version of the APK that the file was uploaded against
                     fsize // the length of the file in bytes
             )
     };
@@ -421,7 +421,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         Log.d("PrintRoot", "" + root);
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             String zipkey = "mobileteam";
-            String expandfilepath = root + EXP_PATH + getPackageName() + "/main.2." + getPackageName() + ".obb";
+            String expandfilepath = root + EXP_PATH + getPackageName() + "/main.1." + getPackageName() + ".obb";
             Log.d("ExpandFilePath", expandfilepath + "," + root.getPath());
             File expPath = new File(expandfilepath);
             if (expPath.exists()) {

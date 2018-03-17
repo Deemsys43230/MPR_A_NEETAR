@@ -173,13 +173,13 @@ public class RenderObject
                 ZipResourceFile.ZipEntryRO[] entriesarray = expansionFile.getAllEntries();
                 for(ZipResourceFile.ZipEntryRO zipEntryRO:entriesarray)
                 {
-                    String theFileName=zipEntryRO.mFileName.substring(36,zipEntryRO.mFileName.length());
+                    String theFileName=zipEntryRO.mFileName.substring(40,zipEntryRO.mFileName.length());
                     Log.d("PrintTheFileName",theFileName);
                     Log.d("PrintAppendName",foldername+"/"+mtl.getMapKd());
                     if(theFileName.equals(foldername+"/"+mtl.getMapKd()))
                     {
                         Log.d("PrintFolderName",foldername);
-                        Log.d("PrintFilterMFile",zipEntryRO.mFileName.substring(36,zipEntryRO.mFileName.length()));
+                        Log.d("PrintFilterMFile",zipEntryRO.mFileName.substring(40,zipEntryRO.mFileName.length()));
                         return zipEntryRO.mFileName;
                     }
 
@@ -254,7 +254,7 @@ public class RenderObject
     public void initializePath(Context context,String obbPath,String objpath,String mtlpath) {
         try {
             Log.d("PrintObbPath",obbPath);
-            expansionFile = APKExpansionSupport.getAPKExpansionZipFile(context, 2, 0, obbPath);
+            expansionFile = APKExpansionSupport.getAPKExpansionZipFile(context, 1, 0, obbPath);
             Log.d("TheObjName",""+objpath+" "+","+" "+mtlpath);
             Log.d("PrintExpanisonFile",""+expansionFile);
             ZipResourceFile.ZipEntryRO[] entriesarray = expansionFile.getAllEntries();

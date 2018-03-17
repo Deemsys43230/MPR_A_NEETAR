@@ -154,7 +154,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp">
 
-        <com.deemsysinc.ARDemoProject.VerticalSeekBar
+        <com.deemsysinc.neetar11biophase1.utils.VerticalSeekBar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/mySeekBar"

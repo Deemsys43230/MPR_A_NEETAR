@@ -54,7 +54,8 @@ public class ModelsAdapter extends RecyclerView.Adapter<ModelsAdapter.ModelsHold
          ZipResourceFile.ZipEntryRO[] entriesarray = expansionFile.getAllEntries();
         for(ZipResourceFile.ZipEntryRO zipEntryRO:entriesarray)
         {
-            String theFileName=zipEntryRO.mFileName.substring(36,zipEntryRO.mFileName.length());
+            String theFileName=zipEntryRO.mFileName.substring(40,zipEntryRO.mFileName.length());
+            Log.d("PrintTheNew",theFileName);
             if(theFileName.equals(objModelsses.get(position).getImagemodel()))
             {
                 Log.d("TheModelIma",theFileName);

@@ -120,7 +120,7 @@ public class ModelsActivity extends AppCompatActivity implements View.OnClickLis
                 objModelsses.add(objModelss);
             }
             try {
-                expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ModelsActivity.this, 2, 0, obbContentPath);
+                expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ModelsActivity.this, 1, 0, obbContentPath);
                 Log.d("PrintExpansionFile",""+expansionFile);
             } catch (IOException e) {
                 e.printStackTrace();

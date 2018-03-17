@@ -362,13 +362,6 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         UtilityAr.setStausBarColor(ARViewActivity.this,ARViewActivity.this);
-        ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-        int memoryClass = am.getMemoryClass();
-        //Log.v("onCreate", "memoryClass:" + Integer.toString(memoryClass));
-
-        Log.d("PrintMem",""+Integer.toString(memoryClass));
-        logHeap();
-
          progressDialog=ProgressDialog.show(ARViewActivity.this,"","Drawing please wait..");
         setContentView(R.layout.activity_main);
         toolbar=findViewById(R.id.ar_toolbar);
@@ -499,7 +492,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
             if(modelPropertiess.get(0).getModelPropertiesChildren().size()>0)
             {
                 try {
-                    expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ARViewActivity.this, 2, 0, obbPath);
+                    expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ARViewActivity.this, 1, 0, obbPath);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
