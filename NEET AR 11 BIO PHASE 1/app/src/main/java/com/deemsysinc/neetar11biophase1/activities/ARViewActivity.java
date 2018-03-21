@@ -514,14 +514,14 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
             public boolean onSingleTapUp(MotionEvent event) {
                 Log.d("OnSigleTapU",""+event);
                 if (fromSettings == 1) {
-                    if (planTemp == 0) {
+                    if (planTemp == 1) {
                         isTouched = true;
                         strokePoint.set(true);
                         touchDown.set(false);
                         vector2f.set(event.getX(), event.getY());
                         Log.d("Called=", "" + "Up");
                             Log.d("Called=", "" + "Up");
-                    } else if (planTemp == 1) {
+                    } else if (planTemp == 0) {
                         onSingleTap(event);
                     }
                 }
@@ -580,11 +580,11 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
                 Log.d("PrintEvent",""+event);
                 Log.d("PointerCount",""+event.getPointerCount());
                             if (fromSettings == 1) {
-                                if (planTemp == 0) {
+                                if (planTemp == 1) {
                                     isTouched = true;
                                     mGestureDetector.onTouchEvent(event);
 
-                                } else if (planTemp == 1) {
+                                } else if (planTemp == 0) {
                                     mGestureDetector.onTouchEvent(event);
                                 }
                             } else {
@@ -1031,7 +1031,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
            }
                 if(fromSettings==1)
                 {
-                    if(planTemp!=0)
+                    if(planTemp==0)
                     {
                         arStatusContainer.setVisibility(View.VISIBLE);
                         indicatorSurface.setVisibility(View.VISIBLE);
@@ -1150,7 +1150,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
             }
         });
         if(fromSettings==1) {
-            if (planTemp == 0) {
+            if (planTemp == 1) {
                 ARViewActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -1217,7 +1217,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
             Log.d("PrintRefresh",""+refresh);
 
                     if (fromSettings == 1) {
-                        if (planTemp == 0) {
+                        if (planTemp == 1) {
                             if (isTouched) {
                                 if (strokePoint.get()) {
                                     strokePoint.set(false);
@@ -1286,7 +1286,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
                             }
 
 
-                        } else if (planTemp == 1) {
+                        } else if (planTemp == 0) {
                             tap = mQueuedSingleTaps.poll();
                             if (tap != null && camera.getTrackingState() == TrackingState.TRACKING) {
 
@@ -1556,7 +1556,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
 
             // Visualize tracked points.
             if(fromSettings==1) {
-                if (planTemp != 0) {
+                if (planTemp == 0) {
                     PointCloud pointCloud = frame.acquirePointCloud();
                     mPointCloud.update(pointCloud);
                     mPointCloud.draw(viewmtx, projmtx);
@@ -1567,7 +1567,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
             {
                 if(modelPropertiess.get(0).getIsSurfaceEnabled()==true)
                 {
-                    if (planTemp != 0) {
+                    if (planTemp == 0) {
                         PointCloud pointCloud = frame.acquirePointCloud();
                         mPointCloud.update(pointCloud);
                         mPointCloud.draw(viewmtx, projmtx);
@@ -1582,7 +1582,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
             // Check if we detected at least one plane. If so, hide the loading message.
             if(fromSettings==1)
             {
-                if(planTemp!=0)
+                if(planTemp==0)
                 {
                         for (Plane plane : mSession.getAllTrackables(Plane.class)) {
                             if (plane.getType() == com.google.ar.core.Plane.Type.HORIZONTAL_UPWARD_FACING
@@ -1639,7 +1639,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
             if(refresh==1) {
                 refresh = 0;
                 if (fromSettings == 1) {
-                    if (planTemp == 1) {
+                    if (planTemp == 0) {
                         for(Plane plane:mSession.getAllTrackables(Plane.class))
                         {
 
@@ -1915,9 +1915,9 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
                 bundle.putInt("frameKey",frametemp);
                 if(fromSettings==0) {
                     if (modelPropertiess.get(0).getIsSurfaceEnabled() == true) {
-                        planTemp = 1;
-                    } else {
                         planTemp = 0;
+                    } else {
+                        planTemp = 1;
                     }
                     if (modelPropertiess.get(0).getisZoomEnable() == true) {
                         zoomtemp = 1;
