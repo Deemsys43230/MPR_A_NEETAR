@@ -209,7 +209,6 @@ public class RenderObject
             if(materialname.equals("Transprent_Head_001")||materialname.equals("Transprent_Head_001_Green.png.004.png.001.png")
                     ||materialname.equals("Head")||materialname.equals("LightYellow_transprent")||materialname.equals("Transprent_blue")||materialname.equals("Red_transeprent"))
             {
-
                 Log.d("TheIfMaterialName",materialname);
                 partsRenderer.setTransparencyMode(true);
                 //partsRenderer.setMaterialProperties(1f, 0.8f, 0f, 1.0f);
@@ -253,8 +252,6 @@ public class RenderObject
     public void draw(float[] cameraView, float[] cameraPerspective,
                      float lightIntensity,float[] AnchorMatrix,float scalfactor,int isPartsClicked)
     {
-
-
         if(isPartsClicked==1)
         {
             for (ObjectRenderer renderer : materialGroupObjectRenders1)

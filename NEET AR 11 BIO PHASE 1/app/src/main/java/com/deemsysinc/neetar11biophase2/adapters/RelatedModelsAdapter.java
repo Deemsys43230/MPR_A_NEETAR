@@ -48,7 +48,17 @@ public class RelatedModelsAdapter extends RecyclerView.Adapter<RelatedModelsAdap
     @Override
     public void onBindViewHolder(RelatedModelsHolder holder, int position) {
         holder.relatedModelName.setTypeface(holder.textFont);
-        holder.relatedModelName.setText(modelPropertiesChildren.get(position).getVisiblename());
+        if(modelPropertiesChildren.get(position).getVisiblename().equals("Skeletal muscle"))
+        {
+            holder.relatedModelName.setText("Muscular tissue");
+        }
+        else if(modelPropertiesChildren.get(position).getVisiblename().equals("Simple squamous"))
+        {
+            holder.relatedModelName.setText("Epithelial tissue");
+        }
+        else {
+            holder.relatedModelName.setText(modelPropertiesChildren.get(position).getVisiblename());
+        }
         ZipResourceFile.ZipEntryRO[] entriesarray = expansionFile.getAllEntries();
         for(ZipResourceFile.ZipEntryRO zipEntryRO:entriesarray)
         {
