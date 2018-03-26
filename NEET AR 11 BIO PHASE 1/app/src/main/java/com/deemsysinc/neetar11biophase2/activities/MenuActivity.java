@@ -98,7 +98,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     // With Folder
     //public static long fsize = 214188092L;
     //Without Folder
-    public static long fsize = 454377472L;
+    public static long fsize = 948944896l;
 
     private static TextView textpercent, underdownloadtext;
     private static ProgressBar mProgressBar;
@@ -153,7 +153,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                     Log.d("Mount_State", "Mounted : Delay ");
                     utils.setObbContentPath(obbContentPath);
                     isMounted=true;
-
 //                    initializePath(context,objpath,mtlPath);
                 } else {
                     Log.d("Mount_State", "UnMounted");

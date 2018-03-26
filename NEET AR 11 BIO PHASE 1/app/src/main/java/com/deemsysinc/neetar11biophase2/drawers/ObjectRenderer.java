@@ -37,6 +37,9 @@ import java.nio.ShortBuffer;
 import de.javagl.obj.Obj;
 import de.javagl.obj.ObjData;
 
+import static android.opengl.GLES20.GL_DST_ALPHA;
+import static android.opengl.GLES20.GL_ONE_MINUS_DST_ALPHA;
+
 /**
  * Renders an object loaded from an OBJ file in OpenGL.
  */
@@ -371,7 +374,10 @@ public class ObjectRenderer {
         {
             GLES20.glDepthMask(false);
             GLES20.glEnable(GLES20.GL_BLEND);
-            GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_DST_COLOR);
+            GLES20.glBlendFunc(GLES20.GL_ONE_MINUS_DST_COLOR, GLES20.GL_DST_COLOR);
+            //GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA,GLES20.GL_ONE_MINUS_SRC_ALPHA);
+            //GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_DST_COLOR);
+
         }
         else
         {

@@ -98,7 +98,7 @@ public class RenderObject
             Log.d("HowManyVertices", "" + renderableObj.getNumVertices());
             Log.d("GetTMatG", "" + renderableObj.getNumMaterialGroups());
             if (renderableObj.getNumMaterialGroups() == 0) {
-                createRenderers(context, renderableObj,expansionFile, null,isPartsAvaliable,"");
+                createRenderers(context, renderableObj,expansionFile, null,isPartsAvaliable,"","");
             } else {
                 // Otherwise, create one renderer for each material
                 createMaterialBasedRenderers(context, renderableObj,
@@ -110,13 +110,13 @@ public class RenderObject
         }
     }
 
-    private void createRenderers(Context context, Obj obj,ZipResourceFile expansionFile, String textureName,boolean isPartsAvalible,String materialname) throws IOException
+    private void createRenderers(Context context, Obj obj,ZipResourceFile expansionFile, String textureName,boolean isPartsAvalible,String materialname,String mtlFileName) throws IOException
     {
 
         noOfVertices=obj.getNumVertices();
         if (obj.getNumVertices() <= 65000)
         {
-            createRenderer(context, obj,expansionFile, textureName,isPartsAvalible,materialname);
+            createRenderer(context, obj,expansionFile, textureName,isPartsAvalible,materialname,mtlFileName);
         }
         else
         {
@@ -127,7 +127,7 @@ public class RenderObject
             for (int j = 0; j < objParts.size(); j++)
             {
                 Obj objPart = objParts.get(j);
-                createRenderer(context, objPart,expansionFile, textureName,isPartsAvalible,materialname);
+                createRenderer(context, objPart,expansionFile, textureName,isPartsAvalible,materialname,mtlFileName);
             }
         }
     }
@@ -141,8 +141,10 @@ public class RenderObject
 
         List<String> mtlFileNames = obj.getMtlFileNames();
         List<Mtl> allMtls = new ArrayList<>();
+        String mtlFilename="";
         for (String mtlFileName : mtlFileNames)
         {
+            mtlFilename=mtlFileName;
             Log.d("MtlFileNames",mtlFileName);
             List<Mtl> mtls = MtlReader.read(mtlStram);
             allMtls.addAll(mtls);
@@ -153,12 +155,13 @@ public class RenderObject
                 ObjSplitting.splitByMaterialGroups(obj);
         for (Map.Entry<String, Obj> entry : materialGroupObjs.entrySet())
         {
+            Log.d("PrintMtlFileName",mtlFilename);
             String materialName = entry.getKey();
             Log.d("PrintMaterialName",materialName);
             String textureName=findObbTextureName(materialName,allMtls,defaultTextureFileName,foldername);
             Log.d("PrintTextureStream",""+textureName);
             Obj materialGroupObj = entry.getValue();
-            createRenderers(context, materialGroupObj,expansionFile, textureName,isPartsAvalible,materialName);
+            createRenderers(context, materialGroupObj,expansionFile, textureName,isPartsAvalible,materialName,mtlFilename);
         }
     }
 
@@ -192,7 +195,7 @@ public class RenderObject
 
 
     private void createRenderer(Context context, Obj obj,ZipResourceFile expansionFile,
-                                String textureName,boolean isPartsAvalible,String materialname) throws IOException
+                                String textureName,boolean isPartsAvalible,String materialname,String mtlFileName) throws IOException
     {
         Log.d("PrintTextureStream",""+textureName);
         Log.i(TAG, "Rendering part with " + obj.getNumVertices()
@@ -204,22 +207,42 @@ public class RenderObject
             ObjectRenderer partsRenderer=new ObjectRenderer();
             partsRenderer.createOnGlThread(context,obj,expansionFile,textureName,materialname);
             if(materialname.equals("Transprent_Head_001")||materialname.equals("Transprent_Head_001_Green.png.004.png.001.png")
-                    ||materialname.equals("Head"))
+                    ||materialname.equals("Head")||materialname.equals("LightYellow_transprent")||materialname.equals("Transprent_blue")||materialname.equals("Red_transeprent"))
             {
+
+                Log.d("TheIfMaterialName",materialname);
                 partsRenderer.setTransparencyMode(true);
+                //partsRenderer.setMaterialProperties(1f, 0.8f, 0f, 1.0f);
+            }
+            else if(mtlFileName.equals("tissue_parts.mtl"))
+            {
+                if(materialname.equals("Material.001")||materialname.equals("Material.003")||materialname.equals("Material.004")||materialname.equals("Transparency"))
+                {
+                    partsRenderer.setTransparencyMode(true);
+                    //partsRenderer.setMaterialProperties(1f, 0.8f, 0f, 1.0f);
+                }
             }
             materialGroupObjectRenders1.add(partsRenderer);
         }
         else {
             ObjectRenderer objectRenderer = new ObjectRenderer();
             objectRenderer.createOnGlThread(context, obj, expansionFile, textureName,materialname);
-            //objectRenderer.setMaterialProperties(1.0f, 0.0f, 0.0f, 1.0f);
-            if(materialname.equals("Bacteriophage:Transprent_Head")||materialname.equals("Transprent_Head")
-                    ||materialname.equals("Transprent_Head_002"))
+             if(materialname.equals("Bacteriophage:Transprent_Head")||materialname.equals("Transprent_Head")
+                    ||materialname.equals("Transprent_Head_002")||materialname.equals("LightYellow_transprent")||materialname.equals("Transprent_blue")||materialname.equals("Red_transeprent"))
             {
+                Log.d("TheIfMaterialName",materialname);
                 objectRenderer.setTransparencyMode(true);
-                objectRenderer.setMaterialProperties(1f, 0.8f, 0f, 1.0f);
+                //objectRenderer.setMaterialProperties(1f, 0.8f, 0f, 1.0f);
             }
+            else if(mtlFileName.equals("tissue.mtl"))
+            {
+                if(materialname.equals("Material.001")||materialname.equals("Material.003")||materialname.equals("Material.004")||materialname.equals("Transparency"))
+                {
+                    objectRenderer.setTransparencyMode(true);
+                    //objectRenderer.setMaterialProperties(1f, 0.8f, 0f, 1.0f);
+                }
+            }
+
             materialGroupObjectRenderers.add(objectRenderer);
         }
         //objectRenderer.setBlendMode(ObjectRenderer.BlendMode.Grid);
