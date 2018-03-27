@@ -32,11 +32,11 @@ public class RelatedModelsAdapter extends RecyclerView.Adapter<RelatedModelsAdap
     ArrayList<ModelPropertiesChild> modelPropertiesChildren;
     ZipResourceFile expansionFile;
     public RelatedModelsAdapter(Context context, ArrayList<ModelPropertiesChild> modelPropertiesChildren, ZipResourceFile expansionFile)
-    {
-        this.context=context;
-        this.modelPropertiesChildren=modelPropertiesChildren;
-        this.expansionFile=expansionFile;
-    }
+        {
+            this.context=context;
+            this.modelPropertiesChildren=modelPropertiesChildren;
+            this.expansionFile=expansionFile;
+        }
     @Override
     public RelatedModelsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.related_model_item,parent,false);
@@ -48,17 +48,7 @@ public class RelatedModelsAdapter extends RecyclerView.Adapter<RelatedModelsAdap
     @Override
     public void onBindViewHolder(RelatedModelsHolder holder, int position) {
         holder.relatedModelName.setTypeface(holder.textFont);
-        if(modelPropertiesChildren.get(position).getVisiblename().equals("Skeletal muscle"))
-        {
-            holder.relatedModelName.setText("Muscular tissue");
-        }
-        else if(modelPropertiesChildren.get(position).getVisiblename().equals("Simple squamous"))
-        {
-            holder.relatedModelName.setText("Epithelial tissue");
-        }
-        else {
-            holder.relatedModelName.setText(modelPropertiesChildren.get(position).getVisiblename());
-        }
+        holder.relatedModelName.setText(modelPropertiesChildren.get(position).getVisiblename());
         ZipResourceFile.ZipEntryRO[] entriesarray = expansionFile.getAllEntries();
         for(ZipResourceFile.ZipEntryRO zipEntryRO:entriesarray)
         {

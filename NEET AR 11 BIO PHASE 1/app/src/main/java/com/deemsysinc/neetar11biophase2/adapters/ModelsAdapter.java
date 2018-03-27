@@ -49,13 +49,13 @@ public class ModelsAdapter extends RecyclerView.Adapter<ModelsAdapter.ModelsHold
     @Override
     public void onBindViewHolder(ModelsHolder holder, int position) {
         holder.modelName.setTypeface(holder.textFont);
-        if(objModelsses.get(position).getModelName().equals("Muscular tissue"))
+        if(objModelsses.get(position).getModelName().equals("Skeletal muscle"))
         {
-            holder.modelName.setText("Skeletal muscle");
+            holder.modelName.setText("Muscular tissue");
         }
-        else if(objModelsses.get(position).getModelName().equals("Epithelial tissue"))
+        else if(objModelsses.get(position).getModelName().equals("Simple squamous"))
         {
-            holder.modelName.setText("Simple squamous");
+            holder.modelName.setText("Epithelial tissue");
         }
         else {
             holder.modelName.setText(objModelsses.get(position).getModelName());

@@ -19,15 +19,16 @@
             "scaleValue":0.2,
             "canModifySurface":true,
             "modelimage":"modelimages/monocotplant.png",
-            "hints":[
-                     "1. Use yellow square/focus square to target the location",
-                     "2. Tap on the focus square to place object",
-                     "3. Try changing the position if object could not be placed",
-                     "4. Pinch to zoom In and Zoom Out an object",
-                     "5. Use ⚙ button to change 3D model settings",
-                     "6. Use ↻ button to clear model",
-                     "7. Use 🏠 button to go to Chapters list"
-                     ],
+              "hints":[
+                "1. Target the location",
+                "2. Tab on the screen to place object",
+                "3. Try changing the position if object could not be placed",
+                "4. Use 🔍 to zoom In and Zoom Out an object",
+                "5. Use ⚙ button to change 3D model settings",
+                "6. Use ↻ button to clear model",
+                "7. Use 🏠 button to go to Chapters list",
+                "8. Tap 👁️ to show/hide parts"
+              ],
             "relatedmodels":[]
             },
             {
@@ -46,15 +47,16 @@
             "scaleValue":0.2,
             "canModifySurface":true,
             "modelimage":"modelimages/monocotroot.png",
-            "hints":[
-                     "1. Use yellow square/focus square to target the location",
-                     "2. Tap on the focus square to place object",
-                     "3. Try changing the position if object could not be placed",
-                     "4. Pinch to zoom In and Zoom Out an object",
-                     "5. Use ⚙ button to change 3D model settings",
-                     "6. Use ↻ button to clear model",
-                     "7. Use 🏠 button to go to Chapters list"
-                     ],
+              "hints":[
+                "1. Target the location",
+                "2. Tab on the screen to place object",
+                "3. Try changing the position if object could not be placed",
+                "4. Use 🔍 to zoom In and Zoom Out an object",
+                "5. Use ⚙ button to change 3D model settings",
+                "6. Use ↻ button to clear model",
+                "7. Use 🏠 button to go to Chapters list",
+                "8. Tap 👁️ to show/hide parts"
+              ],
             "relatedmodels":[
                              {
                              "id":21,
@@ -72,15 +74,16 @@
                              "scaleValue":0.1,
                              "canModifySurface":true,
                              "modelimage":"modelimages/monocotroot_mview.png",
-                             "hints":[
-                                      "1. Use yellow square/focus square to target the location",
-                                      "2. Tap on the focus square to place object",
-                                      "3. Try changing the position if object could not be placed",
-                                      "4. Pinch to zoom In and Zoom Out an object",
-                                      "5. Use ⚙ button to change 3D model settings",
-                                      "6. Use ↻ button to clear model",
-                                      "7. Use 🏠 button to go to Chapters list"
-                                      ],
+                               "hints":[
+                                 "1. Target the location",
+                                 "2. Tab on the screen to place object",
+                                 "3. Try changing the position if object could not be placed",
+                                 "4. Use 🔍 to zoom In and Zoom Out an object",
+                                 "5. Use ⚙ button to change 3D model settings",
+                                 "6. Use ↻ button to clear model",
+                                 "7. Use 🏠 button to go to Chapters list",
+                                 "8. Tap 👁️ to show/hide parts"
+                               ],
                              "relatedids":[
                                            2
                                            ]
@@ -103,15 +106,16 @@
             "scaleValue":0.1,
             "canModifySurface":true,
             "modelimage":"modelimages/monocotstem_mview.png",
-            "hints":[
-                     "1. Use yellow square/focus square to target the location",
-                     "2. Tap on the focus square to place object",
-                     "3. Try changing the position if object could not be placed",
-                     "4. Pinch to zoom In and Zoom Out an object",
-                     "5. Use ⚙ button to change 3D model settings",
-                     "6. Use ↻ button to clear model",
-                     "7. Use 🏠 button to go to Chapters list"
-                     ],
+              "hints":[
+                "1. Target the location",
+                "2. Tab on the screen to place object",
+                "3. Try changing the position if object could not be placed",
+                "4. Use 🔍 to zoom In and Zoom Out an object",
+                "5. Use ⚙ button to change 3D model settings",
+                "6. Use ↻ button to clear model",
+                "7. Use 🏠 button to go to Chapters list",
+                "8. Tap 👁️ to show/hide parts"
+              ],
             "relatedmodels":[]
             },
             {
@@ -130,15 +134,16 @@
             "scaleValue":0.1,
             "canModifySurface":true,
             "modelimage":"modelimages/monocotleaf.png",
-            "hints":[
-                     "1. Use yellow square/focus square to target the location",
-                     "2. Tap on the focus square to place object",
-                     "3. Try changing the position if object could not be placed",
-                     "4. Pinch to zoom In and Zoom Out an object",
-                     "5. Use ⚙ button to change 3D model settings",
-                     "6. Use ↻ button to clear model",
-                     "7. Use 🏠 button to go to Chapters list"
-                     ],
+              "hints":[
+                "1. Target the location",
+                "2. Tab on the screen to place object",
+                "3. Try changing the position if object could not be placed",
+                "4. Use 🔍 to zoom In and Zoom Out an object",
+                "5. Use ⚙ button to change 3D model settings",
+                "6. Use ↻ button to clear model",
+                "7. Use 🏠 button to go to Chapters list",
+                "8. Tap 👁️ to show/hide parts"
+              ],
             "relatedmodels":[
                              {
                              "id":41,
@@ -156,15 +161,16 @@
                              "scaleValue":0.1,
                              "canModifySurface":true,
                              "modelimage":"modelimages/monocotleaf_mview.png",
-                             "hints":[
-                                      "1. Use yellow square/focus square to target the location",
-                                      "2. Tap on the focus square to place object",
-                                      "3. Try changing the position if object could not be placed",
-                                      "4. Pinch to zoom In and Zoom Out an object",
-                                      "5. Use ⚙ button to change 3D model settings",
-                                      "6. Use ↻ button to clear model",
-                                      "7. Use 🏠 button to go to Chapters list"
-                                      ],
+                               "hints":[
+                                 "1. Target the location",
+                                 "2. Tab on the screen to place object",
+                                 "3. Try changing the position if object could not be placed",
+                                 "4. Use 🔍 to zoom In and Zoom Out an object",
+                                 "5. Use ⚙ button to change 3D model settings",
+                                 "6. Use ↻ button to clear model",
+                                 "7. Use 🏠 button to go to Chapters list",
+                                 "8. Tap 👁️ to show/hide parts"
+                               ],
                              "relatedids":[
                                            4
                                            ]
@@ -187,15 +193,16 @@
             "scaleValue":0.4,
             "canModifySurface":true,
             "modelimage":"modelimages/monocotseed.png",
-            "hints":[
-                     "1. Use yellow square/focus square to target the location",
-                     "2. Tap on the focus square to place object",
-                     "3. Try changing the position if object could not be placed",
-                     "4. Pinch to zoom In and Zoom Out an object",
-                     "5. Use ⚙ button to change 3D model settings",
-                     "6. Use ↻ button to clear model",
-                     "7. Use 🏠 button to go to Chapters list"
-                     ],
+              "hints":[
+                "1. Target the location",
+                "2. Tab on the screen to place object",
+                "3. Try changing the position if object could not be placed",
+                "4. Use 🔍 to zoom In and Zoom Out an object",
+                "5. Use ⚙ button to change 3D model settings",
+                "6. Use ↻ button to clear model",
+                "7. Use 🏠 button to go to Chapters list",
+                "8. Tap 👁️ to show/hide parts"
+              ],
             "relatedmodels":[
                              {
                              "id":51,
@@ -250,15 +257,16 @@
             "scaleValue":0.1,
             "canModifySurface":true,
             "modelimage":"modelimages/tissue.png",
-            "hints":[
-                     "1. Use yellow square/focus square to target the location",
-                     "2. Tap on the focus square to place object",
-                     "3. Try changing the position if object could not be placed",
-                     "4. Pinch to zoom In and Zoom Out an object",
-                     "5. Use ⚙ button to change 3D model settings",
-                     "6. Use ↻ button to clear model",
-                     "7. Use 🏠 button to go to Chapters list"
-                     ],
+              "hints":[
+                "1. Target the location",
+                "2. Tab on the screen to place object",
+                "3. Try changing the position if object could not be placed",
+                "4. Use 🔍 to zoom In and Zoom Out an object",
+                "5. Use ⚙ button to change 3D model settings",
+                "6. Use ↻ button to clear model",
+                "7. Use 🏠 button to go to Chapters list",
+                "8. Tap 👁️ to show/hide parts"
+              ],
             "relatedmodels":[]
             },
             {
@@ -277,15 +285,16 @@
             "scaleValue":0.2,
             "canModifySurface":true,
             "modelimage":"modelimages/typicalneuron.png",
-            "hints":[
-                     "1. Use yellow square/focus square to target the location",
-                     "2. Tap on the focus square to place object",
-                     "3. Try changing the position if object could not be placed",
-                     "4. Pinch to zoom In and Zoom Out an object",
-                     "5. Use ⚙ button to change 3D model settings",
-                     "6. Use ↻ button to clear model",
-                     "7. Use 🏠 button to go to Chapters list"
-                     ],
+              "hints":[
+                "1. Target the location",
+                "2. Tab on the screen to place object",
+                "3. Try changing the position if object could not be placed",
+                "4. Use 🔍 to zoom In and Zoom Out an object",
+                "5. Use ⚙ button to change 3D model settings",
+                "6. Use ↻ button to clear model",
+                "7. Use 🏠 button to go to Chapters list",
+                "8. Tap 👁️ to show/hide parts"
+              ],
             "relatedmodels":[]
             },
             {
@@ -304,15 +313,16 @@
             "scaleValue":0.1,
             "canModifySurface":true,
             "modelimage":"modelimages/skeletolmuscle.png",
-            "hints":[
-                     "1. Use yellow square/focus square to target the location",
-                     "2. Tap on the focus square to place object",
-                     "3. Try changing the position if object could not be placed",
-                     "4. Pinch to zoom In and Zoom Out an object",
-                     "5. Use ⚙ button to change 3D model settings",
-                     "6. Use ↻ button to clear model",
-                     "7. Use 🏠 button to go to Chapters list"
-                     ],
+              "hints":[
+                "1. Target the location",
+                "2. Tab on the screen to place object",
+                "3. Try changing the position if object could not be placed",
+                "4. Use 🔍 to zoom In and Zoom Out an object",
+                "5. Use ⚙ button to change 3D model settings",
+                "6. Use ↻ button to clear model",
+                "7. Use 🏠 button to go to Chapters list",
+                "8. Tap 👁️ to show/hide parts"
+              ],
             "relatedmodels":[
                           {
                           "id":31,
@@ -330,15 +340,16 @@
                           "scaleValue":0.1,
                           "canModifySurface":true,
                           "modelimage":"modelimages/cardiacmuscle.png",
-                          "hints":[
-                                   "1. Use yellow square/focus square to target the location",
-                                   "2. Tap on the focus square to place object",
-                                   "3. Try changing the position if object could not be placed",
-                                   "4. Pinch to zoom In and Zoom Out an object",
-                                   "5. Use ⚙ button to change 3D model settings",
-                                   "6. Use ↻ button to clear model",
-                                   "7. Use 🏠 button to go to Chapters list"
-                                   ],
+                            "hints":[
+                              "1. Target the location",
+                              "2. Tab on the screen to place object",
+                              "3. Try changing the position if object could not be placed",
+                              "4. Use 🔍 to zoom In and Zoom Out an object",
+                              "5. Use ⚙ button to change 3D model settings",
+                              "6. Use ↻ button to clear model",
+                              "7. Use 🏠 button to go to Chapters list",
+                              "8. Tap 👁️ to show/hide parts"
+                            ],
                           "relatedids":[
                                         3,
                                         32
@@ -360,15 +371,16 @@
                           "scaleValue":0.1,
                           "canModifySurface":true,
                           "modelimage":"modelimages/visceralmuscle.png",
-                          "hints":[
-                                   "1. Use yellow square/focus square to target the location",
-                                   "2. Tap on the focus square to place object",
-                                   "3. Try changing the position if object could not be placed",
-                                   "4. Pinch to zoom In and Zoom Out an object",
-                                   "5. Use ⚙ button to change 3D model settings",
-                                   "6. Use ↻ button to clear model",
-                                   "7. Use 🏠 button to go to Chapters list"
-                                   ],
+                            "hints":[
+                              "1. Target the location",
+                              "2. Tab on the screen to place object",
+                              "3. Try changing the position if object could not be placed",
+                              "4. Use 🔍 to zoom In and Zoom Out an object",
+                              "5. Use ⚙ button to change 3D model settings",
+                              "6. Use ↻ button to clear model",
+                              "7. Use 🏠 button to go to Chapters list",
+                              "8. Tap 👁️ to show/hide parts"
+                            ],
                           "relatedids":[
                                         3,
                                         31
@@ -392,15 +404,16 @@
             "scaleValue":0.1,
             "canModifySurface":true,
             "modelimage":"modelimages/simplesquamous.png",
-            "hints":[
-                     "1. Use yellow square/focus square to target the location",
-                     "2. Tap on the focus square to place object",
-                     "3. Try changing the position if object could not be placed",
-                     "4. Pinch to zoom In and Zoom Out an object",
-                     "5. Use ⚙ button to change 3D model settings",
-                     "6. Use ↻ button to clear model",
-                     "7. Use 🏠 button to go to Chapters list"
-                     ],
+              "hints":[
+                "1. Target the location",
+                "2. Tab on the screen to place object",
+                "3. Try changing the position if object could not be placed",
+                "4. Use 🔍 to zoom In and Zoom Out an object",
+                "5. Use ⚙ button to change 3D model settings",
+                "6. Use ↻ button to clear model",
+                "7. Use 🏠 button to go to Chapters list",
+                "8. Tap 👁️ to show/hide parts"
+              ],
             "relatedmodels":[
                              {
                              "id":41,
@@ -418,15 +431,16 @@
                              "scaleValue":0.1,
                              "canModifySurface":true,
                              "modelimage":"modelimages/simplecuboidal.png",
-                             "hints":[
-                                      "1. Use yellow square/focus square to target the location",
-                                      "2. Tap on the focus square to place object",
-                                      "3. Try changing the position if object could not be placed",
-                                      "4. Pinch to zoom In and Zoom Out an object",
-                                      "5. Use ⚙ button to change 3D model settings",
-                                      "6. Use ↻ button to clear model",
-                                      "7. Use 🏠 button to go to Chapters list"
-                                      ],
+                               "hints":[
+                                 "1. Target the location",
+                                 "2. Tab on the screen to place object",
+                                 "3. Try changing the position if object could not be placed",
+                                 "4. Use 🔍 to zoom In and Zoom Out an object",
+                                 "5. Use ⚙ button to change 3D model settings",
+                                 "6. Use ↻ button to clear model",
+                                 "7. Use 🏠 button to go to Chapters list",
+                                 "8. Tap 👁️ to show/hide parts"
+                               ],
                              "relatedids":[
                                            4,
                                            42,
@@ -453,15 +467,16 @@
                              "scaleValue":0.1,
                              "canModifySurface":true,
                              "modelimage":"modelimages/simplecolumnar.png",
-                             "hints":[
-                                      "1. Use yellow square/focus square to target the location",
-                                      "2. Tap on the focus square to place object",
-                                      "3. Try changing the position if object could not be placed",
-                                      "4. Pinch to zoom In and Zoom Out an object",
-                                      "5. Use ⚙ button to change 3D model settings",
-                                      "6. Use ↻ button to clear model",
-                                      "7. Use 🏠 button to go to Chapters list"
-                                      ],
+                               "hints":[
+                                 "1. Target the location",
+                                 "2. Tab on the screen to place object",
+                                 "3. Try changing the position if object could not be placed",
+                                 "4. Use 🔍 to zoom In and Zoom Out an object",
+                                 "5. Use ⚙ button to change 3D model settings",
+                                 "6. Use ↻ button to clear model",
+                                 "7. Use 🏠 button to go to Chapters list",
+                                 "8. Tap 👁️ to show/hide parts"
+                               ],
                              "relatedids":[
                                            4,
                                            41,
@@ -488,15 +503,16 @@
                              "scaleValue":0.1,
                              "canModifySurface":true,
                              "modelimage":"modelimages/stratifiedsquamous.png",
-                             "hints":[
-                                      "1. Use yellow square/focus square to target the location",
-                                      "2. Tap on the focus square to place object",
-                                      "3. Try changing the position if object could not be placed",
-                                      "4. Pinch to zoom In and Zoom Out an object",
-                                      "5. Use ⚙ button to change 3D model settings",
-                                      "6. Use ↻ button to clear model",
-                                      "7. Use 🏠 button to go to Chapters list"
-                                      ],
+                               "hints":[
+                                 "1. Target the location",
+                                 "2. Tab on the screen to place object",
+                                 "3. Try changing the position if object could not be placed",
+                                 "4. Use 🔍 to zoom In and Zoom Out an object",
+                                 "5. Use ⚙ button to change 3D model settings",
+                                 "6. Use ↻ button to clear model",
+                                 "7. Use 🏠 button to go to Chapters list",
+                                 "8. Tap 👁️ to show/hide parts"
+                               ],
                              "relatedids":[
                                            4,
                                            41,
@@ -523,15 +539,16 @@
                              "scaleValue":0.1,
                              "canModifySurface":true,
                              "modelimage":"modelimages/stratifiedcuboidal.png",
-                             "hints":[
-                                      "1. Use yellow square/focus square to target the location",
-                                      "2. Tap on the focus square to place object",
-                                      "3. Try changing the position if object could not be placed",
-                                      "4. Pinch to zoom In and Zoom Out an object",
-                                      "5. Use ⚙ button to change 3D model settings",
-                                      "6. Use ↻ button to clear model",
-                                      "7. Use 🏠 button to go to Chapters list"
-                                      ],
+                               "hints":[
+                                 "1. Target the location",
+                                 "2. Tab on the screen to place object",
+                                 "3. Try changing the position if object could not be placed",
+                                 "4. Use 🔍 to zoom In and Zoom Out an object",
+                                 "5. Use ⚙ button to change 3D model settings",
+                                 "6. Use ↻ button to clear model",
+                                 "7. Use 🏠 button to go to Chapters list",
+                                 "8. Tap 👁️ to show/hide parts"
+                               ],
                              "relatedids":[
                                            4,
                                            41,
@@ -558,15 +575,16 @@
                              "scaleValue":0.1,
                              "canModifySurface":true,
                              "modelimage":"modelimages/stratifiedcolumnar.png",
-                             "hints":[
-                                      "1. Use yellow square/focus square to target the location",
-                                      "2. Tap on the focus square to place object",
-                                      "3. Try changing the position if object could not be placed",
-                                      "4. Pinch to zoom In and Zoom Out an object",
-                                      "5. Use ⚙ button to change 3D model settings",
-                                      "6. Use ↻ button to clear model",
-                                      "7. Use 🏠 button to go to Chapters list"
-                                      ],
+                               "hints":[
+                                 "1. Target the location",
+                                 "2. Tab on the screen to place object",
+                                 "3. Try changing the position if object could not be placed",
+                                 "4. Use 🔍 to zoom In and Zoom Out an object",
+                                 "5. Use ⚙ button to change 3D model settings",
+                                 "6. Use ↻ button to clear model",
+                                 "7. Use 🏠 button to go to Chapters list",
+                                 "8. Tap 👁️ to show/hide parts"
+                               ],
                              "relatedids":[
                                            4,
                                            41,
@@ -593,15 +611,16 @@
                              "scaleValue":0.1,
                              "canModifySurface":true,
                              "modelimage":"modelimages/pseudocolumnar.png",
-                             "hints":[
-                                      "1. Use yellow square/focus square to target the location",
-                                      "2. Tap on the focus square to place object",
-                                      "3. Try changing the position if object could not be placed",
-                                      "4. Pinch to zoom In and Zoom Out an object",
-                                      "5. Use ⚙ button to change 3D model settings",
-                                      "6. Use ↻ button to clear model",
-                                      "7. Use 🏠 button to go to Chapters list"
-                                      ],
+                               "hints":[
+                                 "1. Target the location",
+                                 "2. Tab on the screen to place object",
+                                 "3. Try changing the position if object could not be placed",
+                                 "4. Use 🔍 to zoom In and Zoom Out an object",
+                                 "5. Use ⚙ button to change 3D model settings",
+                                 "6. Use ↻ button to clear model",
+                                 "7. Use 🏠 button to go to Chapters list",
+                                 "8. Tap 👁️ to show/hide parts"
+                               ],
                              "relatedids":[
                                            4,
                                            41,
@@ -628,15 +647,16 @@
                              "scaleValue":0.1,
                              "canModifySurface":true,
                              "modelimage":"modelimages/transitionaltissue.png",
-                             "hints":[
-                                      "1. Use yellow square/focus square to target the location",
-                                      "2. Tap on the focus square to place object",
-                                      "3. Try changing the position if object could not be placed",
-                                      "4. Pinch to zoom In and Zoom Out an object",
-                                      "5. Use ⚙ button to change 3D model settings",
-                                      "6. Use ↻ button to clear model",
-                                      "7. Use 🏠 button to go to Chapters list"
-                                      ],
+                               "hints":[
+                                 "1. Target the location",
+                                 "2. Tab on the screen to place object",
+                                 "3. Try changing the position if object could not be placed",
+                                 "4. Use 🔍 to zoom In and Zoom Out an object",
+                                 "5. Use ⚙ button to change 3D model settings",
+                                 "6. Use ↻ button to clear model",
+                                 "7. Use 🏠 button to go to Chapters list",
+                                 "8. Tap 👁️ to show/hide parts"
+                               ],
                              "relatedids":[
                                            4,
                                            41,
