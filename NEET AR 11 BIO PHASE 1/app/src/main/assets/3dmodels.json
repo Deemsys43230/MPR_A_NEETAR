@@ -21,7 +21,7 @@
             "modelimage":"modelimages/monocotplant.png",
               "hints":[
                 "1. Target the location",
-                "2. Tab on the screen to place object",
+                "2. Tap on the screen to place object",
                 "3. Try changing the position if object could not be placed",
                 "4. Use 🔍 to zoom In and Zoom Out an object",
                 "5. Use ⚙ button to change 3D model settings",
@@ -49,7 +49,7 @@
             "modelimage":"modelimages/monocotroot.png",
               "hints":[
                 "1. Target the location",
-                "2. Tab on the screen to place object",
+                "2. Tap on the screen to place object",
                 "3. Try changing the position if object could not be placed",
                 "4. Use 🔍 to zoom In and Zoom Out an object",
                 "5. Use ⚙ button to change 3D model settings",
@@ -76,7 +76,7 @@
                              "modelimage":"modelimages/monocotroot_mview.png",
                                "hints":[
                                  "1. Target the location",
-                                 "2. Tab on the screen to place object",
+                                 "2. Tap on the screen to place object",
                                  "3. Try changing the position if object could not be placed",
                                  "4. Use 🔍 to zoom In and Zoom Out an object",
                                  "5. Use ⚙ button to change 3D model settings",
@@ -108,7 +108,7 @@
             "modelimage":"modelimages/monocotstem_mview.png",
               "hints":[
                 "1. Target the location",
-                "2. Tab on the screen to place object",
+                "2. Tap on the screen to place object",
                 "3. Try changing the position if object could not be placed",
                 "4. Use 🔍 to zoom In and Zoom Out an object",
                 "5. Use ⚙ button to change 3D model settings",
@@ -136,7 +136,7 @@
             "modelimage":"modelimages/monocotleaf.png",
               "hints":[
                 "1. Target the location",
-                "2. Tab on the screen to place object",
+                "2. Tap on the screen to place object",
                 "3. Try changing the position if object could not be placed",
                 "4. Use 🔍 to zoom In and Zoom Out an object",
                 "5. Use ⚙ button to change 3D model settings",
@@ -163,7 +163,7 @@
                              "modelimage":"modelimages/monocotleaf_mview.png",
                                "hints":[
                                  "1. Target the location",
-                                 "2. Tab on the screen to place object",
+                                 "2. Tap on the screen to place object",
                                  "3. Try changing the position if object could not be placed",
                                  "4. Use 🔍 to zoom In and Zoom Out an object",
                                  "5. Use ⚙ button to change 3D model settings",
@@ -195,7 +195,7 @@
             "modelimage":"modelimages/monocotseed.png",
               "hints":[
                 "1. Target the location",
-                "2. Tab on the screen to place object",
+                "2. Tap on the screen to place object",
                 "3. Try changing the position if object could not be placed",
                 "4. Use 🔍 to zoom In and Zoom Out an object",
                 "5. Use ⚙ button to change 3D model settings",
@@ -259,7 +259,7 @@
             "modelimage":"modelimages/tissue.png",
               "hints":[
                 "1. Target the location",
-                "2. Tab on the screen to place object",
+                "2. Tap on the screen to place object",
                 "3. Try changing the position if object could not be placed",
                 "4. Use 🔍 to zoom In and Zoom Out an object",
                 "5. Use ⚙ button to change 3D model settings",
@@ -287,7 +287,7 @@
             "modelimage":"modelimages/typicalneuron.png",
               "hints":[
                 "1. Target the location",
-                "2. Tab on the screen to place object",
+                "2. Tap on the screen to place object",
                 "3. Try changing the position if object could not be placed",
                 "4. Use 🔍 to zoom In and Zoom Out an object",
                 "5. Use ⚙ button to change 3D model settings",
@@ -315,7 +315,7 @@
             "modelimage":"modelimages/skeletolmuscle.png",
               "hints":[
                 "1. Target the location",
-                "2. Tab on the screen to place object",
+                "2. Tap on the screen to place object",
                 "3. Try changing the position if object could not be placed",
                 "4. Use 🔍 to zoom In and Zoom Out an object",
                 "5. Use ⚙ button to change 3D model settings",
@@ -342,7 +342,7 @@
                           "modelimage":"modelimages/cardiacmuscle.png",
                             "hints":[
                               "1. Target the location",
-                              "2. Tab on the screen to place object",
+                              "2. Tap on the screen to place object",
                               "3. Try changing the position if object could not be placed",
                               "4. Use 🔍 to zoom In and Zoom Out an object",
                               "5. Use ⚙ button to change 3D model settings",
@@ -373,7 +373,7 @@
                           "modelimage":"modelimages/visceralmuscle.png",
                             "hints":[
                               "1. Target the location",
-                              "2. Tab on the screen to place object",
+                              "2. Tap on the screen to place object",
                               "3. Try changing the position if object could not be placed",
                               "4. Use 🔍 to zoom In and Zoom Out an object",
                               "5. Use ⚙ button to change 3D model settings",
@@ -406,7 +406,7 @@
             "modelimage":"modelimages/simplesquamous.png",
               "hints":[
                 "1. Target the location",
-                "2. Tab on the screen to place object",
+                "2. Tap on the screen to place object",
                 "3. Try changing the position if object could not be placed",
                 "4. Use 🔍 to zoom In and Zoom Out an object",
                 "5. Use ⚙ button to change 3D model settings",
@@ -433,7 +433,7 @@
                              "modelimage":"modelimages/simplecuboidal.png",
                                "hints":[
                                  "1. Target the location",
-                                 "2. Tab on the screen to place object",
+                                 "2. Tap on the screen to place object",
                                  "3. Try changing the position if object could not be placed",
                                  "4. Use 🔍 to zoom In and Zoom Out an object",
                                  "5. Use ⚙ button to change 3D model settings",
@@ -469,7 +469,7 @@
                              "modelimage":"modelimages/simplecolumnar.png",
                                "hints":[
                                  "1. Target the location",
-                                 "2. Tab on the screen to place object",
+                                 "2. Tap on the screen to place object",
                                  "3. Try changing the position if object could not be placed",
                                  "4. Use 🔍 to zoom In and Zoom Out an object",
                                  "5. Use ⚙ button to change 3D model settings",
@@ -505,7 +505,7 @@
                              "modelimage":"modelimages/stratifiedsquamous.png",
                                "hints":[
                                  "1. Target the location",
-                                 "2. Tab on the screen to place object",
+                                 "2. Tap on the screen to place object",
                                  "3. Try changing the position if object could not be placed",
                                  "4. Use 🔍 to zoom In and Zoom Out an object",
                                  "5. Use ⚙ button to change 3D model settings",
@@ -541,7 +541,7 @@
                              "modelimage":"modelimages/stratifiedcuboidal.png",
                                "hints":[
                                  "1. Target the location",
-                                 "2. Tab on the screen to place object",
+                                 "2. Tap on the screen to place object",
                                  "3. Try changing the position if object could not be placed",
                                  "4. Use 🔍 to zoom In and Zoom Out an object",
                                  "5. Use ⚙ button to change 3D model settings",
@@ -577,7 +577,7 @@
                              "modelimage":"modelimages/stratifiedcolumnar.png",
                                "hints":[
                                  "1. Target the location",
-                                 "2. Tab on the screen to place object",
+                                 "2. Tap on the screen to place object",
                                  "3. Try changing the position if object could not be placed",
                                  "4. Use 🔍 to zoom In and Zoom Out an object",
                                  "5. Use ⚙ button to change 3D model settings",
@@ -613,7 +613,7 @@
                              "modelimage":"modelimages/pseudocolumnar.png",
                                "hints":[
                                  "1. Target the location",
-                                 "2. Tab on the screen to place object",
+                                 "2. Tap on the screen to place object",
                                  "3. Try changing the position if object could not be placed",
                                  "4. Use 🔍 to zoom In and Zoom Out an object",
                                  "5. Use ⚙ button to change 3D model settings",
@@ -649,7 +649,7 @@
                              "modelimage":"modelimages/transitionaltissue.png",
                                "hints":[
                                  "1. Target the location",
-                                 "2. Tab on the screen to place object",
+                                 "2. Tap on the screen to place object",
                                  "3. Try changing the position if object could not be placed",
                                  "4. Use 🔍 to zoom In and Zoom Out an object",
                                  "5. Use ⚙ button to change 3D model settings",
