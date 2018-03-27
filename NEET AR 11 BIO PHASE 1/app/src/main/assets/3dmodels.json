@@ -19,14 +19,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/tmvvirus.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[]
        },
@@ -46,14 +46,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/bacteriophage.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[
            {
@@ -72,14 +72,14 @@
              "canModifySurface":true,
              "modelimage":"modelimages/bacteriophage_cross.png",
              "hints":[
-               "1. Use yellow square/focus square to target the location",
-               "2. Tap on the focus square to place object",
+               "1. Target the location",
+               "2. Tab on the screen to place object",
                "3. Try changing the position if object could not be placed",
-               "4. Pinch to zoom In and Zoom Out an object",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
                "6. Use ↻ button to clear model",
                "7. Use 🏠 button to go to Chapters list",
-               "8. Tap on 3d model to show/hide parts"
+               "8. Tap 👁️ to show/hide parts"
              ],
              "relatedids":[2]
            }
@@ -101,14 +101,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/influenzavirus.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[]
        },
@@ -128,14 +128,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/rodshapedbacterium.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[
 
@@ -163,14 +163,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/tomatoplant.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[]
        },
@@ -190,14 +190,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/tomatoroot.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[
            {
@@ -216,14 +216,14 @@
              "canModifySurface":true,
              "modelimage":"modelimages/tomatoroot_mview.png",
              "hints":[
-               "1. Use yellow square/focus square to target the location",
-               "2. Tap on the focus square to place object",
+               "1. Target the location",
+               "2. Tab on the screen to place object",
                "3. Try changing the position if object could not be placed",
-               "4. Pinch to zoom In and Zoom Out an object",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
                "6. Use ↻ button to clear model",
                "7. Use 🏠 button to go to Chapters list",
-               "8. Tap on 3d model to show/hide parts"
+               "8. Tap 👁️ to show/hide parts"
              ],
              "relatedids":[2]
            }
@@ -245,14 +245,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/tomatostem.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[
            {
@@ -271,14 +271,14 @@
              "canModifySurface":true,
              "modelimage":"modelimages/tomatostem_mview.png",
              "hints":[
-               "1. Use yellow square/focus square to target the location",
-               "2. Tap on the focus square to place object",
+               "1. Target the location",
+               "2. Tab on the screen to place object",
                "3. Try changing the position if object could not be placed",
-               "4. Pinch to zoom In and Zoom Out an object",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
                "6. Use ↻ button to clear model",
                "7. Use 🏠 button to go to Chapters list",
-               "8. Tap on 3d model to show/hide parts"
+               "8. Tap 👁️ to show/hide parts"
              ],
              "relatedids":[3]
            }
@@ -300,14 +300,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/mangofruit.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[
            {
@@ -326,14 +326,14 @@
              "canModifySurface":true,
              "modelimage":"modelimages/mangofruit_cross.png",
              "hints":[
-               "1. Use yellow square/focus square to target the location",
-               "2. Tap on the focus square to place object",
+               "1. Target the location",
+               "2. Tab on the screen to place object",
                "3. Try changing the position if object could not be placed",
-               "4. Pinch to zoom In and Zoom Out an object",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
                "6. Use ↻ button to clear model",
                "7. Use 🏠 button to go to Chapters list",
-               "8. Tap on 3d model to show/hide parts"
+               "8. Tap 👁️ to show/hide parts"
              ],
              "relatedids":[
                4
@@ -357,14 +357,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/tomatoleaf.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[
            {
@@ -383,14 +383,14 @@
              "canModifySurface":true,
              "modelimage":"modelimages/tomatoleaf_mview.png",
              "hints":[
-               "1. Use yellow square/focus square to target the location",
-               "2. Tap on the focus square to place object",
+               "1. Target the location",
+               "2. Tab on the screen to place object",
                "3. Try changing the position if object could not be placed",
-               "4. Pinch to zoom In and Zoom Out an object",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
                "6. Use ↻ button to clear model",
                "7. Use 🏠 button to go to Chapters list",
-               "8. Tap on 3d model to show/hide parts"
+               "8. Tap 👁️ to show/hide parts"
              ],
              "relatedids":[5]
            }
@@ -412,14 +412,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/seed.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[
            {
@@ -438,14 +438,14 @@
              "canModifySurface":true,
              "modelimage":"modelimages/seedcross.png",
              "hints":[
-               "1. Use yellow square/focus square to target the location",
-               "2. Tap on the focus square to place object",
+               "1. Target the location",
+               "2. Tab on the screen to place object",
                "3. Try changing the position if object could not be placed",
-               "4. Pinch to zoom In and Zoom Out an object",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
                "6. Use ↻ button to clear model",
                "7. Use 🏠 button to go to Chapters list",
-               "8. Tap on 3d model to show/hide parts"
+               "8. Tap 👁️ to show/hide parts"
              ],
              "relatedids":[6]
            }
@@ -467,14 +467,14 @@
          "canModifySurface":true,
          "modelimage":"modelimages/hibiscusflower.png",
          "hints":[
-           "1. Use yellow square/focus square to target the location",
-           "2. Tap on the focus square to place object",
+           "1. Target the location",
+           "2. Tab on the screen to place object",
            "3. Try changing the position if object could not be placed",
-           "4. Pinch to zoom In and Zoom Out an object",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
            "6. Use ↻ button to clear model",
            "7. Use 🏠 button to go to Chapters list",
-           "8. Tap on 3d model to show/hide parts"
+           "8. Tap 👁️ to show/hide parts"
          ],
          "relatedmodels":[
            {
@@ -493,14 +493,14 @@
              "canModifySurface":true,
              "modelimage":"modelimages/hibiscus_cross.png",
              "hints":[
-               "1. Use yellow square/focus square to target the location",
-               "2. Tap on the focus square to place object",
+               "1. Target the location",
+               "2. Tab on the screen to place object",
                "3. Try changing the position if object could not be placed",
-               "4. Pinch to zoom In and Zoom Out an object",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
                "6. Use ↻ button to clear model",
                "7. Use 🏠 button to go to Chapters list",
-               "8. Tap on 3d model to show/hide parts"
+               "8. Tap 👁️ to show/hide parts"
              ],
              "relatedids":[7]
            }
