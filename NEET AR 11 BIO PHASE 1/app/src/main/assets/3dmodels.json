@@ -20,7 +20,7 @@
          "modelimage":"modelimages/tmvvirus.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -47,7 +47,7 @@
          "modelimage":"modelimages/bacteriophage.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -73,7 +73,7 @@
              "modelimage":"modelimages/bacteriophage_cross.png",
              "hints":[
                "1. Target the location",
-               "2. Tab on the screen to place object",
+               "2. Tap on the screen to place object",
                "3. Try changing the position if object could not be placed",
                "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
@@ -102,7 +102,7 @@
          "modelimage":"modelimages/influenzavirus.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -129,7 +129,7 @@
          "modelimage":"modelimages/rodshapedbacterium.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -164,7 +164,7 @@
          "modelimage":"modelimages/tomatoplant.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -191,7 +191,7 @@
          "modelimage":"modelimages/tomatoroot.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -217,7 +217,7 @@
              "modelimage":"modelimages/tomatoroot_mview.png",
              "hints":[
                "1. Target the location",
-               "2. Tab on the screen to place object",
+               "2. Tap on the screen to place object",
                "3. Try changing the position if object could not be placed",
                "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
@@ -246,7 +246,7 @@
          "modelimage":"modelimages/tomatostem.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -272,7 +272,7 @@
              "modelimage":"modelimages/tomatostem_mview.png",
              "hints":[
                "1. Target the location",
-               "2. Tab on the screen to place object",
+               "2. Tap on the screen to place object",
                "3. Try changing the position if object could not be placed",
                "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
@@ -301,7 +301,7 @@
          "modelimage":"modelimages/mangofruit.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -327,7 +327,7 @@
              "modelimage":"modelimages/mangofruit_cross.png",
              "hints":[
                "1. Target the location",
-               "2. Tab on the screen to place object",
+               "2. Tap on the screen to place object",
                "3. Try changing the position if object could not be placed",
                "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
@@ -358,7 +358,7 @@
          "modelimage":"modelimages/tomatoleaf.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -384,7 +384,7 @@
              "modelimage":"modelimages/tomatoleaf_mview.png",
              "hints":[
                "1. Target the location",
-               "2. Tab on the screen to place object",
+               "2. Tap on the screen to place object",
                "3. Try changing the position if object could not be placed",
                "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
@@ -413,7 +413,7 @@
          "modelimage":"modelimages/seed.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -439,7 +439,7 @@
              "modelimage":"modelimages/seedcross.png",
              "hints":[
                "1. Target the location",
-               "2. Tab on the screen to place object",
+               "2. Tap on the screen to place object",
                "3. Try changing the position if object could not be placed",
                "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
@@ -468,7 +468,7 @@
          "modelimage":"modelimages/hibiscusflower.png",
          "hints":[
            "1. Target the location",
-           "2. Tab on the screen to place object",
+           "2. Tap on the screen to place object",
            "3. Try changing the position if object could not be placed",
            "4. Use 🔍 to zoom In and Zoom Out an object",
            "5. Use ⚙ button to change 3D model settings",
@@ -494,7 +494,7 @@
              "modelimage":"modelimages/hibiscus_cross.png",
              "hints":[
                "1. Target the location",
-               "2. Tab on the screen to place object",
+               "2. Tap on the screen to place object",
                "3. Try changing the position if object could not be placed",
                "4. Use 🔍 to zoom In and Zoom Out an object",
                "5. Use ⚙ button to change 3D model settings",
