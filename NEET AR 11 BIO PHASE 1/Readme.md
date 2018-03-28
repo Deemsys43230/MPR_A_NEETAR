@@ -1,11 +1,18 @@
-# NEET AR 11 BIO PHASE 2
+# NEET AR 11 BIO PHASE 3
 
-This application for learning 11th Standard Biology chapters using 3D model.
+This application for learning 11th Standard Biology chapters using 3D models.
 
 ## Overview
 
-- Anatomy and functions of different parts of flowering plants
-- Structural organisation in animals
+- Cell theory and cell as the basic unit of life
+
+- Chemical constituents of living cells
+
+- Transport in plants
+
+- Digestion and Absorption
+
+- Breathing and Exchange of Gases
 
 
 
@@ -23,4 +30,4 @@ This application for learning 11th Standard Biology chapters using 3D model.
 
 
 ========================================================================================================
-Copyright © 2018 deemsys. All rights reserved.
+Copyright Â© 2018 deemsys. All rights reserved.
