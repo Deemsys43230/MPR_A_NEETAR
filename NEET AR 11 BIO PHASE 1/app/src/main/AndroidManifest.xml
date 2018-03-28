@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.deemsysinc.neetar11biophase2">
+    package="com.deemsysinc.neetar11biophase3">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -25,7 +25,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="false">
         <activity
-            android:name="com.deemsysinc.neetar11biophase2.activities.ARViewActivity"
+            android:name=".activities.ARViewActivity"
             android:label="@string/app_name"
             android:configChanges="orientation|screenSize"
             android:exported="true"
@@ -36,10 +36,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.deemsysinc.neetar11biophase2.activities.SettingsActivity"
+        <activity android:name=".activities.SettingsActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
-            android:name="com.deemsysinc.neetar11biophase2.activities.ScanArActivity"
+            android:name=".activities.ScanArActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.deemsysinc.neetar11biophase2.activities.MenuActivity"
+            android:name=".activities.MenuActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -56,12 +56,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.deemsysinc.neetar11biophase2.activities.ModelsActivity"
+        <activity android:name=".activities.ModelsActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name="com.deemsysinc.neetar11biophase2.activities.HintsActivity"
+        <activity android:name=".activities.HintsActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <service
-            android:name="com.deemsysinc.neetar11biophase2.expansion.DownloaderService"
+            android:name=".expansion.DownloaderService"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <meta-data android:name="com.google.ar.core" android:value="required" />

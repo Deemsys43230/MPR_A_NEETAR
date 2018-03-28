@@ -18,7 +18,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.deemsysinc.ARDemoProject.ARViewActivity">
+    >
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -154,7 +154,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp">
 
-        <com.deemsysinc.neetar11biophase2.utils.VerticalSeekBar
+        <com.deemsysinc.neetar11biophase3.utils.VerticalSeekBar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/mySeekBar"
