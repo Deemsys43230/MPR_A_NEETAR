@@ -77,13 +77,14 @@
         "canModifySurface":true,
         "modelimage":"modelimages/eukaryoticcell.png",
         "hints":[
-          "1. Use yellow square/focus square to target the location",
-          "2. Tap on the focus square to place object",
+          "1. Target the location",
+          "2. Tap on the screen to place object",
           "3. Try changing the position if object could not be placed",
-          "4. Pinch to zoom In and Zoom Out an object",
+          "4. Use 🔍 to zoom In and Zoom Out an object",
           "5. Use ⚙ button to change 3D model settings",
           "6. Use ↻ button to clear model",
-          "7. Use 🏠 button to go to Chapters list"
+          "7. Use 🏠 button to go to Chapters list",
+          "8. Tap 👁️ to show/hide parts"
         ],
         "relatedmodels":[
 
@@ -99,24 +100,26 @@
         "id":1,
         "modelname":"mitosis",
         "visiblename":"Mitosis",
-        "staticmodelpath":"art.scnassets/mitosis/mitosis.scn",
-        "mtlmodelpath":null,
+        "staticmodelpath":"mitosis/mitosis.obj",
+        "mtlmodelpath":"mitosis/mitosis.mtl",
         "isSurfaceEnabled":false,
         "isZoomEnabled":true,
         "isPartsAvailable":true,
         "partsname":"mitosis_parts",
-        "partsmodelpath":"art.scnassets/mitosis/mitosis_parts.scn",
-        "scaleValue":0.2,
+        "partsmodelpath":"mitosis_parts/mitosis_parts.obj",
+        "partsmtlpath":"mitosis_parts/mitosis_parts.mtl",
+        "scaleValue":0.1,
         "canModifySurface":true,
-        "modelimage":"mitosis",
+        "modelimage":"modelimages/mitosis.png",
         "hints":[
-          "1. Use yellow square/focus square to target the location",
-          "2. Tap on the focus square to place object",
+          "1. Target the location",
+          "2. Tap on the screen to place object",
           "3. Try changing the position if object could not be placed",
-          "4. Pinch to zoom In and Zoom Out an object",
+          "4. Use 🔍 to zoom In and Zoom Out an object",
           "5. Use ⚙ button to change 3D model settings",
           "6. Use ↻ button to clear model",
-          "7. Use 🏠 button to go to Chapters list"
+          "7. Use 🏠 button to go to Chapters list",
+          "8. Tap 👁️ to show/hide parts"
         ],
         "relatedmodels":[
 
@@ -126,24 +129,26 @@
         "id":2,
         "modelname":"meiosis1",
         "visiblename":"Meiosis I",
-        "staticmodelpath":"art.scnassets/meiosis1/meiosis1.scn",
-        "mtlmodelpath":null,
+        "staticmodelpath":"meiosis1/meiosis1.obj",
+        "mtlmodelpath":"meiosis1/meiosis1.mtl",
         "isSurfaceEnabled":false,
         "isZoomEnabled":true,
         "isPartsAvailable":true,
         "partsname":"meiosis1_parts",
-        "partsmodelpath":"art.scnassets/meiosis1/meiosis1_parts.scn",
+        "partsmodelpath":"meiosis1_parts/meiosis1_parts.obj",
+        "partsmtlpath":"meiosis1_parts/meiosis1_parts.mtl",
         "scaleValue":0.1,
         "canModifySurface":true,
-        "modelimage":"meiosis1",
+        "modelimage":"modelimages/meiosis1.png",
         "hints":[
-          "1. Use yellow square/focus square to target the location",
-          "2. Tap on the focus square to place object",
+          "1. Target the location",
+          "2. Tap on the screen to place object",
           "3. Try changing the position if object could not be placed",
-          "4. Pinch to zoom In and Zoom Out an object",
+          "4. Use 🔍 to zoom In and Zoom Out an object",
           "5. Use ⚙ button to change 3D model settings",
           "6. Use ↻ button to clear model",
-          "7. Use 🏠 button to go to Chapters list"
+          "7. Use 🏠 button to go to Chapters list",
+          "8. Tap 👁️ to show/hide parts"
         ],
         "relatedmodels":[
 
@@ -153,24 +158,26 @@
         "id":3,
         "modelname":"meiosis2",
         "visiblename":"Meiosis II",
-        "staticmodelpath":"art.scnassets/meiosis2/meiosis2.scn",
-        "mtlmodelpath":null,
+        "staticmodelpath":"meiosis2/meiosis2.obj",
+        "mtlmodelpath":"meiosis2/meiosis2.mtl",
         "isSurfaceEnabled":false,
         "isZoomEnabled":true,
         "isPartsAvailable":true,
         "partsname":"meiosis2_parts",
-        "partsmodelpath":"art.scnassets/meiosis2/meiosis2_parts.scn",
+        "partsmodelpath":"meiosis2_parts/meiosis2_parts.obj",
+        "partsmtlpath":"meiosis2_parts/meiosis2_parts.mtl",
         "scaleValue":0.1,
         "canModifySurface":true,
-        "modelimage":"meiosis2",
+        "modelimage":"modelimages/meiosis2.png",
         "hints":[
-          "1. Use yellow square/focus square to target the location",
-          "2. Tap on the focus square to place object",
+          "1. Target the location",
+          "2. Tap on the screen to place object",
           "3. Try changing the position if object could not be placed",
-          "4. Pinch to zoom In and Zoom Out an object",
+          "4. Use 🔍 to zoom In and Zoom Out an object",
           "5. Use ⚙ button to change 3D model settings",
           "6. Use ↻ button to clear model",
-          "7. Use 🏠 button to go to Chapters list"
+          "7. Use 🏠 button to go to Chapters list",
+          "8. Tap 👁️ to show/hide parts"
         ],
         "relatedmodels":[
 
@@ -212,7 +219,7 @@
       {
         "id":2,
         "modelname":"translocation",
-        "visiblename":"Plant cell",
+        "visiblename":"Translocation",
         "staticmodelpath":"art.scnassets/translocation/translocation.scn",
         "mtlmodelpath":null,
         "isSurfaceEnabled":false,
