@@ -202,10 +202,18 @@ public class RenderObject
                 + " vertices and " + textureName);
         //Log.d("CreateRendererStream",""+textureStream);
         Log.d("IsPartsAvalible",""+isPartsAvalible);
+        Log.d("PrintMtlFileName",mtlFileName);
         if(isPartsAvalible==true)
         {
             ObjectRenderer partsRenderer=new ObjectRenderer();
             partsRenderer.createOnGlThread(context,obj,expansionFile,textureName,materialname);
+            if(mtlFileName.equals("typicalneuron_parts.mtl"))
+            {
+              if(materialname.equals("LightYellow_transprent")||materialname.equals("Transprent_blue"))
+              {
+                  partsRenderer.setTransparencyMode(true);
+              }
+            }
 //            partsRenderer.setMaterialProperties(0.0f, 3.5f, 1.0f, 6.0f);
 
 //            if(materialname.equals("Transprent_Head_001")||materialname.equals("Transprent_Head_001_Green.png.004.png.001.png")
@@ -224,10 +232,17 @@ public class RenderObject
 //                }
 //            }
             materialGroupObjectRenders1.add(partsRenderer);
+
         }
         else {
             ObjectRenderer objectRenderer = new ObjectRenderer();
             objectRenderer.createOnGlThread(context, obj, expansionFile, textureName,materialname);
+              if(mtlFileName.equals("typicalneuron.mtl"))
+              {
+                  if(materialname.equals("LightYellow_transprent")||materialname.equals("Transprent_blue")) {
+                      objectRenderer.setTransparencyMode(true);
+                  }
+              }
 //            objectRenderer.setMaterialProperties(0.0f, 3.5f, 1.0f, 6.0f);
 //             if(materialname.equals("Bacteriophage:Transprent_Head")||materialname.equals("Transprent_Head")
 //                    ||materialname.equals("Transprent_Head_002")||materialname.equals("LightYellow_transprent")||materialname.equals("Transprent_blue")||materialname.equals("Red_transeprent"))

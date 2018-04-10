@@ -323,7 +323,7 @@ public class ObjectRenderer {
     public void draw(float[] cameraView, float[] cameraPerspective, float lightIntensity) {
 
         ShaderUtil.checkGLError(TAG, "Before draw");
-        GLES20.glDisable(GLES20.GL_CULL_FACE);
+//        GLES20.glDisable(GLES20.GL_CULL_FACE);
         // Build the ModelView and ModelViewProjection matrices
         // for calculating object position and light.
         Matrix.multiplyMM(mModelViewMatrix, 0, cameraView, 0, mModelMatrix, 0);

@@ -98,7 +98,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     // With Folder
     //public static long fsize = 214188092L;
     //Without Folder
-    public static long fsize = 830701568L;
+    public static long fsize = 1496481792L;
 
     private static TextView textpercent, underdownloadtext;
     private static ProgressBar mProgressBar;
@@ -126,7 +126,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     };
 
 
-     String AppPrefernce = "ScanAR_Ref";
+    String AppPrefernce = "ScanAR_Ref";
 
     static  SharedPreferences prefs;
 
@@ -167,7 +167,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 MountObb();
             }
         }
-
         UtilityAr.setStausBarColor(MenuActivity.this,MenuActivity.this);
         toolbar=findViewById(R.id.menu_toolbar);
         setSupportActionBar(toolbar);
@@ -189,9 +188,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         GetChapters();
     }
 
-    private void setStausBarColor() {
-
-    }
 
     private void GetChapters() {
         try {

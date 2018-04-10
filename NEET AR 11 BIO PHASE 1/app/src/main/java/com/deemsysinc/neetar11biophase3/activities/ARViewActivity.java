@@ -1195,7 +1195,6 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
     public void onDrawFrame(GL10 gl) {
         // Clear screen to notify driver it should not load any pixels from previous frame.
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
-
         Log.d("CalledWhat","OnDrawFrame");
         if (mSession == null) {
             return;
