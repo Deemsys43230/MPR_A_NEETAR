@@ -269,34 +269,7 @@
               ],
             "relatedmodels":[]
             },
-            {
-            "id":2,
-            "modelname":"typicalneuron",
-            "visiblename":"Typical neuron",
-            "staticmodelpath":"typicalneuron/typicalneuron.obj",
-            "mtlmodelpath":"typicalneuron/typicalneuron.mtl",
-            "isSurfaceEnabled":false,
-            "isLighteningEnabled":false,
-            "isZoomEnabled":true,
-            "isPartsAvailable":true,
-            "partsname":"typicalneuron_parts",
-            "partsmodelpath":"typicalneuron_parts/typicalneuron_parts.obj",
-            "partsmtlpath":"typicalneuron_parts/typicalneuron_parts.mtl",
-            "scaleValue":0.2,
-            "canModifySurface":true,
-            "modelimage":"modelimages/typicalneuron.png",
-              "hints":[
-                "1. Target the location",
-                "2. Tap on the screen to place object",
-                "3. Try changing the position if object could not be placed",
-                "4. Use 🔍 to zoom In and Zoom Out an object",
-                "5. Use ⚙ button to change 3D model settings",
-                "6. Use ↻ button to clear model",
-                "7. Use 🏠 button to go to Chapters list",
-                "8. Tap 👁️ to show/hide parts"
-              ],
-            "relatedmodels":[]
-            },
+
             {
             "id":3,
             "visiblename":"Skeletal muscle",
