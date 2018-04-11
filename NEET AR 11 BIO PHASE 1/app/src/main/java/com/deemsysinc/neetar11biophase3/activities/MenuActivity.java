@@ -98,7 +98,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     // With Folder
     //public static long fsize = 214188092L;
     //Without Folder
-    public static long fsize = 1496481792L;
+    public static long fsize = 1494974464L;
 
     private static TextView textpercent, underdownloadtext;
     private static ProgressBar mProgressBar;

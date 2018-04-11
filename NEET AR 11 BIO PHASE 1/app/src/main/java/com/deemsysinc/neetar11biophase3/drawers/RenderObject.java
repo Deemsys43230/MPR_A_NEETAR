@@ -164,9 +164,6 @@ public class RenderObject
             createRenderers(context, materialGroupObj,expansionFile, textureName,isPartsAvalible,materialName,mtlFilename);
         }
     }
-
-
-
     private String findObbTextureName(String materialName, Iterable<? extends Mtl> mtls, String defaultTextureFileName,String foldername)
     {
         for(Mtl mtl:mtls)
@@ -185,7 +182,6 @@ public class RenderObject
                         Log.d("PrintFilterMFile",zipEntryRO.mFileName.substring(40,zipEntryRO.mFileName.length()));
                         return zipEntryRO.mFileName;
                     }
-
                 }
 
             }
