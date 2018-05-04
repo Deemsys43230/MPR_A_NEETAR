@@ -47,8 +47,8 @@ public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.Chapte
         if(position+1==chapterModels.size())
         {
             holder.containerPlay.setVisibility(View.VISIBLE);
-            holder.playOne.setTypeface(holder.textFont);
-            holder.playTwo.setTypeface(holder.textFont);
+            holder.playOne.setTypeface(holder.textFont1);
+            holder.playTwo.setTypeface(holder.textFont1);
             holder.playNavigation1.setTypeface(holder.font);
             holder.playNavigation2.setTypeface(holder.font);
 
@@ -88,7 +88,7 @@ public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.Chapte
 
         LinearLayout containerPlay;
 
-        Typeface font,textFont;
+        Typeface font,textFont,textFont1;
 
         RelativeLayout playoneClick,playTwoClick;
 
@@ -108,6 +108,7 @@ public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.Chapte
             playTwoClick=(itemView).findViewById(R.id.playtwo_click);
             font=Typeface.createFromAsset(context.getAssets(),"fontawesome-webfont.ttf");
             textFont=Typeface.createFromAsset(context.getAssets(),"fonts/gillsansstd.otf");
+            textFont1=Typeface.createFromAsset(context.getAssets(),"fonts/gillsansstd-bold.otf");
         }
     }
 }

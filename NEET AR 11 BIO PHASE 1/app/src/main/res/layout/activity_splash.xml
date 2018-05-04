@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/s_neet"
-        android:text="Augment Reality"
+        android:text="Augmented Reality"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textColor="@color/ar_white"
