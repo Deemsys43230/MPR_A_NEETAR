@@ -1,0 +1,2154 @@
+ [
+   {
+     "name":"The Five Kingdom System of Classification",
+     "no_of_models":4,
+     "models":[
+       {
+         "id":1,
+         "modelname":"tmvvirus",
+         "visiblename":"TMV virus",
+         "staticmodelpath":"tmvvirus/tmvvirus.obj",
+         "mtlmodelpath":"tmvvirus/tmvvirus.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"tmvvirus_parts",
+         "partsmodelpath":"tmvvirus_parts/tmvvirus_parts.obj",
+         "partsmtlpath":"tmvvirus_parts/tmvvirus_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/tmvvirus.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+       {
+         "id":2,
+         "modelname":"bacteriophage",
+         "visiblename":"Bacteriophage",
+         "staticmodelpath":"bacteriophage/bacteriophage.obj",
+         "mtlmodelpath":"bacteriophage/bacteriophage.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"bacteriophage_parts",
+         "partsmodelpath":"bacteriophage_parts/bacteriophage_parts.obj",
+         "partsmtlpath":"bacteriophage_parts/bacteriophage_parts.mtl",
+         "scaleValue":0.4,
+         "canModifySurface":true,
+         "modelimage":"modelimages/bacteriophage.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":21,
+             "visiblename":"Bacteriophage cross section",
+             "modelname":"bacteriophage_cross",
+             "staticmodelpath":"bacteriophage_cross/bacteriophage_cross.obj",
+             "mtlmodelpath":"bacteriophage_cross/bacteriophage_cross.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"bacteriophage_cross_parts",
+             "partsmodelpath":"bacteriophage_cross_parts/bacteriophage_cross_parts.obj",
+             "partsmtlpath":"bacteriophage_cross_parts/bacteriophage_cross_parts.mtl",
+             "scaleValue":0.5,
+             "canModifySurface":true,
+             "modelimage":"modelimages/bacteriophage_cross.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[2]
+           }
+         ]
+       },
+       {
+         "id":3,
+         "modelname":"influenzavirus",
+         "visiblename":"Influenza virus",
+         "staticmodelpath":"influenzavirus/influenzavirus.obj",
+         "mtlmodelpath":"influenzavirus/influenzavirus.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"influenzavirus_parts",
+         "partsmodelpath":"influenzavirus_parts/influenzavirus_parts.obj",
+         "partsmtlpath":"influenzavirus_parts/influenzavirus_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/influenzavirus.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+       {
+         "id":4,
+         "modelname":"rodshapedbacterium",
+         "visiblename":"Rod shaped bacterium",
+         "staticmodelpath":"rodshapedbacterium/rodshapedbacterium.obj",
+         "mtlmodelpath":"rodshapedbacterium/rodshapedbacterium.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"rodshapedbacterium_parts",
+         "partsmodelpath":"rodshapedbacterium_parts/rodshapedbacterium_parts.obj",
+         "partsmtlpath":"rodshapedbacterium_parts/rodshapedbacterium_parts.mtl",
+         "scaleValue":0.3,
+         "canModifySurface":true,
+         "modelimage":"modelimages/rodshapedbacterium.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Morphology of Flowering Plants",
+     "no_of_models":7,
+     "models":[
+       {
+         "id":1,
+         "modelname":"tomatoplant",
+         "visiblename":"Tomato flowering plant",
+         "staticmodelpath":"tomatoplant/tomatoplant.obj",
+         "mtlmodelpath":"tomatoplant/tomatoplant.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"tomatoplant_parts",
+         "partsmodelpath":"tomatoplant_parts/tomatoplant_parts.obj",
+         "partsmtlpath":"tomatoplant_parts/tomatoplant_parts.mtl",
+         "scaleValue":0.2,
+         "canModifySurface":true,
+         "modelimage":"modelimages/tomatoplant.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+       {
+         "id":2,
+         "modelname":"tomatoroot",
+         "visiblename":"Tomato root",
+         "staticmodelpath":"tomatoroot/tomatoroot.obj",
+         "mtlmodelpath":"tomatoroot/tomatoroot.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"tomatoroot_parts",
+         "partsmodelpath":"tomatoroot_parts/tomatoroot_parts.obj",
+         "partsmtlpath":"tomatoroot_parts/tomatoroot_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/tomatoroot.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":21,
+             "visiblename":"Tomato root microscopic view",
+             "modelname":"tomatoroot_mview",
+             "staticmodelpath":"tomatoroot_mview/tomatoroot_mview.obj",
+             "mtlmodelpath":"tomatoroot_mview/tomatoroot_mview.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"tomatoroot_mview_parts",
+             "partsmodelpath":"tomatoroot_mview_parts/tomatoroot_mview_parts.obj",
+             "partsmtlpath":"tomatoroot_mview_parts/tomatoroot_mview_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/tomatoroot_mview.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[2]
+           }
+         ]
+       },
+       {
+         "id":3,
+         "modelname":"tomatostem",
+         "visiblename":"Tomato stem",
+         "staticmodelpath":"tomatostem/tomatostem.obj",
+         "mtlmodelpath":"tomatostem/tomatostem.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"tomatostem_parts",
+         "partsmodelpath":"tomatostem_parts/tomatostem_parts.obj",
+         "partsmtlpath":"tomatostem_parts/tomatostem_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/tomatostem.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":31,
+             "visiblename":"Tomato stem microscopic view",
+             "modelname":"tomatostem_mview",
+             "staticmodelpath":"tomatostem_mview/tomatostem_mview.obj",
+             "mtlmodelpath":"tomatostem_mview/tomatostem_mview.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"tomatostem_mview_parts",
+             "partsmodelpath":"tomatostem_mview_parts/tomatostem_mview_parts.obj",
+             "partsmtlpath":"tomatostem_mview_parts/tomatostem_mview_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/tomatostem_mview.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[3]
+           }
+         ]
+       },
+       {
+         "id":4,
+         "modelname":"mangofruit",
+         "visiblename":"Mango fruit",
+         "staticmodelpath":"mangofruit/mangofruit.obj",
+         "mtlmodelpath":"mangofruit/mangofruit.mtl",
+         "partsmtlpath":null,
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":false,
+         "partsname":null,
+         "partsmodelpath":null,
+         "scaleValue":0.3,
+         "canModifySurface":true,
+         "modelimage":"modelimages/mangofruit.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":41,
+             "visiblename":"Mango fruit cross section",
+             "modelname":"mangofruit_cross",
+             "staticmodelpath":"mangofruit_cross/mangofruit_cross.obj",
+             "mtlmodelpath":"mangofruit_cross/mangofruit_cross.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"mangofruit_cross_parts",
+             "partsmodelpath":"mangofruit_cross_parts/mangofruit_cross_parts.obj",
+             "partsmtlpath":"mangofruit_cross_parts/mangofruit_cross_parts.mtl",
+             "scaleValue":0.2,
+             "canModifySurface":true,
+             "modelimage":"modelimages/mangofruit_cross.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               4
+             ]
+           }
+         ]
+       },
+       {
+         "id":5,
+         "modelname":"tomatoleaf",
+         "visiblename":"Tomato leaf",
+         "staticmodelpath":"tomatoleaf/tomatoleaf.obj",
+         "mtlmodelpath":"tomatoleaf/tomatoleaf.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"tomatoleaf_parts",
+         "partsmodelpath":"tomatoleaf_parts/tomatoleaf_parts.obj",
+         "partsmtlpath":"tomatoleaf_parts/tomatoleaf_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/tomatoleaf.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":51,
+             "visiblename":"Tomato leaf microscopic view",
+             "modelname":"tomatoleaf_mview",
+             "staticmodelpath":"tomatoleaf_mview/tomatoleaf_mview.obj",
+             "mtlmodelpath":"tomatoleaf_mview/tomatoleaf_mview.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"tomatoleaf_mview_parts",
+             "partsmodelpath":"tomatoleaf_mview_parts/tomatoleaf_mview_parts.obj",
+             "partsmtlpath":"tomatoleaf_mview_parts/tomatoleaf_mview_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/tomatoleaf_mview.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[5]
+           }
+         ]
+       },
+       {
+         "id":6,
+         "modelname":"seed",
+         "visiblename":"Seed",
+         "staticmodelpath":"seed/seed.obj",
+         "mtlmodelpath":"seed/seed.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"seed_parts",
+         "partsmodelpath":"seed_parts/seed_parts.obj",
+         "partsmtlpath":"seed_parts/seed_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/seed.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":61,
+             "visiblename":"Seed cross section",
+             "modelname":"seedcross",
+             "staticmodelpath":"seedcross/seedcross.obj",
+             "mtlmodelpath":"seedcross/seedcross.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"seedcross_parts",
+             "partsmodelpath":"seedcross_parts/seedcross_parts.obj",
+             "partsmtlpath":"seedcross_parts/seedcross_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/seedcross.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[6]
+           }
+         ]
+       },
+       {
+         "id":7,
+         "modelname":"hibiscusflower",
+         "visiblename":"Hibiscus flower",
+         "staticmodelpath":"hibiscusflower/hibiscusflower.obj",
+         "mtlmodelpath":"hibiscusflower/hibiscusflower.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"hibiscusflower_parts",
+         "partsmodelpath":"hibiscusflower_parts/hibiscusflower_parts.obj",
+         "partsmtlpath":"hibiscusflower_parts/hibiscusflower_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/hibiscusflower.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":71,
+             "visiblename":"Hibiscus flower cross section",
+             "modelname":"hibiscus_cross",
+             "staticmodelpath":"hibiscus_cross/hibiscus_cross.obj",
+             "mtlmodelpath":"hibiscus_cross/hibiscus_cross.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"hibiscus_cross_parts",
+             "partsmodelpath":"hibiscus_cross_parts/hibiscus_cross_parts.obj",
+             "partsmtlpath":"hibiscus_cross_parts/hibiscus_cross_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/hibiscus_cross.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[7]
+           }
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Anatomy and functions of different parts of flowering plants",
+     "no_of_models":5,
+     "models":[
+       {
+         "id":1,
+         "modelname":"monocotplant",
+         "visiblename":"Corn flowering plant",
+         "staticmodelpath":"monocotplant/monocotplant.obj",
+         "mtlmodelpath":"monocotplant/monocotplant.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isLighteningEnabled":false,
+         "isPartsAvailable":true,
+         "partsname":"monocotplant_parts",
+         "partsmodelpath":"monocotplant_parts/monocotplant_parts.obj",
+         "partsmtlpath":"monocotplant_parts/monocotplant_parts.mtl",
+         "scaleValue":0.2,
+         "canModifySurface":true,
+         "modelimage":"modelimages/monocotplant.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+       {
+         "id":2,
+         "modelname":"monocotroot",
+         "visiblename":"Corn root",
+         "staticmodelpath":"monocotroot/monocotroot.obj",
+         "mtlmodelpath":"monocotroot/monocotroot.mtl",
+         "isSurfaceEnabled":false,
+         "isLighteningEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":false,
+         "partsname":"monocotroot_parts",
+         "partsmodelpath":null,
+         "partsmtlpath":null,
+         "scaleValue":0.2,
+         "canModifySurface":true,
+         "modelimage":"modelimages/monocotroot.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":21,
+             "visiblename":"Corn root microscopic view",
+             "modelname":"monocotroot_mview",
+             "staticmodelpath":"monocotroot_mview/monocotroot_mview.obj",
+             "mtlmodelpath":"monocotroot_mview/monocotroot_mview.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":true,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"monocotroot_mview_parts",
+             "partsmodelpath":"monocotroot_mview_parts/monocotroot_mview_parts.obj",
+             "partsmtlpath":"monocotroot_mview_parts/monocotroot_mview_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/monocotroot_mview.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               2
+             ]
+           }
+         ]
+       },
+       {
+         "id":3,
+         "visiblename":"Corn stem microscopic view",
+         "modelname":"monocotstem_mview",
+         "staticmodelpath":"monocotstem_mview/monocotstem_mview.obj",
+         "mtlmodelpath":"monocotstem_mview/monocotstem_mview.mtl",
+         "isSurfaceEnabled":false,
+         "isLighteningEnabled":true,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"monocotstem_mview_parts",
+         "partsmodelpath":"monocotstem_mview_parts/monocotstem_mview_parts.obj",
+         "partsmtlpath":"monocotstem_mview_parts/monocotstem_mview_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/monocotstem_mview.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+       {
+         "id":4,
+         "modelname":"monocotleaf",
+         "visiblename":"Banana leaf",
+         "staticmodelpath":"monocotleaf/monocotleaf.obj",
+         "mtlmodelpath":"monocotleaf/monocotleaf.mtl",
+         "isSurfaceEnabled":false,
+         "isLighteningEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"monocotleaf_parts",
+         "partsmodelpath":null,
+         "partsmtlpath":null,
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/monocotleaf.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":41,
+             "visiblename":"Corn leaf microscopic view",
+             "modelname":"monocotleaf_mview",
+             "staticmodelpath":"monocotleaf_mview/monocotleaf_mview.obj",
+             "mtlmodelpath":"monocotleaf_mview/monocotleaf_mview.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":true,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"monocotleaf_mview_parts",
+             "partsmodelpath":"monocotleaf_mview_parts/monocotleaf_mview_parts.obj",
+             "partsmtlpath":"monocotleaf_mview_parts/monocotleaf_mview_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/monocotleaf_mview.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               4
+             ]
+           }
+         ]
+       },
+       {
+         "id":5,
+         "modelname":"monocotseed",
+         "visiblename":"Corn Seed",
+         "staticmodelpath":"monocotseed/monocotseed.obj",
+         "mtlmodelpath":"monocotseed/monocotseed.mtl",
+         "isSurfaceEnabled":false,
+         "isLighteningEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":false,
+         "partsname":null,
+         "partsmodelpath":null,
+         "partsmtlpath":null,
+         "scaleValue":0.4,
+         "canModifySurface":true,
+         "modelimage":"modelimages/monocotseed.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":51,
+             "visiblename":"Seed cross section",
+             "modelname":"monocotseed_cross",
+             "staticmodelpath":"monocotseed_cross/monocotseed_cross.obj",
+             "mtlmodelpath":"monocotseed_cross/monocotseed_cross.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":true,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"monocotseed_cross_parts",
+             "partsmodelpath":"monocotseed_cross_parts/monocotseed_cross_parts.obj",
+             "partsmtlpath":"monocotseed_cross_parts/monocotseed_cross_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/monocotseed_cross.png",
+             "hints":[
+               "1. Use yellow square/focus square to target the location",
+               "2. Tap on the focus square to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Pinch to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list"
+             ],
+             "relatedids":[
+               5
+             ]
+           }
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Structural organisation in animals",
+     "no_of_models":4,
+     "models":[
+       {
+         "id":1,
+         "modelname":"tissue",
+         "visiblename":"Connective tissue and blood",
+         "staticmodelpath":"tissue/tissue.obj",
+         "mtlmodelpath":"tissue/tissue.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isLighteningEnabled":false,
+         "isPartsAvailable":true,
+         "partsname":"tissue_parts",
+         "partsmodelpath":"tissue_parts/tissue_parts.obj",
+         "partsmtlpath":"tissue_parts/tissue_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/tissue.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+
+       {
+         "id":3,
+         "visiblename":"Skeletal muscle",
+         "modelname":"skeletolmuscle",
+         "staticmodelpath":"skeletolmuscle/skeletolmuscle.obj",
+         "mtlmodelpath":"skeletolmuscle/skeletolmuscle.mtl",
+         "isSurfaceEnabled":false,
+         "isLighteningEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":false,
+         "partsname":null,
+         "partsmodelpath":null,
+         "partsmtlpath" :null,
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/skeletolmuscle.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":31,
+             "visiblename":"Cardiac muscle",
+             "modelname":"cardiacmuscle",
+             "staticmodelpath":"cardiacmuscle/cardiacmuscle.obj",
+             "mtlmodelpath":"cardiacmuscle/cardiacmuscle.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":false,
+             "partsname":null,
+             "partsmodelpath":null,
+             "partsmtlpath":null,
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/cardiacmuscle.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               3,
+               32
+             ]
+           },
+           {
+             "id":32,
+             "visiblename":"Visceral muscle",
+             "modelname":"visceralmuscle",
+             "staticmodelpath":"visceralmuscle/visceralmuscle.obj",
+             "mtlmodelpath":"visceralmuscle/visceralmuscle.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"visceralmuscle_parts",
+             "partsmodelpath":"visceralmuscle_parts/visceralmuscle_parts.obj",
+             "partsmtlpath":"visceralmuscle_parts/visceralmuscle_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/visceralmuscle.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               3,
+               31
+             ]
+           }
+         ]
+       },
+       {
+         "id":4,
+         "modelname":"simplesquamous",
+         "visiblename":"Simple squamous",
+         "staticmodelpath":"simplesquamous/simplesquamous.obj",
+         "mtlmodelpath":"simplesquamous/simplesquamous.mtl",
+         "isSurfaceEnabled":false,
+         "isLighteningEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"simplesquamous_parts",
+         "partsmodelpath":"simplesquamous_parts/simplesquamous_parts.obj",
+         "partsmtlpath":"simplesquamous_parts/simplesquamous_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/simplesquamous.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":41,
+             "visiblename":"Simple cuboidal",
+             "modelname":"simplecuboidal",
+             "staticmodelpath":"simplecuboidal/simplecuboidal.obj",
+             "mtlmodelpath":"simplecuboidal/simplecuboidal.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"simplecuboidal_parts",
+             "partsmodelpath":"simplecuboidal_parts/simplecuboidal_parts.obj",
+             "partsmtlpath":"simplecuboidal_parts/simplecuboidal_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/simplecuboidal.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               4,
+               42,
+               43,
+               44,
+               45,
+               46,
+               47
+             ]
+           },
+           {
+             "id":42,
+             "visiblename":"Simple columnar",
+             "modelname":"simplecolumnar",
+             "staticmodelpath":"simplecolumnar/simplecolumnar.obj",
+             "mtlmodelpath":"simplecolumnar/simplecolumnar.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"simplecolumnar_parts",
+             "partsmodelpath":"simplecolumnar_parts/simplecolumnar_parts.obj",
+             "partsmtlpath":"simplecolumnar_parts/simplecolumnar_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/simplecolumnar.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               4,
+               41,
+               43,
+               44,
+               45,
+               46,
+               47
+             ]
+           },
+           {
+             "id":43,
+             "visiblename":"Stratified squamous",
+             "modelname":"stratifiedsquamous",
+             "staticmodelpath":"stratifiedsquamous/stratifiedsquamous.obj",
+             "mtlmodelpath":"stratifiedsquamous/stratifiedsquamous.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"stratifiedsquamous_parts",
+             "partsmodelpath":"stratifiedsquamous_parts/stratifiedsquamous_parts.obj",
+             "partsmtlpath":"stratifiedsquamous_parts/stratifiedsquamous_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/stratifiedsquamous.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               4,
+               41,
+               42,
+               44,
+               45,
+               46,
+               47
+             ]
+           },
+           {
+             "id":44,
+             "visiblename":"Stratified cuboidal",
+             "modelname":"stratifiedcuboidal",
+             "staticmodelpath":"stratifiedcuboidal/stratifiedcuboidal.obj",
+             "mtlmodelpath":"stratifiedcuboidal/stratifiedcuboidal.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"stratifiedcuboidal_parts",
+             "partsmodelpath":"stratifiedcuboidal_parts/stratifiedcuboidal_parts.obj",
+             "partsmtlpath":"stratifiedcuboidal_parts/stratifiedcuboidal_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/stratifiedcuboidal.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               4,
+               41,
+               42,
+               43,
+               45,
+               46,
+               47
+             ]
+           },
+           {
+             "id":45,
+             "visiblename":"Stratified columnar",
+             "modelname":"stratifiedcolumnar",
+             "staticmodelpath":"stratifiedcolumnar/stratifiedcolumnar.obj",
+             "mtlmodelpath":"stratifiedcolumnar/stratifiedcolumnar.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"stratifiedcolumnar_parts",
+             "partsmodelpath":"stratifiedcolumnar_parts/stratifiedcolumnar_parts.obj",
+             "partsmtlpath":"stratifiedcolumnar_parts/stratifiedcolumnar_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/stratifiedcolumnar.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               4,
+               41,
+               42,
+               43,
+               44,
+               46,
+               47
+             ]
+           },
+           {
+             "id":46,
+             "visiblename":"Pseudo stratified columnar",
+             "modelname":"pseudocolumnar",
+             "staticmodelpath":"pseudocolumnar/pseudocolumnar.obj",
+             "mtlmodelpath":"pseudocolumnar/pseudocolumnar.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"pseudocolumnar_parts",
+             "partsmodelpath":"pseudocolumnar_parts/pseudocolumnar_parts.obj",
+             "partsmtlpath":"pseudocolumnar_parts/pseudocolumnar_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/pseudocolumnar.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               4,
+               41,
+               42,
+               43,
+               44,
+               45,
+               47
+             ]
+           },
+           {
+             "id":47,
+             "visiblename":"Transitional",
+             "modelname":"transitionaltissue",
+             "staticmodelpath":"transitionaltissue/transitionaltissue.obj",
+             "mtlmodelpath":"transitionaltissue/transitionaltissue.mtl",
+             "isSurfaceEnabled":false,
+             "isLighteningEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"transitionaltissue_parts",
+             "partsmodelpath":"transitionaltissue_parts/transitionaltissue_parts.obj",
+             "partsmtlpath":"transitionaltissue_parts/transitionaltissue_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/transitionaltissue.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+               4,
+               41,
+               42,
+               43,
+               44,
+               45,
+               46
+             ]
+           }
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Cell theory and cell as the basic unit of life",
+     "no_of_models":3,
+     "models":[
+       {
+         "id":1,
+         "modelname":"plantcell",
+         "visiblename":"Plant cell",
+         "staticmodelpath":"plantcell/plantcell.obj",
+         "mtlmodelpath":"plantcell/plantcell.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"plantcell_parts",
+         "partsmodelpath":"plantcell_parts/plantcell_parts.obj",
+         "partsmtlpath":"plantcell_parts/plantcell_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/plantcell.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       },
+       {
+         "id":2,
+         "modelname":"animalcell",
+         "visiblename":"Animal cell",
+         "staticmodelpath":"animalcell/animalcell.obj",
+         "mtlmodelpath":"animalcell/animalcell.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"animalcell_parts",
+         "partsmodelpath":"animalcell_parts/animalcell_parts.obj",
+         "partsmtlpath":"animalcell_parts/animalcell_parts.mtl",
+         "scaleValue":0.2,
+         "canModifySurface":true,
+         "modelimage":"modelimages/animalcell.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       },
+       {
+         "id":3,
+         "modelname":"eukaryoticcell",
+         "visiblename":"Eukaryotic cell",
+         "staticmodelpath":"eukaryoticcell/eukaryoticcell.obj",
+         "mtlmodelpath":"eukaryoticcell/eukaryoticcell.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"eukaryoticcell_parts",
+         "partsmodelpath":"eukaryoticcell_parts/eukaryoticcell_parts.obj",
+         "partsmtlpath":"eukaryoticcell_parts/eukaryoticcell_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/eukaryoticcell.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Chemical constituents of living cells",
+     "no_of_models":3,
+     "models":[
+       {
+         "id":1,
+         "modelname":"mitosis",
+         "visiblename":"Mitosis",
+         "staticmodelpath":"mitosis/mitosis.obj",
+         "mtlmodelpath":"mitosis/mitosis.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"mitosis_parts",
+         "partsmodelpath":"mitosis_parts/mitosis_parts.obj",
+         "partsmtlpath":"mitosis_parts/mitosis_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/mitosis.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       },
+       {
+         "id":2,
+         "modelname":"meiosis1",
+         "visiblename":"Meiosis I",
+         "staticmodelpath":"meiosis1/meiosis1.obj",
+         "mtlmodelpath":"meiosis1/meiosis1.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"meiosis1_parts",
+         "partsmodelpath":"meiosis1_parts/meiosis1_parts.obj",
+         "partsmtlpath":"meiosis1_parts/meiosis1_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/meiosis1.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       },
+       {
+         "id":3,
+         "modelname":"meiosis2",
+         "visiblename":"Meiosis II",
+         "staticmodelpath":"meiosis2/meiosis2.obj",
+         "mtlmodelpath":"meiosis2/meiosis2.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"meiosis2_parts",
+         "partsmodelpath":"meiosis2_parts/meiosis2_parts.obj",
+         "partsmtlpath":"meiosis2_parts/meiosis2_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/meiosis2.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Transport in plants",
+     "no_of_models":2,
+     "models":[
+       {
+         "id":1,
+         "modelname":"xylem",
+         "visiblename":"Xylem, Phloem, Cambium",
+         "staticmodelpath":"xylem/xylem.obj",
+         "mtlmodelpath":"xylem/xylem.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"xylem_parts",
+         "partsmodelpath":"xylem_parts/xylem_parts.obj",
+         "partsmtlpath":"xylem_parts/xylem_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/xylem.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       },
+       {
+         "id":2,
+         "modelname":"translocation",
+         "visiblename":"Translocation",
+         "staticmodelpath":"translocation/translocation.obj",
+         "mtlmodelpath":"translocation/translocation.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"translocation_parts",
+         "partsmodelpath":"translocation_parts/translocation_parts.obj",
+         "partsmtlpath":"translocation_parts/translocation_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/translocation.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       },
+       {
+         "id":3,
+         "modelname":"symplastic",
+         "visiblename":"Symplastic and Apoplastic",
+         "staticmodelpath":"symplastic/symplastic.obj",
+         "mtlmodelpath":"symplastic/symplastic.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"symplastic_parts",
+         "partsmodelpath":"symplastic_parts/symplastic_parts.obj",
+         "partsmtlpath":"symplastic_parts/symplastic_parts.mtl",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/symplastic.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Digestion and Absorption",
+     "no_of_models":1,
+     "models":[
+       {
+         "id":1,
+         "modelname":"stomach",
+         "visiblename":"Stomach",
+         "staticmodelpath":"stomach/stomach.obj",
+         "mtlmodelpath":"stomach/stomach.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"stomach_parts",
+         "partsmodelpath":"stomach_parts/stomach_parts.obj",
+         "partsmtlpath":"stomach_parts/stomach_parts.mtl",
+         "isAnimationAvailable":true,
+         "animationname":"spider-1",
+         "animationpath":"art.scnassets/spider/spider",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/stomach.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":11,
+             "modelname":"stomachcross",
+             "visiblename":"Stomach cross section",
+             "staticmodelpath":"stomachcross/stomachcross.obj",
+             "mtlmodelpath":"stomachcross/stomachcross.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"stomachcross_parts",
+             "partsmodelpath":"stomachcross_parts/stomachcross_parts.obj",
+             "partsmtlpath":"stomachcross_parts/stomachcross_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/stomachcross.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+
+             ]
+           }
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Breathing and Exchange of Gases",
+     "no_of_models":1,
+     "models":[
+       {
+         "id":1,
+         "modelname":"lungs",
+         "visiblename":"Lungs",
+         "staticmodelpath":"lungs/lungs.obj",
+         "mtlmodelpath":"lungs/lungs.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"lungs_parts",
+         "partsmodelpath":"lungs_parts/lungs_parts.obj",
+         "partsmtlpath":"lungs_parts/lungs_parts.mtl",
+         "isAnimationAvailable":true,
+         "animationname":"spider-1",
+         "animationpath":"art.scnassets/spider/spider",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/lungs.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":11,
+             "modelname":"lungscross",
+             "visiblename":"Lungs cross section",
+             "staticmodelpath":"lungscross/lungscross.obj",
+             "mtlmodelpath":"lungscross/lungscross.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"lungscross_parts",
+             "partsmodelpath":"lungscross_parts/lungscross_parts.obj",
+             "partsmtlpath":"lungscross_parts/lungscross_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/lungscross.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[
+
+             ]
+           }
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Body fluids and circulation ",
+     "no_of_models":2,
+     "models":[
+       {
+         "id":1,
+         "modelname":"lympatic",
+         "visiblename":"Lympatic and Immune Systems",
+         "staticmodelpath":"lympatic/lympatic.obj",
+         "mtlmodelpath":"lympatic/lympatic.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"lympatic_parts",
+         "partsmodelpath":"lympatic_parts/lympatic_parts.obj",
+         "partsmtlpath":"lympatic_parts/lympatic_parts.mtl",
+         "isAnimationAvailable":true,
+         "animationname":"spider-1",
+         "animationpath":"art.scnassets/spider/spider",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/lympatic.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+       {
+         "id":2,
+         "modelname":"heart",
+         "visiblename":"Heart",
+         "staticmodelpath":"heart/heart.obj",
+         "mtlmodelpath":"heart/heart.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"heart_parts",
+         "partsmodelpath":"heart_parts/heart_parts.obj",
+         "partsmtlpath":"heart_parts/heart_parts.mtl",
+         "isAnimationAvailable":true,
+         "animationname":"spider-1",
+         "animationpath":"art.scnassets/spider/spider",
+         "scaleValue":0.3,
+         "canModifySurface":true,
+         "modelimage":"modelimages/heart.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":21,
+             "modelname":"heart_cross",
+             "visiblename":"Heart Cross Section",
+             "staticmodelpath":"heart_cross/heart_cross.obj",
+             "mtlmodelpath":"heart_cross/heart_cross.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"heart_cross_parts",
+             "partsmodelpath":"heart_cross_parts/heart_cross_parts.obj",
+             "partsmtlpath":"heart_cross_parts/heart_cross_parts.mtl",
+             "scaleValue":0.3,
+             "canModifySurface":true,
+             "modelimage":"modelimages/heart_cross.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[2]
+           }
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Excretory products and their elimination",
+     "no_of_models":1,
+     "models":[
+       {
+         "id":1,
+         "modelname":"kidney",
+         "visiblename":"Kidney",
+         "staticmodelpath":"kidney/kidney.obj",
+         "mtlmodelpath":"kidney/kidney.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"kidney_parts",
+         "partsmodelpath":"kidney_parts/kidney_parts.obj",
+         "partsmtlpath":"kidney_parts/kidney_parts.mtl",
+         "isAnimationAvailable":true,
+         "animationname":"spider-1",
+         "animationpath":"art.scnassets/spider/spider",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/kidney.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":11,
+             "modelname":"kidney_cross",
+             "visiblename":"Kidney Cross Section",
+             "staticmodelpath":"kidney_cross/kidney_cross.obj",
+             "mtlmodelpath":"kidney_cross/kidney_cross.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"kidney_cross_parts",
+             "partsmodelpath":"kidney_cross_parts/kidney_cross_parts.obj",
+             "partsmtlpath":"kidney_cross_parts/kidney_cross_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/kidney_cross.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[1]
+           }
+         ]
+       }
+     ]
+   },
+   {
+     "name":"Neural products and coordination",
+     "no_of_models":1,
+     "models":[
+       {
+         "id":1,
+         "modelname":"brain",
+         "visiblename":"Brain",
+         "staticmodelpath":"brain/brain.obj",
+         "mtlmodelpath":"brain/brain.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"brain_parts",
+         "partsmodelpath":"brain_parts/brain_parts.obj",
+         "partsmtlpath":"brain_parts/brain_parts.mtl",
+         "isAnimationAvailable":true,
+         "animationname":"spider-1",
+         "animationpath":"art.scnassets/spider/spider",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/brain.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[
+           {
+             "id":11,
+             "modelname":"brain_cross",
+             "visiblename":"Brain Cross Section",
+             "staticmodelpath":"brain_cross/brain_cross.obj",
+             "mtlmodelpath":"brain_cross/brain_cross.mtl",
+             "isSurfaceEnabled":false,
+             "isZoomEnabled":true,
+             "isPartsAvailable":true,
+             "partsname":"brain_cross_parts",
+             "partsmodelpath":"brain_cross_parts/brain_cross_parts.obj",
+             "partsmtlpath":"brain_cross_parts/brain_cross_parts.mtl",
+             "scaleValue":0.1,
+             "canModifySurface":true,
+             "modelimage":"modelimages/brain_cross.png",
+             "hints":[
+               "1. Target the location",
+               "2. Tap on the screen to place object",
+               "3. Try changing the position if object could not be placed",
+               "4. Use 🔍 to zoom In and Zoom Out an object",
+               "5. Use ⚙ button to change 3D model settings",
+               "6. Use ↻ button to clear model",
+               "7. Use 🏠 button to go to Chapters list",
+               "8. Tap 👁️ to show/hide parts"
+             ],
+             "relatedids":[1]
+           }
+         ]
+       },
+       {
+         "id":2,
+         "modelname":"ear",
+         "visiblename":"Ear",
+         "staticmodelpath":"ear/ear.obj",
+         "mtlmodelpath":"ear/ear.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"ear_parts",
+         "partsmodelpath":"ear_parts/ear_parts.obj",
+         "partsmtlpath":"ear_parts/ear_parts.mtl",
+         "isAnimationAvailable":true,
+         "animationname":"spider-1",
+         "animationpath":"art.scnassets/spider/spider",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/ear.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+       {
+         "id":3,
+         "modelname":"eye",
+         "visiblename":"Eye",
+         "staticmodelpath":"eye/eye.obj",
+         "mtlmodelpath":"eye/eye.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"eye_parts",
+         "partsmodelpath":"eye_parts/eye_parts.obj",
+         "partsmtlpath":"eye_parts/eye_parts.mtl",
+         "isAnimationAvailable":true,
+         "animationname":"spider-1",
+         "animationpath":"art.scnassets/spider/spider",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/eye.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+       {
+         "id":4,
+         "modelname":"skin",
+         "visiblename":"Skin",
+         "staticmodelpath":"skin/skin.obj",
+         "mtlmodelpath":"skin/skin.mtl",
+         "isSurfaceEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"skin_parts",
+         "partsmodelpath":"skin_parts/skin_parts.obj",
+         "partsmtlpath":"skin_parts/skin_parts.mtl",
+         "isAnimationAvailable":true,
+         "animationname":"spider-1",
+         "animationpath":"art.scnassets/spider/spider",
+         "scaleValue":0.1,
+         "canModifySurface":true,
+         "modelimage":"modelimages/skin.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       },
+       {
+         "id":5,
+         "modelname":"typicalneuron",
+         "visiblename":"Typical neuron",
+         "staticmodelpath":"typicalneuron/typicalneuron.obj",
+         "mtlmodelpath":"typicalneuron/typicalneuron.mtl",
+         "isSurfaceEnabled":false,
+         "isLighteningEnabled":false,
+         "isZoomEnabled":true,
+         "isPartsAvailable":true,
+         "partsname":"typicalneuron_parts",
+         "partsmodelpath":"typicalneuron_parts/typicalneuron_parts.obj",
+         "partsmtlpath":"typicalneuron_parts/typicalneuron_parts.mtl",
+         "scaleValue":0.2,
+         "canModifySurface":true,
+         "modelimage":"modelimages/typicalneuron.png",
+         "hints":[
+           "1. Target the location",
+           "2. Tap on the screen to place object",
+           "3. Try changing the position if object could not be placed",
+           "4. Use 🔍 to zoom In and Zoom Out an object",
+           "5. Use ⚙ button to change 3D model settings",
+           "6. Use ↻ button to clear model",
+           "7. Use 🏠 button to go to Chapters list",
+           "8. Tap 👁️ to show/hide parts"
+         ],
+         "relatedmodels":[]
+       }
+     ]
+   }
+
+
+
+//  {
+//    "name":"Anatomy and functions of different parts of flowering plants",
+//    "no_of_models":5,
+//    "models":[
+//      {
+//        "id":1,
+//        "modelname":"cornfloweringplant",
+//        "visiblename":"Corn flowering plant",
+//        "staticmodelpath":"art.scnassets/cornfloweringplant/cornfloweringplant.scn",
+//        "mtlmodelpath":null,
+//        "isSurfaceEnabled":false,
+//        "isZoomEnabled":true,
+//        "isPartsAvailable":true,
+//        "partsname":"cornfloweringplant_parts",
+//        "partsmodelpath":"art.scnassets/cornfloweringplant/cornfloweringplant_parts.scn",
+//        "scaleValue":0.1,
+//        "canModifySurface":true,
+//        "modelimage":"cornfloweringplant",
+//        "hints":[
+//          "1. Use yellow square/focus square to target the location",
+//          "2. Tap on the focus square to place object",
+//          "3. Try changing the position if object could not be placed",
+//          "4. Pinch to zoom In and Zoom Out an object",
+//          "5. Use ⚙ button to change 3D model settings",
+//          "6. Use ↻ button to clear model",
+//          "7. Use 🏠 button to go to Chapters list",
+//          "8. Tap on 3d model to show/hide parts"
+//        ],
+//        "relatedmodels":[]
+//      },
+//      {
+//        "id":2,
+//        "modelname":"cornroot",
+//        "visiblename":"Corn root",
+//        "staticmodelpath":"art.scnassets/cornroot/cornroot.scn",
+//        "mtlmodelpath":null,
+//        "isSurfaceEnabled":false,
+//        "isZoomEnabled":true,
+//        "isPartsAvailable":true,
+//        "partsname":"cornroot_parts",
+//        "partsmodelpath":"art.scnassets/cornroot/cornroot_parts.scn",
+//        "scaleValue":0.1,
+//        "canModifySurface":true,
+//        "modelimage":"cornroot",
+//        "hints":[
+//          "1. Use yellow square/focus square to target the location",
+//          "2. Tap on the focus square to place object",
+//          "3. Try changing the position if object could not be placed",
+//          "4. Pinch to zoom In and Zoom Out an object",
+//          "5. Use ⚙ button to change 3D model settings",
+//          "6. Use ↻ button to clear model",
+//          "7. Use 🏠 button to go to Chapters list",
+//          "8. Tap on 3d model to show/hide parts"
+//        ],
+//        "relatedmodels":[
+//          {
+//            "id":21,
+//            "visiblename":"Corn root microscopic view",
+//            "modelname":"cornroot_mview",
+//            "staticmodelpath":"art.scnassets/cornroot_mview/cornroot_mview.scn",
+//            "mtlmodelpath":null,
+//            "isSurfaceEnabled":false,
+//            "isZoomEnabled":true,
+//            "isPartsAvailable":true,
+//            "partsname":"cornroot_mview_parts",
+//            "partsmodelpath":"art.scnassets/cornroot_mview/cornroot_mview_parts.scn",
+//            "scaleValue":0.1,
+//            "canModifySurface":true,
+//            "modelimage":"cornroot_mview",
+//            "hints":[
+//              "1. Use yellow square/focus square to target the location",
+//              "2. Tap on the focus square to place object",
+//              "3. Try changing the position if object could not be placed",
+//              "4. Pinch to zoom In and Zoom Out an object",
+//              "5. Use ⚙ button to change 3D model settings",
+//              "6. Use ↻ button to clear model",
+//              "7. Use 🏠 button to go to Chapters list",
+//              "8. Tap on 3d model to show/hide parts"
+//            ],
+//            "relatedids":[2]
+//          }
+//        ]
+//      },
+//      {
+//        "id":3,
+//        "modelname":"cornstem",
+//        "visiblename":"Corn stem",
+//        "staticmodelpath":"art.scnassets/cornstem/cornstem.scn",
+//        "mtlmodelpath":null,
+//        "isSurfaceEnabled":false,
+//        "isZoomEnabled":true,
+//        "isPartsAvailable":true,
+//        "partsname":"cornstem_parts",
+//        "partsmodelpath":"art.scnassets/cornstem/cornstem_parts.scn",
+//        "scaleValue":0.1,
+//        "canModifySurface":true,
+//        "modelimage":"cornstem",
+//        "hints":[
+//          "1. Use yellow square/focus square to target the location",
+//          "2. Tap on the focus square to place object",
+//          "3. Try changing the position if object could not be placed",
+//          "4. Pinch to zoom In and Zoom Out an object",
+//          "5. Use ⚙ button to change 3D model settings",
+//          "6. Use ↻ button to clear model",
+//          "7. Use 🏠 button to go to Chapters list",
+//          "8. Tap on 3d model to show/hide parts"
+//        ],
+//        "relatedmodels":[
+//          {
+//            "id":31,
+//            "visiblename":"Corn stem microscopic view",
+//            "modelname":"cornstem_mview",
+//            "staticmodelpath":"art.scnassets/cornstem_mview/cornstem_mview.scn",
+//            "mtlmodelpath":null,
+//            "isSurfaceEnabled":false,
+//            "isZoomEnabled":true,
+//            "isPartsAvailable":true,
+//            "partsname":"cornstem_mview_parts",
+//            "partsmodelpath":"art.scnassets/cornstem_mview/cornstem_mview_parts.scn",
+//            "scaleValue":0.1,
+//            "canModifySurface":true,
+//            "modelimage":"cornstem_mview",
+//            "hints":[
+//              "1. Use yellow square/focus square to target the location",
+//              "2. Tap on the focus square to place object",
+//              "3. Try changing the position if object could not be placed",
+//              "4. Pinch to zoom In and Zoom Out an object",
+//              "5. Use ⚙ button to change 3D model settings",
+//              "6. Use ↻ button to clear model",
+//              "7. Use 🏠 button to go to Chapters list",
+//              "8. Tap on 3d model to show/hide parts"
+//            ],
+//            "relatedids":[3]
+//          }
+//        ]
+//      },
+//      {
+//        "id":4,
+//        "modelname":"cornleaf",
+//        "visiblename":"Corn leaf",
+//        "staticmodelpath":"art.scnassets/cornleaf/cornleaf.scn",
+//        "mtlmodelpath":null,
+//        "isSurfaceEnabled":false,
+//        "isZoomEnabled":true,
+//        "isPartsAvailable":true,
+//        "partsname":"cornleaf_parts",
+//        "partsmodelpath":"art.scnassets/cornleaf/cornleaf_parts.scn",
+//        "scaleValue":0.1,
+//        "canModifySurface":true,
+//        "modelimage":"cornleaf",
+//        "hints":[
+//          "1. Use yellow square/focus square to target the location",
+//          "2. Tap on the focus square to place object",
+//          "3. Try changing the position if object could not be placed",
+//          "4. Pinch to zoom In and Zoom Out an object",
+//          "5. Use ⚙ button to change 3D model settings",
+//          "6. Use ↻ button to clear model",
+//          "7. Use 🏠 button to go to Chapters list",
+//          "8. Tap on 3d model to show/hide parts"
+//        ],
+//        "relatedmodels":[
+//          {
+//            "id":41,
+//            "visiblename":"Corn leaf microscopic view",
+//            "modelname":"cronleaf_mview",
+//            "staticmodelpath":"art.scnassets/cronleaf_mview/cronleaf_mview.scn",
+//            "mtlmodelpath":null,
+//            "isSurfaceEnabled":false,
+//            "isZoomEnabled":true,
+//            "isPartsAvailable":true,
+//            "partsname":"cronleaf_mview_parts",
+//            "partsmodelpath":"art.scnassets/cronleaf_mview/cronleaf_mview_parts.scn",
+//            "scaleValue":0.1,
+//            "canModifySurface":true,
+//            "modelimage":"cronleaf_mview",
+//            "hints":[
+//              "1. Use yellow square/focus square to target the location",
+//              "2. Tap on the focus square to place object",
+//              "3. Try changing the position if object could not be placed",
+//              "4. Pinch to zoom In and Zoom Out an object",
+//              "5. Use ⚙ button to change 3D model settings",
+//              "6. Use ↻ button to clear model",
+//              "7. Use 🏠 button to go to Chapters list",
+//              "8. Tap on 3d model to show/hide parts"
+//            ],
+//            "relatedids":[4]
+//          }
+//        ]
+//      },
+//      {
+//        "id":5,
+//        "modelname":"cornseed",
+//        "visiblename":"Seed",
+//        "staticmodelpath":"art.scnassets/cornseed/cornseed.scn",
+//        "mtlmodelpath":null,
+//        "isSurfaceEnabled":false,
+//        "isZoomEnabled":true,
+//        "isPartsAvailable":true,
+//        "partsname":"cornseed_parts",
+//        "partsmodelpath":"art.scnassets/cornseed/cornseed_parts.scn",
+//        "scaleValue":0.1,
+//        "canModifySurface":true,
+//        "modelimage":"cornseed",
+//        "hints":[
+//          "1. Use yellow square/focus square to target the location",
+//          "2. Tap on the focus square to place object",
+//          "3. Try changing the position if object could not be placed",
+//          "4. Pinch to zoom In and Zoom Out an object",
+//          "5. Use ⚙ button to change 3D model settings",
+//          "6. Use ↻ button to clear model",
+//          "7. Use 🏠 button to go to Chapters list",
+//          "8. Tap on 3d model to show/hide parts"
+//        ],
+//        "relatedmodels":[
+//          {
+//            "id":51,
+//            "visiblename":"Seed cross section",
+//            "modelname":"cornseed_cross",
+//            "staticmodelpath":"art.scnassets/cornseed_cross/cornseed_cross.scn",
+//            "mtlmodelpath":null,
+//            "isSurfaceEnabled":false,
+//            "isZoomEnabled":true,
+//            "isPartsAvailable":true,
+//            "partsname":"cornseed_cross_parts",
+//            "partsmodelpath":"art.scnassets/cornseed_cross/cornseed_cross_parts.scn",
+//            "scaleValue":0.1,
+//            "canModifySurface":true,
+//            "modelimage":"cornseed_cross",
+//            "hints":[
+//              "1. Use yellow square/focus square to target the location",
+//              "2. Tap on the focus square to place object",
+//              "3. Try changing the position if object could not be placed",
+//              "4. Pinch to zoom In and Zoom Out an object",
+//              "5. Use ⚙ button to change 3D model settings",
+//              "6. Use ↻ button to clear model",
+//              "7. Use 🏠 button to go to Chapters list",
+//              "8. Tap on 3d model to show/hide parts"
+//            ],
+//            "relatedids":[5]
+//          }
+//        ]
+//      }
+//    ]
+//  }
+  ]

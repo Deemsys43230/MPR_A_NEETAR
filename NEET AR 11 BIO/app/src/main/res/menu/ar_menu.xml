@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+    android:title="AR-Settings"
+    android:id="@+id/ar_settings"
+    android:icon="@drawable/ic_settings"
+    android:showAsAction="always"
+    tools:ignore="AppCompatResource" />
+    <item
+        android:title="Refresh"
+        android:id="@+id/ar_refresh"
+        android:icon="@drawable/ic_refresh"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:title="AR-Home"
+        android:id="@+id/ar_home"
+        android:icon="@drawable/ic_home"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:title="How to Use"
+        android:id="@+id/ar_hints"
+        android:icon="@drawable/ic_help_outline"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:title="Show Parts"
+        android:id="@+id/menu_show_parts"
+        android:icon="@drawable/visible"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource"/>
+    <item
+        android:title="Show Parts"
+        android:id="@+id/menu_hide_parts"
+        android:icon="@drawable/invisible"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource"/>
+
+
+
+
+
+</menu>
