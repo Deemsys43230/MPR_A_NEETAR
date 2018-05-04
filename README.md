@@ -4,12 +4,12 @@ ANDROID NEET AR
 
 PLATFORM SPECIFICATIONS:
 
-Platform: Android
+Platform: Android,Unity
 
 Operating System: Android 7.0 and later
 
-Language: Java
+Language: Java,C#
 
-Ide: Android Studio
+Ide: Android Studio,Unity3D
 
 Target Devices: Android Phone 7.0 and later
