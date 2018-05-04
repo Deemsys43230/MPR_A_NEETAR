@@ -71,8 +71,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/get_scale"
-                android:min="1"
-                android:max="6"
+                android:min="5"
+                android:max="20"
                 android:layout_gravity="center_vertical"
                 />
         </LinearLayout>

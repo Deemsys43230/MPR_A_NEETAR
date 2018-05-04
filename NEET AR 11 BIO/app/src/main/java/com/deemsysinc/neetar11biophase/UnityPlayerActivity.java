@@ -108,6 +108,9 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
     ImageView helpClose;
 
 
+
+
+
     // Setup activity layout
     @Override protected void onCreate(Bundle savedInstanceState)
     {
@@ -125,6 +128,7 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
             public void onClick(View view) {
                 Bundle bundle=new Bundle();
                 Intent goBack=new Intent(UnityPlayerActivity.this,ScanArActivity.class);
+                goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 bundle.putInt("index",index);
                 bundle.putInt("parentindex",parentIndex);
                 goBack.putExtras(bundle);
@@ -152,6 +156,22 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
         szoomOnOff=(settingsDialog).findViewById(R.id.zoom_on_off);
         szoomOnOff.setOnCheckedChangeListener(this);
         scale=(settingsDialog).findViewById(R.id.get_scale);
+        scale.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeScale",String.valueOf(i));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         settingsApply.setOnClickListener(this);
         settingsCancel.setOnClickListener(this);
         zoomOnOff=findViewById(R.id.zoom_on_off);
@@ -427,6 +447,7 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
     public void onBackPressed() {
         Bundle bundle=new Bundle();
         Intent goBack=new Intent(UnityPlayerActivity.this,ScanArActivity.class);
+        goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         bundle.putInt("index",index);
         bundle.putInt("parentindex",parentIndex);
         goBack.putExtras(bundle);
