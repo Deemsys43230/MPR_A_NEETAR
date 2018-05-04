@@ -1873,7 +1873,6 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
             eyeOpen.setVisible(false);
             eyeHide.setVisible(false);
         }
-
         return true;
     }
 
@@ -1984,9 +1983,6 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
                         }
                     }
                 },3000);
-
-
-
                 break;
             case R.id.ar_hints:
                 dialog.show();
@@ -2052,6 +2048,7 @@ public class ARViewActivity extends AppCompatActivity implements GLSurfaceView.R
         Log.d("TheArViewActivity", "debug.heap native: allocated " + df.format(allocated) + "MB of " + df.format(available) + "MB (" + df.format(free) + "MB free)");
         Log.d("TheArViewActivity", "debug.memory: allocated: " + df.format(new Double(Runtime.getRuntime().totalMemory()/1048576)) + "MB of " + df.format(new Double(Runtime.getRuntime().maxMemory()/1048576))+ "MB (" + df.format(new Double(Runtime.getRuntime().freeMemory()/1048576)) +"MB free)");
     }
+
 
 
 }

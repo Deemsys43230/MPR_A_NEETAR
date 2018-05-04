@@ -35,6 +35,88 @@
         android:layout_marginTop="5dp"
         android:visibility="visible"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/container_play"
+        android:orientation="vertical"
+        android:visibility="gone">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/playone_click"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/play_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="GET NEET AR 11th Biology PHASE II"
+            android:textColor="@color/phase_Colors"
+            android:textSize="21sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/right_navigation"
+            android:id="@+id/play_navigation"
+            android:layout_alignParentRight="true"
+            android:textSize="21sp"
+            android:textColor="@color/phase_Colors"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#80909090"
+            android:layout_marginTop="5dp"
+            android:visibility="visible"/>
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+            android:id="@+id/playtwo_click"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/play_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="GET NEET AR 11th Biology PHASE III"
+            android:textColor="@color/phase_Colors"
+            android:textSize="21sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/right_navigation"
+            android:id="@+id/play_navigation_two"
+            android:layout_alignParentRight="true"
+            android:textSize="21sp"
+            android:textColor="@color/phase_Colors"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#80909090"
+            android:layout_marginTop="5dp"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+
+
+
 
 
 </LinearLayout>

@@ -98,7 +98,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     // With Folder
     //public static long fsize = 214188092L;
     //Without Folder
-    public static long fsize = 1202618368L;
+    public static long fsize = 1244135488L;
 
     private static TextView textpercent, underdownloadtext;
     private static ProgressBar mProgressBar;
@@ -205,6 +205,10 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 chapterModel.setChaptername(jsonObject.getString("name"));
                 chapterModels.add(chapterModel);
             }
+//            ChapterModel chapterModel=new ChapterModel();
+//            chapterModel.setPhase1("GET NEET AR 11th Biology PHASE II");
+//            chapterModel.setPhase2("GET NEET AR 11th Biology PHASE III");
+//            chapterModels.add(chapterModel);
             chaptersAdapter=new ChaptersAdapter(MenuActivity.this,chapterModels);
             chapterList.setAdapter(chaptersAdapter);
 
