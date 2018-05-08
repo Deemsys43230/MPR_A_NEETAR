@@ -20,6 +20,7 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.os.storage.OnObbStateChangeListener;
 import android.os.storage.StorageManager;
+import android.provider.SyncStateContract;
 import android.support.annotation.Nullable;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AlertDialog;
@@ -152,9 +153,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 //            }
 //        };
 //        for (XAPKFile xf : xAPKS) {
-//            String fileName = Helpers.getExpansionAPKFileName(this, xf.mIsMain, xf.mFileVersion);
+//            String fileName = SyncStateContract.Helpers.getExpansionAPKFileName(this, xf.mIsMain, xf.mFileVersion);
 //            Log.d("PrintOnCreateFileName",fileName);
-//            File file=new File(Helpers.generateSaveFileName(MenuActivity.this,fileName));
+//            File file=new File(SyncStateContract.Helpers.generateSaveFileName(MenuActivity.this,fileName));
 //            if(file.exists()) {
 //                MountObb();
 //            }

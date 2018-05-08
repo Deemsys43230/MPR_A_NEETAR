@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.deemsysinc.neetar11biophase" xmlns:tools="http://schemas.android.com/tools" android:versionName="1.0" android:versionCode="1" android:installLocation="preferExternal"
     tools:ignore="MissingLeanbackLauncher">
     <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
-    <application android:theme="@style/UnityThemeSelector" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:isGame="true" android:banner="@drawable/app_banner">
+    <application android:theme="@style/UnityThemeSelector" android:icon="@mipmap/ic_one" android:roundIcon="@mipmap/ic_one_round" android:label="@string/app_name" android:isGame="true" android:banner="@drawable/app_banner">
         <activity android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density" android:name="com.deemsysinc.neetar11biophase.UnityPlayerActivity"
             >
             <intent-filter>

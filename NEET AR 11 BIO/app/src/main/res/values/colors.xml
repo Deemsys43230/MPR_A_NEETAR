@@ -8,4 +8,5 @@
     <color name="black_hints_border">#75000000</color>
     <color name="trans_related_label">#80FFFFFF</color>
     <color name="settings_apply">#5927ae60</color>
+    <color name="disabled_color">#80AAAFB4</color>
 </resources>

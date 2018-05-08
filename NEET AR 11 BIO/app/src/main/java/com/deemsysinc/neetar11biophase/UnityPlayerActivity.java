@@ -229,10 +229,20 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
         if(modelPropertiess.get(0).getisZoomEnable()==true)
         {
             szoomOnOff.setChecked(true);
+            AZoom.setEnabled(true);
+            dummyZoom.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
+
         }
         else
         {
+            if(AZoom.isChecked()==true)
+            {
+                AZoom.setChecked(false);
+            }
+
             szoomOnOff.setChecked(false);
+            AZoom.setEnabled(false);
+            dummyZoom.setTextColor(ContextCompat.getColor(this,R.color.disabled_color));
         }
 
         if(modelPropertiess.get(0).getModelPropertiesChildren()!=null)
@@ -528,9 +538,14 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
             else
             {
 //                UnityPlayer.UnitySendMessage("ObjectPlacer","ZoomObject","No");
+
                 AZoom.setEnabled(false);
+                if(AZoom.isChecked()==true)
+                {
+                    AZoom.setChecked(false);
+                }
                 dummyZoom.setEnabled(false);
-                dummyZoom.setTextColor(Color.parseColor("#EBEBE4"));
+                dummyZoom.setTextColor(ContextCompat.getColor(this,R.color.disabled_color));
 //                //zoomOnOff.setVisibility(View.GONE);
             }
 //            if(settingsScale!=0)
@@ -590,6 +605,9 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
                 eyeOpen.setVisible(false);
                 eyeHide.setVisible(false);
             }
+            isPartsClicked=0;
+            invalidateOptionsMenu();
+            UnityPlayer.UnitySendMessage("ObjectPlacer","ShowParts","false");
             cameraHintPageAdapter=new CameraHintPageAdapter(UnityPlayerActivity.this,modelPropertiess.get(0).getHints());
             cameraHintsList.setAdapter(cameraHintPageAdapter);
             UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeModel",modelPropertiess.get(0).getModelname());
@@ -847,6 +865,10 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
                     UnityPlayer.UnitySendMessage("ObjectPlacer","EnablePlane","false");
 
                 }
+                if(AZoom.isChecked()==true)
+                {
+                    AZoom.setChecked(false);
+                }
                 if(modelPropertiess.get(0).getisZoomEnable()==true)
                 {
                     szoomOnOff.setChecked(true);
@@ -856,9 +878,14 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
                 }
                 else
                 {
+                    if(AZoom.isChecked()==true)
+                    {
+                        AZoom.setChecked(false);
+                    }
+
                     szoomOnOff.setChecked(false);
                     AZoom.setEnabled(false);
-                    dummyZoom.setTextColor(Color.parseColor("#EBEBE4"));
+                    dummyZoom.setTextColor(ContextCompat.getColor(this,R.color.disabled_color));
                 }
 //                if (fromSettings == 1) {
 //                    if (zoomtemp != 0) {
