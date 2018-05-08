@@ -16,6 +16,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -165,6 +166,7 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
         planeOnOff.setOnCheckedChangeListener(this);
         szoomOnOff=(settingsDialog).findViewById(R.id.zoom_on_off);
         szoomOnOff.setOnCheckedChangeListener(this);
+        szoomOnOff.setChecked(true);
         scale=(settingsDialog).findViewById(R.id.get_scale);
         scale.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -200,6 +202,7 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
         parentIndex=extras.getInt("parentindex");
         modelPropertiess=new ArrayList<>();
         LoadModelProperties(index,parentIndex);
+
         cameraHintPageAdapter=new CameraHintPageAdapter(UnityPlayerActivity.this,modelPropertiess.get(0).getHints());
         cameraHintsList.setAdapter(cameraHintPageAdapter);
         //UnityPlayer.UnitySendMessage("Cube","willLoadArScene","Yes");
@@ -222,6 +225,14 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
             planeOnOff.setChecked(true);
             UnityPlayer.UnitySendMessage("ObjectPlacer","EnablePlane","false");
 
+        }
+        if(modelPropertiess.get(0).getisZoomEnable()==true)
+        {
+            szoomOnOff.setChecked(true);
+        }
+        else
+        {
+            szoomOnOff.setChecked(false);
         }
 
         if(modelPropertiess.get(0).getModelPropertiesChildren()!=null)
@@ -498,29 +509,35 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
             settingsDialog.dismiss();
             if(planeOnOff.isChecked()==true)
             {
-                //UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
+                UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
                 UnityPlayer.UnitySendMessage("ObjectPlacer","EnablePlane","false");
             }
             else
             {
-                //UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
+                UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
                 UnityPlayer.UnitySendMessage("ObjectPlacer","EnablePlane","true");
             }
             if(szoomOnOff.isChecked()==true)
             {
-                UnityPlayer.UnitySendMessage("ObjectPlacer","ZoomObject","Yes");
-                zoomOnOff.setVisibility(View.VISIBLE);
+//                UnityPlayer.UnitySendMessage("ObjectPlacer","ZoomObject","Yes");
+                AZoom.setEnabled(true);
+                dummyZoom.setEnabled(true);
+                dummyZoom.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
+//                //zoomOnOff.setVisibility(View.VISIBLE);
             }
             else
             {
-                UnityPlayer.UnitySendMessage("ObjectPlacer","ZoomObject","No");
-                zoomOnOff.setVisibility(View.GONE);
+//                UnityPlayer.UnitySendMessage("ObjectPlacer","ZoomObject","No");
+                AZoom.setEnabled(false);
+                dummyZoom.setEnabled(false);
+                dummyZoom.setTextColor(Color.parseColor("#EBEBE4"));
+//                //zoomOnOff.setVisibility(View.GONE);
             }
-            if(settingsScale!=0)
-            {
-                Log.d("UnityScale",""+settingsScale);
-                UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeScale",String.valueOf(settingsScale));
-            }
+//            if(settingsScale!=0)
+//            {
+//                Log.d("UnityScale",""+settingsScale);
+//                UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeScale",String.valueOf(settingsScale));
+//            }
         }
         if(view==settingsCancel)
         {
@@ -818,6 +835,31 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
                     }
                 }
                 modelPropertiess.add(modelProperties);
+                if(modelPropertiess.get(0).getIsSurfaceEnabled()==true)
+                {
+                    planeOnOff.setChecked(false);
+                    UnityPlayer.UnitySendMessage("ObjectPlacer","EnablePlane","true");
+
+                }
+                else
+                {
+                    planeOnOff.setChecked(true);
+                    UnityPlayer.UnitySendMessage("ObjectPlacer","EnablePlane","false");
+
+                }
+                if(modelPropertiess.get(0).getisZoomEnable()==true)
+                {
+                    szoomOnOff.setChecked(true);
+                    AZoom.setEnabled(true);
+                    dummyZoom.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
+
+                }
+                else
+                {
+                    szoomOnOff.setChecked(false);
+                    AZoom.setEnabled(false);
+                    dummyZoom.setTextColor(Color.parseColor("#EBEBE4"));
+                }
 //                if (fromSettings == 1) {
 //                    if (zoomtemp != 0) {
 //                        zoomMenu.setVisibility(View.VISIBLE);

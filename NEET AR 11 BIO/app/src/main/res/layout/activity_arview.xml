@@ -101,6 +101,9 @@
         android:layout_height="match_parent"
         android:id="@+id/ar_frame"
         android:layout_below="@+id/one_container">
+        <!--<Switch-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
     </FrameLayout>
     <com.yarolegovich.discretescrollview.DiscreteScrollView
         android:layout_width="match_parent"
