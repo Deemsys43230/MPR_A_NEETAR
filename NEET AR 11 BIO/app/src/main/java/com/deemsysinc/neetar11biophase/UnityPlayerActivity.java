@@ -71,7 +71,7 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
 
     android.widget.Toolbar arToolbar;
 
-    TextView headModelName;
+    TextView headModelName,SDynamicScale;
 
     Typeface toolbarFont;
 
@@ -87,7 +87,7 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
     Button zoomOnOff,settingsApply,settingsCancel;
 
 
-    Switch planeOnOff,szoomOnOff;
+    Switch planeOnOff,szoomOnOff,AZoom;
 
     SeekBar scale;
 
@@ -106,6 +106,12 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
 
 
     ImageView helpClose;
+
+
+    int settingsScale=0;
+
+
+    TextView dummyZoom;
 
 
 
@@ -135,6 +141,9 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
                 startActivity(goBack);
             }
         });
+        AZoom=findViewById(R.id.switch_zoom);
+        dummyZoom=findViewById(R.id.zoom_dummy);
+        AZoom.setOnCheckedChangeListener(this);
         settingsDialog=new Dialog(UnityPlayerActivity.this);
         settingsDialog.setContentView(R.layout.settings_ar);
         settingsDialog.setCancelable(true);
@@ -145,6 +154,7 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
         cameraHintsList=(dialog).findViewById(R.id.help_list_ar);
         dialoglayoutManager=new LinearLayoutManager(this);
         cameraHintsList.setLayoutManager(dialoglayoutManager);
+        SDynamicScale=(settingsDialog).findViewById(R.id.dynamic_scale);
         helpClose=(dialog).findViewById(R.id.help_close);
         helpClose.setOnClickListener(this);
         settingsApply=(settingsDialog).findViewById(R.id.settings_apply);
@@ -159,7 +169,9 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
         scale.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeScale",String.valueOf(i));
+                SDynamicScale.setText(""+i);
+                settingsScale=i;
+
             }
 
             @Override
@@ -178,6 +190,7 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
         zoomOnOff.setOnClickListener(this);
         headModelName=findViewById(R.id.head_modelname);
         toolbarFont= Typeface.createFromAsset(getAssets(),"fonts/GillSans-SemiBold.ttf");
+        dummyZoom.setTypeface(toolbarFont);
         headModelName.setTypeface(toolbarFont);
         FrameAr=findViewById(R.id.ar_frame);
         relatedMenuPicker=findViewById(R.id.related_model_list);
@@ -190,7 +203,6 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
         cameraHintPageAdapter=new CameraHintPageAdapter(UnityPlayerActivity.this,modelPropertiess.get(0).getHints());
         cameraHintsList.setAdapter(cameraHintPageAdapter);
         //UnityPlayer.UnitySendMessage("Cube","willLoadArScene","Yes");
-
         UnityPlayer.UnitySendMessage("Cube","NavigateSceneModel",modelPropertiess.get(0).getVisiblename());
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -483,15 +495,15 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
         }
         if(view==settingsApply)
         {
-
             settingsDialog.dismiss();
-            UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
             if(planeOnOff.isChecked()==true)
             {
+                //UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
                 UnityPlayer.UnitySendMessage("ObjectPlacer","EnablePlane","false");
             }
             else
             {
+                //UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
                 UnityPlayer.UnitySendMessage("ObjectPlacer","EnablePlane","true");
             }
             if(szoomOnOff.isChecked()==true)
@@ -501,9 +513,13 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
             }
             else
             {
-
                 UnityPlayer.UnitySendMessage("ObjectPlacer","ZoomObject","No");
                 zoomOnOff.setVisibility(View.GONE);
+            }
+            if(settingsScale!=0)
+            {
+                Log.d("UnityScale",""+settingsScale);
+                UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeScale",String.valueOf(settingsScale));
             }
         }
         if(view==settingsCancel)
@@ -519,6 +535,17 @@ public class UnityPlayerActivity extends Activity implements DiscreteScrollView.
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        if(compoundButton==AZoom)
+        {
+            if(b==true)
+            {
+                UnityPlayer.UnitySendMessage("ObjectPlacer","ZoomObject","Yes");
+            }
+            else
+            {
+                UnityPlayer.UnitySendMessage("ObjectPlacer","ZoomObject","No");
+            }
+        }
 
     }
 

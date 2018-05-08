@@ -20,7 +20,12 @@
                 android:textAllCaps="false"
                 android:background="@drawable/rounded_button"
                 android:textColor="@color/ar_white"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:visibility="gone"/>
+<!--<Switch-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:layout_centerInParent="true"/>-->
     <!--</RelativeLayout>-->
     <!--<RelativeLayout-->
         <!--android:layout_width="60dp"-->
@@ -67,12 +72,35 @@
             android:singleLine="true"/>
 
     </Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/one_container"
+        android:background="@color/ar_neet_theme"
+        android:layout_below="@+id/ar_toolbar"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/zoom_dummy"
+            android:text="Zoom"
+            android:textColor="@color/ar_white"
+            android:textSize="20sp"
+            android:layout_toLeftOf="@id/switch_zoom"/>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/switch_zoom"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="3dp"/>
+    </RelativeLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/ar_frame"
-        android:layout_below="@+id/ar_toolbar">
+        android:layout_below="@+id/one_container">
     </FrameLayout>
     <com.yarolegovich.discretescrollview.DiscreteScrollView
         android:layout_width="match_parent"
