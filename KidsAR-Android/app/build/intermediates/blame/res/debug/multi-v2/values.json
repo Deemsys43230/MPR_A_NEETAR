@@ -1,0 +1,62 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\KidsAR-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "E:\\KidsAR-Android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2,4",
+                        "startColumns": "0,0",
+                        "startOffsets": "53,149",
+                        "endLines": "3,7",
+                        "endColumns": "8,8",
+                        "endOffsets": "147,374"
+                    },
+                    "to": {
+                        "startLines": "8,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "482,580",
+                        "endLines": "9,13",
+                        "endColumns": "8,8",
+                        "endOffsets": "575,802"
+                    }
+                },
+                {
+                    "source": "E:\\KidsAR-Android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "55",
+                        "endColumns": "41",
+                        "endOffsets": "94"
+                    },
+                    "to": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "438",
+                        "endColumns": "43",
+                        "endOffsets": "477"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Deemsys\\.gradle\\caches\\transforms-1\\files-1.1\\arcore_client.aar\\3c27beeeef598e91cf9502bf4e5862d4\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "161,208,259,360,461",
+                        "endColumns": "46,50,100,100,62",
+                        "endOffsets": "207,258,359,460,523"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,106,161,266,371",
+                        "endColumns": "50,54,104,104,66",
+                        "endOffsets": "101,156,261,366,433"
+                    }
+                }
+            ]
+        }
+    ]
+}

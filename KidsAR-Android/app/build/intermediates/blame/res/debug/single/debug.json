@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\KidsAR-Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_app_banner.png.flat",
+        "source": "E:\\KidsAR-Android\\app\\src\\main\\res\\drawable-xhdpi\\app_banner.png"
+    },
+    {
+        "merged": "E:\\KidsAR-Android\\app\\build\\intermediates\\res\\merged\\debug\\layout___arcore_education.xml.flat",
+        "source": "C:\\Users\\Deemsys\\.gradle\\caches\\transforms-1\\files-1.1\\arcore_client.aar\\3c27beeeef598e91cf9502bf4e5862d4\\res\\layout\\__arcore_education.xml"
+    },
+    {
+        "merged": "E:\\KidsAR-Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_app_icon.png.flat",
+        "source": "E:\\KidsAR-Android\\app\\src\\main\\res\\drawable-mdpi\\app_icon.png"
+    }
+]
