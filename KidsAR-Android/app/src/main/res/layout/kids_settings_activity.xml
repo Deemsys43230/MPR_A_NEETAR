@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <RelativeLayout
+        android:id="@+id/tool_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/buttonBack"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:id="@+id/prefences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/comic_sans_ms_bold"
+            android:text="Preferences"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tool_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comic_sans_ms_bold"
+                android:text="Customize"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp" />
+
+            <LinearLayout
+                android:id="@+id/musiccontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/containerback"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="15dp"
+                    android:text="Music"
+                    android:textAllCaps="false"
+                    android:textColor="@color/button_icon_color"
+                    android:textSize="17sp" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/musicSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="15dp"
+                    android:theme="@style/StyleSwitch"
+                    app:switchMinWidth="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/purchasecontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/containerback"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="15dp"
+                    android:text="Purchase"
+                    android:textAllCaps="false"
+                    android:textColor="@color/button_icon_color"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rateuscontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/containerback"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="15dp"
+                    android:text="Rate us"
+                    android:textAllCaps="false"
+                    android:textColor="@color/button_icon_color"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/namecontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/containerback"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="15dp"
+                    android:text="Name"
+                    android:textAllCaps="false"
+                    android:textColor="@color/button_icon_color"
+                    android:textSize="17sp" />
+
+
+                <TextView
+                    android:id="@+id/kidname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:gravity="end"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:text="Vimal"
+                    android:textAllCaps="false"
+                    android:textColor="@color/button_icon_color"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/comic_sans_ms_bold"
+                android:text="Extras"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp" />
+
+            <LinearLayout
+                android:id="@+id/helpcontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/containerback"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="15dp"
+                    android:text="Help"
+                    android:textAllCaps="false"
+                    android:textColor="@color/button_icon_color"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contactcontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/containerback"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="15dp"
+                    android:text="Contact"
+                    android:textAllCaps="false"
+                    android:textColor="@color/button_icon_color"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/privacycontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/containerback"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="15dp"
+                    android:text="Privacy"
+                    android:textAllCaps="false"
+                    android:textColor="@color/button_icon_color"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

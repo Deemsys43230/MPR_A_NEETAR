@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<style name="UnityThemeSelector" parent="android:Theme.Light.NoTitleBar.Fullscreen">
-</style>
-<style name="UnityThemeSelector.Translucent" parent="@style/UnityThemeSelector">
-    <item name="android:windowIsTranslucent">true</item>
-    <item name="android:windowBackground">@android:color/transparent</item>
-</style>
+
+    <style name="UnityThemeSelector" parent="android:Theme.Light.NoTitleBar.Fullscreen" />
+
+    <style name="UnityThemeSelector.Translucent" parent="@style/UnityThemeSelector">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeAction" parent="Theme.AppCompat.NoActionBar" />
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:windowTitleStyle">@style/PauseDialogTitle</item>
+    </style>
+
+    <style name="PauseDialogTitle" parent="@android:style/TextAppearance.DialogWindowTitle">
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="StyleSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/button_icon_color</item>
+        <item name="colorSwitchThumbNormal">#F0F0F0</item>
+        <item name="android:colorForeground">#CCA6A6A6</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/darkgray</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:windowTitleStyle">@style/PauseDialogTitle</item>
+        <item name="android:subtitleTextAppearance">@style/TextAlertTitle</item>
+        <item name="android:titleTextStyle">@style/TextAlertTitle</item>
+    </style>
+
+    <style name="TextAlertTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:fontFamily">@font/comic_sans_ms_bold</item>
+    </style>
 </resources>

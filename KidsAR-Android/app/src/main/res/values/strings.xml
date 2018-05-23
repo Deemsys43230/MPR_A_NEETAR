@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">KidsAR</string>
+    <string name="app_name">KidsAR</string>
+    <string name="kidLabel">Please Tell Us Your Name</string>
+    <string name="copyrights">Copyright © 2018 Deemsys Inc. All Right Reserved.</string>
 </resources>

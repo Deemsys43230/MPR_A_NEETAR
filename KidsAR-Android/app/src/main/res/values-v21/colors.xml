@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00C5FB</color>
+    <color name="colorPrimaryDark">#006CF9</color>
+    <color name="colorAccent">#FF5D9A</color>
+    <color name="solid_blue">#47BFFB</color>
+    <color name="solid_water_blue_light">#805abcd8</color>
+    <color name="cardbackground">#2000C5FB</color>
+    <color name="solid_orange">#fc4a1a</color>
+    <color name="solid_orange_light">#ff6633</color>
+    <color name="solid_yellow">#f7b733</color>
+    <color name="button_icon_color">#21759B</color>
+    <color name="text_color">#7AB1E0</color>
+    <color name="titlecolor">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#A6A6A6</color>
+</resources>
