@@ -1,0 +1,206 @@
+[{
+  "levelid":1,
+  "levelName":"LEARN ALPHABETS",
+  "models":[
+    {
+      "modelId":1,
+      "modelName":"A",
+      "modelImage":"modelImages/a.png",
+      "audioName":"audio_a"
+
+    },
+    {
+      "modelId":2,
+      "modelName":"B",
+      "modelImage":"modelImages/b.png",
+      "audioName":"audio_b"
+
+    },
+    {
+      "modelId":3,
+      "modelName":"C",
+      "modelImage":"modelImages/c.png",
+      "audioName":"audio_c"
+
+    },
+    {
+      "modelId":4,
+      "modelName":"D",
+      "modelImage":"modelImages/d.png",
+      "audioName":"audio_d"
+
+    },
+    {
+      "modelId":5,
+      "modelName":"E",
+      "modelImage":"modelImages/e.png",
+      "audioName":"audio_e"
+
+    },
+    {
+      "modelId":6,
+      "modelName":"F",
+      "modelImage":"modelImages/f.png",
+      "audioName":"audio_f"
+
+    },
+    {
+      "modelId":7,
+      "modelName":"G",
+      "modelImage":"modelImages/g.png",
+      "audioName":"audio_g"
+
+    },
+    {
+      "modelId":8,
+      "modelName":"H",
+      "modelImage":"modelImages/h.png",
+      "audioName":"audio_h"
+
+    },
+    {
+      "modelId":9,
+      "modelName":"I",
+      "modelImage":"modelImages/i.png",
+      "audioName":"audio_i"
+
+    },
+    {
+      "modelId":10,
+      "modelName":"J",
+      "modelImage":"modelImages/j.png",
+      "audioName":"audio_j"
+
+    },
+    {
+      "modelId":11,
+      "modelName":"K",
+      "modelImage":"modelImages/k.png",
+      "audioName":"audio_k"
+
+    },
+    {
+      "modelId":12,
+      "modelName":"L",
+      "modelImage":"modelImages/l.png",
+      "audioName":"audio_l"
+
+    },
+    {
+      "modelId":13,
+      "modelName":"M",
+      "modelImage":"modelImages/m.png",
+      "audioName":"audio_m"
+
+    },
+    {
+      "modelId":14,
+      "modelName":"N",
+      "modelImage":"modelImages/n.png",
+      "audioName":"audio_n"
+
+    },
+    {
+      "modelId":15,
+      "modelName":"O",
+      "modelImage":"modelImages/o.png",
+      "audioName":"audio_o"
+
+    },
+    {
+      "modelId":16,
+      "modelName":"P",
+      "modelImage":"modelImages/p.png",
+      "audioName":"audio_p"
+
+    },
+    {
+      "modelId":17,
+      "modelName":"Q",
+      "modelImage":"modelImages/q.png",
+      "audioName":"audio_q"
+
+    },
+    {
+      "modelId":18,
+      "modelName":"R",
+      "modelImage":"modelImages/r.png",
+      "audioName":"audio_r"
+
+    },
+    {
+      "modelId":19,
+      "modelName":"S",
+      "modelImage":"modelImages/s.png",
+      "audioName":"audio_s"
+
+    },
+    {
+      "modelId":20,
+      "modelName":"T",
+      "modelImage":"modelImages/t.png",
+      "audioName":"audio_t"
+
+    },
+    {
+      "modelId":21,
+      "modelName":"U",
+      "modelImage":"modelImages/u.png",
+      "audioName":"audio_u"
+
+    },
+    {
+      "modelId":22,
+      "modelName":"V",
+      "modelImage":"modelImages/v.png",
+      "audioName":"audio_v"
+
+    },
+    {
+      "modelId":23,
+      "modelName":"W",
+      "modelImage":"modelImages/w.png",
+      "audioName":"audio_w"
+
+    },
+    {
+      "modelId":24,
+      "modelName":"X",
+      "modelImage":"modelImages/x.png",
+      "audioName":"audio_x"
+
+    },
+    {
+      "modelId":25,
+      "modelName":"Y",
+      "modelImage":"modelImages/y.png",
+      "audioName":"audio_y"
+
+    },
+    {
+      "modelId":26,
+      "modelName":"Z",
+      "modelImage":"modelImages/z.png",
+      "audioName":"audio_z"
+
+    }
+
+
+  ]
+},
+  {
+    "levelid":2,
+    "levelName":"KNOW ABOUT ANIMALS",
+    "models":[]
+  },
+  {
+    "levelid":3,
+    "levelName":"KNOW ABOUT FRUITS & VEGETABLES",
+    "models":[]
+  },
+  {
+    "levelid":4,
+    "levelName":"PLAY PUZZLES",
+    "models":[]
+  }
+  ]

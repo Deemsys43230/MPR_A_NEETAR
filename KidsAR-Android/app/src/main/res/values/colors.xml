@@ -16,4 +16,13 @@
     <color name="gray">#A6A6A6</color>
     <color name="darkgray">#AA000000</color>
     <color name="brown">#AA7942</color>
+    <color name="ar_neet_theme">#27ae60</color>
+    <color name="ar_white">#FFFFFF</color>
+    <color name="ar_black">#000000</color>
+    <color name="ar_line_color">#80909090</color>
+    <color name="white_transparency">#50FFFFFF</color>
+    <color name="black_hints_border">#75000000</color>
+    <color name="trans_related_label">#80FFFFFF</color>
+    <color name="settings_apply">#5927ae60</color>
+    <color name="disabled_color">#80AAAFB4</color>
 </resources>

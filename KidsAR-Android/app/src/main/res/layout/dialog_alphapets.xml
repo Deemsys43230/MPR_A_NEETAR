@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="160dp"
+    android:minWidth="500dp"
+    android:background="@color/ar_white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/deco_icon_alphapet"
+            android:src="@drawable/show_alphabet"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALPHABETS"
+        android:textSize="25sp"
+        android:fontFamily="@font/comic_sans_ms_bold"
+        android:textColor="@color/button_icon_color"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/deco_icon_alphapet"
+        android:layout_marginLeft="5dp"/>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/alphapets_close"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/error"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="7dp"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#cc8e35"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="8dp"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_alphapets"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="15dp">
+    </android.support.v7.widget.RecyclerView>
+<!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="40dp"/>-->
+</LinearLayout>

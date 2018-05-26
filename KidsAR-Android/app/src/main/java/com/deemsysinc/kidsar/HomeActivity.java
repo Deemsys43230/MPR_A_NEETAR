@@ -56,7 +56,11 @@ public class HomeActivity extends AppCompatActivity implements DiscreteScrollVie
         playmodule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(HomeActivity.this, "Button hit", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HomeActivity.this, "Button hit", Toast.LENGTH_SHORT).show();
+                Bundle bundle=new Bundle();
+                Intent goPlayer=new Intent(HomeActivity.this,UnityPlayerActivity.class);
+                //bundle.putInt("position",pos);
+                startActivity(goPlayer);
             }
         });
 

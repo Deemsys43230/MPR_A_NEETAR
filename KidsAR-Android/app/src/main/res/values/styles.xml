@@ -46,5 +46,16 @@
     <style name="TextAlertTitle" parent="TextAppearance.AppCompat.Title">
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:fontFamily">@font/comic_sans_ms_bold</item>
+
+    </style>
+
+    <style name="Theme.MyFancyTheme" parent="android:Theme.Holo">
+        <item name="android:homeAsUpIndicator">@drawable/btn_back</item>
+        <item name="android:height">35dp</item>
+        <item name="android:width">35dp</item>
+    </style>
+    <style name="DialogAnimation_2">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_bottom</item>
     </style>
 </resources>

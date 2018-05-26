@@ -1,7 +1,5 @@
 package com.deemsysinc.kidsar;
 
-import com.unity3d.player.*;
-import android.app.NativeActivity;
 import android.os.Bundle;
 import android.util.Log;
 
