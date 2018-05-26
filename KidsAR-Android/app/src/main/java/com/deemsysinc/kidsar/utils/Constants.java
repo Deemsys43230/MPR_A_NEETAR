@@ -1,5 +1,7 @@
 package com.deemsysinc.kidsar.utils;
 
+import android.os.Build;
+
 import com.deemsysinc.kidsar.HelpModel;
 
 import java.util.ArrayList;
@@ -19,14 +21,19 @@ public class Constants {
     public static final String kidname = "KidName";
 
     //For Contact Page Send User Feedback
+
+    public static final String osName = "Android" + " " + Build.VERSION.RELEASE;
+    public static final String DeviceName = Build.MANUFACTURER + " " + Build.MODEL;
     public static final String contactfromemail = "deemmobtest@gmail.com";
     public static final String contactfrompassword = "deemsys@123";
     public static final String contacttoemail = "deemmobtest@gmail.com";
 
-    //    public static final String contacttoemail = "support@deemsysinc.com";
+    //    public static final String contacttoemail = "incdeemsys@gmail.com";
     public static final String contacthost = "smtp.gmail.com";
     public static final String contactemailsubject = "Kids AR - User query";
-    public static final String contactemailbody = "Hello,\n\n User from Kids AR Android application has sent a query to you.\n\n User Details\n\n";
+    public static final String contactemailbody = "Hello,\n\n User from Kids AR Android application has sent a query to you.\n\n USER DETAILS : \n\n";
+    public static final String contactemailbody2 = "\n\n DEVICE DETAILS : \n\n Device Name : " + DeviceName + "\n OS Version : " + osName + "\n App Version : ";
+
 
     public static final List<HelpModel> getModelList() {
         List<HelpModel> modelList = new ArrayList<>();
