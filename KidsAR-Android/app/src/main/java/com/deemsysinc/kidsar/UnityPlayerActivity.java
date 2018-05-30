@@ -3,12 +3,14 @@ package com.deemsysinc.kidsar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -88,7 +90,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     TextView dialogHeader,mainHeaderName;
 
 
-    LinearLayout rootDialogLayout;
+    LinearLayout rootDialogLayout,alphabetlayout,animallayout,fruitlayout;
 
     ImageView imageBackground;
 
@@ -150,15 +152,16 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         dialog.setCancelable(true);
         dialog.getWindow().getAttributes().windowAnimations=animationResource;
         imageBackground=(dialog).findViewById(R.id.image_background);
+        alphabetlayout=(dialog).findViewById(R.id.alphapet_transparent);
+        animallayout=(dialog).findViewById(R.id.animal_transparent);
+        fruitlayout=(dialog).findViewById(R.id.fandv_transparent);
         closeAlphapets=(dialog).findViewById(R.id.alphapets_close);
         closeAlphapets.setOnClickListener(this);
         dialogHeader=(dialog).findViewById(R.id.dialog_header);
         alphapetsList=(dialog).findViewById(R.id.list_alphapets);
         ChangeDialogHeaderName(getSelectedPos);
         onClickListener=new AlphapetsClickListner(this);
-
         LoadLevels(getSelectedPos);
-
         UnityPlayer.UnitySendMessage("ARCore Device","NavigateScene",parentModels.get(0).getLevelName());
 //        setActionBar(USceneToolbar);
 //        getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -172,25 +175,39 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         switch (getSelectedPos)
         {
             case 0:
+                closeAlphapets.setImageResource(R.drawable.error);
                 imageBackground.setImageResource(R.drawable.alphabets_theme);
                 dialogHeader.setText("ALPHABETS");
                 mainHeaderName.setText("ALPHABETS");
+                alphabetlayout.setVisibility(View.VISIBLE);
+                animallayout.setVisibility(View.GONE);
+                fruitlayout.setVisibility(View.GONE);
                 alphapetsList.addItemDecoration(new GridSpacingItemDecoration(4, 50, false));
                 layoutManager=new GridLayoutManager(UnityPlayerActivity.this,4);
                 alphapetsList.setLayoutManager(layoutManager);
                 break;
             case 1:
+                closeAlphapets.setImageResource(R.drawable.animal_close);
                 imageBackground.setImageResource(R.drawable.animals_theme);
                 dialogHeader.setText("ANIMALS & BIRDS");
+                dialogHeader.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
                 mainHeaderName.setText("ANIMALS & BIRDS");
+                animallayout.setVisibility(View.VISIBLE);
+                alphabetlayout.setVisibility(View.GONE);
+                fruitlayout.setVisibility(View.GONE);
                 alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 50, false));
                 layoutManager=new GridLayoutManager(UnityPlayerActivity.this,3);
                 alphapetsList.setLayoutManager(layoutManager);
                 break;
             case 2:
+                closeAlphapets.setImageResource(R.drawable.animal_close);
                 imageBackground.setImageResource(R.drawable.veggs_theme);
                 dialogHeader.setText("FRUITS & VEGETABLES");
                 mainHeaderName.setText("FRUITS & VEGETABLES");
+                dialogHeader.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
+                fruitlayout.setVisibility(View.VISIBLE);
+                animallayout.setVisibility(View.GONE);
+                alphabetlayout.setVisibility(View.GONE);
                 alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 50, false));
                 layoutManager=new GridLayoutManager(UnityPlayerActivity.this,3);
                 alphapetsList.setLayoutManager(layoutManager);
@@ -349,9 +366,9 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         {
             mUnityPlayer.quit();
             Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
+            startActivity(goBack);
 //            goBack.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 //            //goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(goBack);
 //            finish();
 //            UnityPlayer.currentActivity.startActivity(goBack);
         }
@@ -434,8 +451,11 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onBackPressed() {
+        mUnityPlayer.quit();
         Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
-        goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(goBack);
+//        Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
+//        goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(goBack);
     }
 }

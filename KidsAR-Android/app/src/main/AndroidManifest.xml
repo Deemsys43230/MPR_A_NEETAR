@@ -48,7 +48,7 @@
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
         </activity>
         <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
-        <meta-data android:name="unity.build-id" android:value="2833a162-93b0-41fd-b3cd-60109e0717a3" />
+        <meta-data android:name="unity.build-id" android:value="9a2c2e97-0b5f-4931-a925-502bd2711c09" />
         <meta-data android:name="unity.splash-mode" android:value="0" />
         <meta-data android:name="unity.splash-enable" android:value="True" />
         <meta-data android:name="android.max_aspect" android:value="2.1" />
@@ -116,7 +116,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />

@@ -16,6 +16,33 @@
        android:src="@drawable/alphabets_theme"
        android:scaleType="centerCrop"
        android:visibility="visible"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/alphapet_transparent"
+            android:background="@color/ar_white"
+            android:alpha=".6"
+            android:visibility="gone">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/animal_transparent"
+            android:background="#27ae60"
+            android:alpha=".6"
+            android:visibility="gone">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/fandv_transparent"
+            android:background="#E1CDB4"
+            android:alpha=".7"
+            android:visibility="gone">
+        </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +75,7 @@
             android:layout_height="35dp"
             android:id="@+id/alphapets_close"
             android:layout_alignParentRight="true"
-            android:src="@drawable/error"
+            android:src="@drawable/animal_close"
             android:layout_centerVertical="true"
             android:layout_marginRight="7dp"/>
     </RelativeLayout>
