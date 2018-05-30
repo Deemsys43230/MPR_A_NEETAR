@@ -24,15 +24,28 @@ public class AlphapetsAdapter extends RecyclerView.Adapter<AlphapetsAdapter.Alph
 
     ArrayList<AlphapetsModel> alphapetsList;
 
-    public AlphapetsAdapter(Context context, ArrayList<AlphapetsModel> alphapetsList)
+    int getposition;
+
+    public AlphapetsAdapter(Context context, ArrayList<AlphapetsModel> alphapetsList,int getposition)
     {
         this.context=context;
         this.alphapetsList=alphapetsList;
+        this.getposition=getposition;
     }
 
     @Override
     public AlphapetsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.alphapets_item,parent,false);
+        View view=null;
+        if(getposition==0)
+        {
+             view= LayoutInflater.from(parent.getContext()).inflate(R.layout.alphapets_item,parent,false);
+
+        }
+        else if(getposition==1||getposition==2)
+        {
+            view= LayoutInflater.from(parent.getContext()).inflate(R.layout.animals_item,parent,false);
+
+        }
         view.setOnClickListener(UnityPlayerActivity.onClickListener);
         AlphapetsHolder alphapetsHolder=new AlphapetsHolder(view);
         return alphapetsHolder;

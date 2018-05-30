@@ -16,7 +16,8 @@ public class Constants {
 
     // APP Shared Preference Name
     public static final String AppPreferences = "ARKids_Preferences";
-    public static final String firstLogin = "FirstLogin";
+    public static final String alertrate_pref = "Alert_Rating";
+    public static final String purchased_product = "Purchased_Product";
     public static final String music = "isMusicOn";
     public static final String kidname = "KidName";
 

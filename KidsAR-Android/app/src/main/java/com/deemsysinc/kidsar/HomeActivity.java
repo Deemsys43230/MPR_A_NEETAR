@@ -16,7 +16,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.MyApplication;
@@ -43,6 +42,10 @@ public class HomeActivity extends AppCompatActivity implements DiscreteScrollVie
     private SharedPreferences prefs;
     private boolean firstlogin;
 
+
+
+    int SelectedItemPOs=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +61,9 @@ public class HomeActivity extends AppCompatActivity implements DiscreteScrollVie
             public void onClick(View v) {
 //                Toast.makeText(HomeActivity.this, "Button hit", Toast.LENGTH_SHORT).show();
                 Bundle bundle=new Bundle();
+                bundle.putInt("selectedPos",SelectedItemPOs);
                 Intent goPlayer=new Intent(HomeActivity.this,UnityPlayerActivity.class);
+                goPlayer.putExtras(bundle);
                 //bundle.putInt("position",pos);
                 startActivity(goPlayer);
             }
@@ -128,6 +133,22 @@ public class HomeActivity extends AppCompatActivity implements DiscreteScrollVie
 
     private void onItemChanged(KidsModel kidsModel) {
         kidmodelname.setText(kidsModel.getName());
+        switch (kidsModel.getName())
+        {
+            case "Learn Alphabets":
+                SelectedItemPOs=0;
+                break;
+            case "Know about Animals":
+                SelectedItemPOs=1;
+                break;
+            case "Know about Fruits & Vegetables":
+                SelectedItemPOs=2;
+                break;
+            case "Play Puzzles":
+                SelectedItemPOs=3;
+                break;
+        }
+
     }
 
     @Override

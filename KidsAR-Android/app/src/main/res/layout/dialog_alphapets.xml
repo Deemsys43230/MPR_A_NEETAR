@@ -4,9 +4,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="160dp"
+    android:id="@+id/alphapets_dialog_root"
+    android:minHeight="500dp"
     android:minWidth="500dp"
-    android:background="@color/ar_white">
+    >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,6 +26,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/dialog_header"
         android:text="ALPHABETS"
         android:textSize="25sp"
         android:fontFamily="@font/comic_sans_ms_bold"

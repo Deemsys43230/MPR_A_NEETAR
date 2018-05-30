@@ -5,182 +5,182 @@
     {
       "modelId":1,
       "modelName":"A",
-      "modelImage":"modelImages/a.png",
+      "modelImage":"modelImages/alphabets/a.png",
       "audioName":"audio_a"
 
     },
     {
       "modelId":2,
       "modelName":"B",
-      "modelImage":"modelImages/b.png",
+      "modelImage":"modelImages/alphabets/b.png",
       "audioName":"audio_b"
 
     },
     {
       "modelId":3,
       "modelName":"C",
-      "modelImage":"modelImages/c.png",
+      "modelImage":"modelImages/alphabets/c.png",
       "audioName":"audio_c"
 
     },
     {
       "modelId":4,
       "modelName":"D",
-      "modelImage":"modelImages/d.png",
+      "modelImage":"modelImages/alphabets/d.png",
       "audioName":"audio_d"
 
     },
     {
       "modelId":5,
       "modelName":"E",
-      "modelImage":"modelImages/e.png",
+      "modelImage":"modelImages/alphabets/e.png",
       "audioName":"audio_e"
 
     },
     {
       "modelId":6,
       "modelName":"F",
-      "modelImage":"modelImages/f.png",
+      "modelImage":"modelImages/alphabets/f.png",
       "audioName":"audio_f"
 
     },
     {
       "modelId":7,
       "modelName":"G",
-      "modelImage":"modelImages/g.png",
+      "modelImage":"modelImages/alphabets/g.png",
       "audioName":"audio_g"
 
     },
     {
       "modelId":8,
       "modelName":"H",
-      "modelImage":"modelImages/h.png",
+      "modelImage":"modelImages/alphabets/h.png",
       "audioName":"audio_h"
 
     },
     {
       "modelId":9,
       "modelName":"I",
-      "modelImage":"modelImages/i.png",
+      "modelImage":"modelImages/alphabets/i.png",
       "audioName":"audio_i"
 
     },
     {
       "modelId":10,
       "modelName":"J",
-      "modelImage":"modelImages/j.png",
+      "modelImage":"modelImages/alphabets/j.png",
       "audioName":"audio_j"
 
     },
     {
       "modelId":11,
       "modelName":"K",
-      "modelImage":"modelImages/k.png",
+      "modelImage":"modelImages/alphabets/k.png",
       "audioName":"audio_k"
 
     },
     {
       "modelId":12,
       "modelName":"L",
-      "modelImage":"modelImages/l.png",
+      "modelImage":"modelImages/alphabets/l.png",
       "audioName":"audio_l"
 
     },
     {
       "modelId":13,
       "modelName":"M",
-      "modelImage":"modelImages/m.png",
+      "modelImage":"modelImages/alphabets/m.png",
       "audioName":"audio_m"
 
     },
     {
       "modelId":14,
       "modelName":"N",
-      "modelImage":"modelImages/n.png",
+      "modelImage":"modelImages/alphabets/n.png",
       "audioName":"audio_n"
 
     },
     {
       "modelId":15,
       "modelName":"O",
-      "modelImage":"modelImages/o.png",
+      "modelImage":"modelImages/alphabets/o.png",
       "audioName":"audio_o"
 
     },
     {
       "modelId":16,
       "modelName":"P",
-      "modelImage":"modelImages/p.png",
+      "modelImage":"modelImages/alphabets/p.png",
       "audioName":"audio_p"
 
     },
     {
       "modelId":17,
       "modelName":"Q",
-      "modelImage":"modelImages/q.png",
+      "modelImage":"modelImages/alphabets/q.png",
       "audioName":"audio_q"
 
     },
     {
       "modelId":18,
       "modelName":"R",
-      "modelImage":"modelImages/r.png",
+      "modelImage":"modelImages/alphabets/r.png",
       "audioName":"audio_r"
 
     },
     {
       "modelId":19,
       "modelName":"S",
-      "modelImage":"modelImages/s.png",
+      "modelImage":"modelImages/alphabets/s.png",
       "audioName":"audio_s"
 
     },
     {
       "modelId":20,
       "modelName":"T",
-      "modelImage":"modelImages/t.png",
+      "modelImage":"modelImages/alphabets/t.png",
       "audioName":"audio_t"
 
     },
     {
       "modelId":21,
       "modelName":"U",
-      "modelImage":"modelImages/u.png",
+      "modelImage":"modelImages/alphabets/u.png",
       "audioName":"audio_u"
 
     },
     {
       "modelId":22,
       "modelName":"V",
-      "modelImage":"modelImages/v.png",
+      "modelImage":"modelImages/alphabets/v.png",
       "audioName":"audio_v"
 
     },
     {
       "modelId":23,
       "modelName":"W",
-      "modelImage":"modelImages/w.png",
+      "modelImage":"modelImages/alphabets/w.png",
       "audioName":"audio_w"
 
     },
     {
       "modelId":24,
       "modelName":"X",
-      "modelImage":"modelImages/x.png",
+      "modelImage":"modelImages/alphabets/x.png",
       "audioName":"audio_x"
 
     },
     {
       "modelId":25,
       "modelName":"Y",
-      "modelImage":"modelImages/y.png",
+      "modelImage":"modelImages/alphabets/y.png",
       "audioName":"audio_y"
 
     },
     {
       "modelId":26,
       "modelName":"Z",
-      "modelImage":"modelImages/z.png",
+      "modelImage":"modelImages/alphabets/z.png",
       "audioName":"audio_z"
 
     }
@@ -191,12 +191,376 @@
   {
     "levelid":2,
     "levelName":"KNOW ABOUT ANIMALS",
-    "models":[]
+    "models":[
+      {
+      "modelId":1,
+      "modelName":"ALLIGATOR",
+      "modelImage":"modelImages/animals/alligator.jpg",
+      "audioName":"audio_alligator"
+
+    },
+      {
+        "modelId":2,
+        "modelName":"BEAR",
+        "modelImage":"modelImages/animals/bear.jpg",
+        "audioName":"audio_bear"
+
+      },
+      {
+        "modelId":3,
+        "modelName":"COW",
+        "modelImage":"modelImages/animals/cow.jpg",
+        "audioName":"audio_cow"
+
+      },
+      {
+        "modelId":4,
+        "modelName":"DOG",
+        "modelImage":"modelImages/animals/dog.jpg",
+        "audioName":"audio_dog"
+
+      },
+      {
+        "modelId":5,
+        "modelName":"ELEPHANT",
+        "modelImage":"modelImages/animals/elephant.jpg",
+        "audioName":"audio_elephant"
+
+      },
+      {
+        "modelId":6,
+        "modelName":"FOX",
+        "modelImage":"modelImages/animals/fox.jpg",
+        "audioName":"audio_fox"
+
+      },
+      {
+        "modelId":7,
+        "modelName":"GIRAFFE",
+        "modelImage":"modelImages/animals/giraffe.jpg",
+        "audioName":"audio_giraffe"
+
+      },
+      {
+        "modelId":8,
+        "modelName":"HORSE",
+        "modelImage":"modelImages/animals/horse.jpg",
+        "audioName":"audio_horse"
+
+      },
+      {
+        "modelId":9,
+        "modelName":"IMPALA",
+        "modelImage":"modelImages/animals/impala.jpg",
+        "audioName":"audio_impala"
+
+      },
+      {
+        "modelId":10,
+        "modelName":"JAGUAR",
+        "modelImage":"modelImages/animals/jaguar.jpg",
+        "audioName":"audio_jaguar"
+
+      },
+      {
+        "modelId":11,
+        "modelName":"KANGAROO",
+        "modelImage":"modelImages/animals/kangaroo.jpg",
+        "audioName":"audio_kangaroo"
+
+      },
+      {
+        "modelId":12,
+        "modelName":"LION",
+        "modelImage":"modelImages/animals/lion.jpg",
+        "audioName":"audio_lion"
+
+      },
+      {
+        "modelId":13,
+        "modelName":"MONKEY",
+        "modelImage":"modelImages/animals/monkey.jpg",
+        "audioName":"audio_monkey"
+
+      },
+      {
+        "modelId":14,
+        "modelName":"NIGHTINGALE",
+        "modelImage":"modelImages/animals/nightingale.jpg",
+        "audioName":"audio_nightingale"
+
+      },
+      {
+        "modelId":15,
+        "modelName":"OWL",
+        "modelImage":"modelImages/animals/owl.jpg",
+        "audioName":"audio_owl"
+
+      },
+      {
+        "modelId":16,
+        "modelName":"PENGUIN",
+        "modelImage":"modelImages/animals/penguin.jpg",
+        "audioName":"audio_penguin"
+
+      },
+      {
+        "modelId":17,
+        "modelName":"QUAIL",
+        "modelImage":"modelImages/animals/quail.jpg",
+        "audioName":"audio_quail"
+
+      },
+      {
+        "modelId":18,
+        "modelName":"RABBIT",
+        "modelImage":"modelImages/animals/rabbit.jpg",
+        "audioName":"audio_rabbit"
+
+      },
+      {
+        "modelId":19,
+        "modelName":"SEAL",
+        "modelImage":"modelImages/animals/seal.jpg",
+        "audioName":"audio_seal"
+
+      },
+      {
+        "modelId":20,
+        "modelName":"TIGER",
+        "modelImage":"modelImages/animals/tiger.jpg",
+        "audioName":"audio_tiger"
+
+      },
+      {
+        "modelId":21,
+        "modelName":"URCHIN",
+        "modelImage":"modelImages/animals/urchin.jpg",
+        "audioName":"audio_urchin"
+
+      },
+      {
+        "modelId":22,
+        "modelName":"VULTURE",
+        "modelImage":"modelImages/animals/vulture.jpg",
+        "audioName":"audio_vulture"
+
+      },
+      {
+        "modelId":23,
+        "modelName":"WOLF",
+        "modelImage":"modelImages/animals/wolf.jpg",
+        "audioName":"audio_wolf"
+
+      },
+      {
+        "modelId":24,
+        "modelName":"XENOPSBIRD",
+        "modelImage":"modelImages/animals/xenopsbird.jpg",
+        "audioName":"audio_xenopsbird"
+
+      },
+      {
+        "modelId":25,
+        "modelName":"YAK",
+        "modelImage":"modelImages/animals/yak.jpg",
+        "audioName":"audio_yak"
+
+      },
+      {
+        "modelId":26,
+        "modelName":"ZEBRA",
+        "modelImage":"modelImages/animals/zebra.jpg",
+        "audioName":"audio_zebra"
+
+      }]
   },
   {
     "levelid":3,
     "levelName":"KNOW ABOUT FRUITS & VEGETABLES",
-    "models":[]
+    "models":[
+       {
+        "modelId":1,
+        "modelName":"APPLE",
+        "modelImage":"modelImages/fruits/apple.jpg",
+        "audioName":"audio_apple"
+
+      },
+      {
+        "modelId":2,
+        "modelName":"BANANA",
+        "modelImage":"modelImages/fruits/banana.jpg",
+        "audioName":"audio_banana"
+
+      },
+      {
+        "modelId":3,
+        "modelName":"CHERRY",
+        "modelImage":"modelImages/fruits/cherry.jpg",
+        "audioName":"audio_cherry"
+
+      },
+      {
+        "modelId":4,
+        "modelName":"DRAGON FRUIT",
+        "modelImage":"modelImages/fruits/dragonfruit.jpg",
+        "audioName":"audio_fruit"
+
+      },
+      {
+        "modelId":5,
+        "modelName":"EGG FRUIT",
+        "modelImage":"modelImages/fruits/dragonfruit.jpg",
+        "audioName":"audio_fruit"
+
+      },
+      {
+        "modelId":6,
+        "modelName":"FIG",
+        "modelImage":"modelImages/fruits/fig.jpg",
+        "audioName":"audio_fig"
+
+      },
+      {
+        "modelId":7,
+        "modelName":"GRAPE",
+        "modelImage":"modelImages/fruits/grapes.jpg",
+        "audioName":"audio_grape"
+
+      },
+      {
+        "modelId":8,
+        "modelName":"HONEYDEW MELON",
+        "modelImage":"modelImages/fruits/grapes.jpg",
+        "audioName":"audio_honeydrewmelon"
+
+      },
+      {
+        "modelId":9,
+        "modelName":"IVY FRUIT",
+        "modelImage":"modelImages/fruits/grapes.jpg",
+        "audioName":"audio_ivyfruit"
+
+      },
+      {
+        "modelId":10,
+        "modelName":"JACK FRUIT",
+        "modelImage":"modelImages/fruits/jackfruit.jpg",
+        "audioName":"audio_jackfruit"
+
+      },
+      {
+        "modelId":11,
+        "modelName":"KIWI",
+        "modelImage":"modelImages/fruits/kiwi.jpg",
+        "audioName":"audio_kiwi"
+
+      },
+      {
+        "modelId":12,
+        "modelName":"LEMON",
+        "modelImage":"modelImages/fruits/lemon.jpg",
+        "audioName":"audio_lemon"
+
+      },
+      {
+        "modelId":13,
+        "modelName":"MANGO",
+        "modelImage":"modelImages/fruits/mango.jpg",
+        "audioName":"audio_mango"
+
+      },
+      {
+        "modelId":14,
+        "modelName":"NECTARINE",
+        "modelImage":"modelImages/fruits/mango.jpg",
+        "audioName":"audio_nectarine"
+
+      },
+      {
+        "modelId":15,
+        "modelName":"ORANGE",
+        "modelImage":"modelImages/fruits/orange.jpg",
+        "audioName":"audio_orange"
+
+      },
+      {
+        "modelId":16,
+        "modelName":"PAPAYA",
+        "modelImage":"modelImages/fruits/papaya.jpg",
+        "audioName":"audio_papaya"
+
+      },
+      {
+        "modelId":17,
+        "modelName":"QUINCE",
+        "modelImage":"modelImages/fruits/papaya.jpg",
+        "audioName":"audio_quince"
+
+      },
+      {
+        "modelId":18,
+        "modelName":"RASPBERRY",
+        "modelImage":"modelImages/fruits/rasberry.jpg",
+        "audioName":"audio_raspberry"
+
+      },
+      {
+        "modelId":19,
+        "modelName":"STRAWBERRY",
+        "modelImage":"modelImages/fruits/strawberry.jpg",
+        "audioName":"audio_strawberry"
+
+      },
+      {
+        "modelId":20,
+        "modelName":"TOMATO",
+        "modelImage":"modelImages/fruits/tomato.jpg",
+        "audioName":"audio_tomato"
+
+      },
+      {
+        "modelId":21,
+        "modelName":"UGNI",
+        "modelImage":"modelImages/fruits/tomato.jpg",
+        "audioName":"audio_ugni"
+
+      },
+      {
+        "modelId":22,
+        "modelName":"VELVET BEAN",
+        "modelImage":"modelImages/fruits/tomato.jpg",
+        "audioName":"audio_velvetbean"
+
+      },
+      {
+        "modelId":23,
+        "modelName":"WATER MELON",
+        "modelImage":"modelImages/fruits/watermelon.jpg",
+        "audioName":"audio_watermelon"
+
+      },
+      {
+        "modelId":24,
+        "modelName":"XIMENIA",
+        "modelImage":"modelImages/fruits/watermelon.jpg",
+        "audioName":"audio_ximenia"
+
+      },
+      {
+        "modelId":25,
+        "modelName":"YAM",
+        "modelImage":"modelImages/fruits/watermelon.jpg",
+        "audioName":"audio_yam"
+
+      },
+      {
+        "modelId":26,
+        "modelName":"ZUCCHINI",
+        "modelImage":"modelImages/fruits/watermelon.jpg",
+        "audioName":"audio_zucchini"
+
+      }]
   },
   {
     "levelid":4,

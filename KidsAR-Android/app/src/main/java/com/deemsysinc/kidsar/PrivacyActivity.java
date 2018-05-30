@@ -10,7 +10,6 @@ import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.ImageView;
 
-import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
 

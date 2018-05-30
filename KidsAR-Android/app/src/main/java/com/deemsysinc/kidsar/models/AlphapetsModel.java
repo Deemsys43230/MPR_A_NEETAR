@@ -2,6 +2,8 @@ package com.deemsysinc.kidsar.models;
 
 public class AlphapetsModel {
 
+
+
     int modelid;
 
     String modelImage,modelName,audioSource;

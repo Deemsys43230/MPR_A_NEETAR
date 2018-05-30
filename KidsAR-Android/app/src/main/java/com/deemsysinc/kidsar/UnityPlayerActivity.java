@@ -1,26 +1,36 @@
 package com.deemsysinc.kidsar;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.deemsysinc.kidsar.adapter.AlphapetsAdapter;
 import com.deemsysinc.kidsar.models.AlphapetsModel;
+import com.deemsysinc.kidsar.models.ParentModel;
+import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.GridSpacingItemDecoration;
+import com.deemsysinc.kidsar.utils.MyApplication;
+import com.deemsysinc.kidsar.utils.PlayAudioService;
 import com.unity3d.player.UnityPlayer;
 
 import org.json.JSONArray;
@@ -31,7 +41,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class UnityPlayerActivity extends Activity implements View.OnClickListener
@@ -47,7 +56,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     Button takeScreenShot,playAudio;
 
-    ArrayList<AlphapetsModel> alphapets;
+    ArrayList<ParentModel> parentModels;
 
     RecyclerView alphapetsList;
 
@@ -69,6 +78,18 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     public static View.OnClickListener onClickListener;
 
+
+    Bundle extras;
+
+
+    int getSelectedPos=0;
+
+
+    TextView dialogHeader,mainHeaderName;
+
+
+    LinearLayout rootDialogLayout;
+
     // Setup activity layout
     @Override protected void onCreate(Bundle savedInstanceState)
     {
@@ -78,15 +99,14 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         mUnityPlayer = new UnityPlayer(this);
         //setContentView(mUnityPlayer);
         setContentView(R.layout.activity_arview);
-        alphapets=new ArrayList<>();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                UnityPlayer.UnitySendMessage("ARCore Device","NavigateScene","LEARN ALPHABETS");
-            }
-        },500);
+        parentModels=new ArrayList<>();
+        if(getIntent().getExtras()!=null)
+        {
+            extras=getIntent().getExtras();
+            getSelectedPos=extras.getInt("selectedPos");
+        }
+        Log.d("PrintSelectedName",""+getSelectedPos);
 
-        LoadLevels(0);
 //        alphapets.add("Alligator");
 //        alphapets.add("Bear");
 //        alphapets.add("Cow");
@@ -113,6 +133,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 //        alphapets.add("Xenops bird");
 //        alphapets.add("Yak");
 //        alphapets.add("Zebra");
+        mainHeaderName=findViewById(R.id.model_name);
         takeScreenShot=findViewById(R.id.take_screenshot);
         showAlphapets=findViewById(R.id.alphapet_collections);
         showAlphapets.setOnClickListener(this);
@@ -126,15 +147,17 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         dialog.setContentView(R.layout.dialog_alphapets);
         dialog.setCancelable(true);
         dialog.getWindow().getAttributes().windowAnimations=animationResource;
+        rootDialogLayout=(dialog).findViewById(R.id.alphapets_dialog_root);
         closeAlphapets=(dialog).findViewById(R.id.alphapets_close);
         closeAlphapets.setOnClickListener(this);
+        dialogHeader=(dialog).findViewById(R.id.dialog_header);
         alphapetsList=(dialog).findViewById(R.id.list_alphapets);
+        ChangeDialogHeaderName(getSelectedPos);
         onClickListener=new AlphapetsClickListner(this);
-        alphapetsList.addItemDecoration(new GridSpacingItemDecoration(4, 50, false));
-        layoutManager=new GridLayoutManager(UnityPlayerActivity.this,4);
-        alphapetsList.setLayoutManager(layoutManager);
-        alphapetsAdapter=new AlphapetsAdapter(UnityPlayerActivity.this,alphapets);
-        alphapetsList.setAdapter(alphapetsAdapter);
+
+        LoadLevels(getSelectedPos);
+        mainHeaderName.setText(parentModels.get(0).getLevelName());
+        UnityPlayer.UnitySendMessage("ARCore Device","NavigateScene",parentModels.get(0).getLevelName());
 //        setActionBar(USceneToolbar);
 //        getActionBar().setDisplayHomeAsUpEnabled(true);
 //        getActionBar().setTitle("");
@@ -143,22 +166,61 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         mUnityPlayer.requestFocus();
     }
 
+    private void ChangeDialogHeaderName(int getSelectedPos) {
+        switch (getSelectedPos)
+        {
+            case 0:
+                rootDialogLayout.setBackgroundResource(R.drawable.alphabet);
+                dialogHeader.setText("ALPHABETS");
+                alphapetsList.addItemDecoration(new GridSpacingItemDecoration(4, 50, false));
+                layoutManager=new GridLayoutManager(UnityPlayerActivity.this,4);
+                alphapetsList.setLayoutManager(layoutManager);
+                break;
+            case 1:
+                rootDialogLayout.setBackgroundResource(R.drawable.animals_theme);
+                dialogHeader.setText("ANIMALS & BIRDS");
+                alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 50, false));
+                layoutManager=new GridLayoutManager(UnityPlayerActivity.this,3);
+                alphapetsList.setLayoutManager(layoutManager);
+                break;
+            case 2:
+                dialogHeader.setText("FRUITS & VEGETABLES");
+                alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 50, false));
+                layoutManager=new GridLayoutManager(UnityPlayerActivity.this,3);
+                alphapetsList.setLayoutManager(layoutManager);
+                break;
+        }
+    }
+
     private void LoadLevels(int position) {
         try {
+            ArrayList<AlphapetsModel> alphapetsModels=new ArrayList<>();
             JSONArray kidsArray=new JSONArray(loadJSONFromAsset());
-            JSONObject kidsObject=kidsArray.getJSONObject(position);
-            JSONArray jsonArray=kidsObject.getJSONArray("models");
-            for(int k=0; k<jsonArray.length(); k++)
-            {
-                JSONObject alphapetsObject=jsonArray.getJSONObject(k);
-                AlphapetsModel alphapetsModel=new AlphapetsModel();
-                alphapetsModel.setModelid(alphapetsObject.getInt("modelId"));
-                alphapetsModel.setModelName(alphapetsObject.getString("modelName"));
-                alphapetsModel.setModelImage(alphapetsObject.getString("modelImage"));
-                alphapetsModel.setAudioSource(alphapetsObject.getString("audioName"));
-                alphapets.add(alphapetsModel);
+                JSONObject levelObject=kidsArray.getJSONObject(position);
+                ParentModel parentModel=new ParentModel();
+                parentModel.setLevelId(levelObject.getInt("levelid"));
+                parentModel.setLevelName(levelObject.getString("levelName"));
+                JSONArray jsonArray=levelObject.getJSONArray("models");
+                for(int k=0; k<jsonArray.length(); k++)
+                {
+                    JSONObject alphapetsObject=jsonArray.getJSONObject(k);
+                    AlphapetsModel alphapetsModel=new AlphapetsModel();
+                    alphapetsModel.setModelid(alphapetsObject.getInt("modelId"));
+                    alphapetsModel.setModelName(alphapetsObject.getString("modelName"));
+                    alphapetsModel.setModelImage(alphapetsObject.getString("modelImage"));
+                    alphapetsModel.setAudioSource(alphapetsObject.getString("audioName"));
+                    alphapetsModels.add(alphapetsModel);
 
-            }
+                }
+                parentModel.setAlphapetsModels(alphapetsModels);
+                parentModels.add(parentModel);
+
+            Log.d("ParentModelSize",""+parentModels.size());
+            alphapetsAdapter=new AlphapetsAdapter(UnityPlayerActivity.this,parentModels.get(0).getAlphapetsModels(),getSelectedPos);
+            alphapetsList.setAdapter(alphapetsAdapter);
+            //JSONObject kidsObject=kidsArray.getJSONObject(position);
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -186,6 +248,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     {
         super.onPause();
         mUnityPlayer.pause();
+        ((MyApplication) this.getApplication()).startActivityTransitionTimer(this);
     }
 
     // Resume Unity
@@ -193,6 +256,11 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     {
         super.onResume();
         mUnityPlayer.resume();
+        MyApplication myApp = (MyApplication) this.getApplication();
+        if (myApp.wasInBackground) {
+            PlayAudioService.onResumePlayer();
+        }
+        myApp.stopActivityTransitionTimer();
     }
 
     @Override protected void onStart()
@@ -273,14 +341,23 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         }
         if(view==NavigateBack)
         {
+            mUnityPlayer.quit();
             Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
-            goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            goBack.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+//            //goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(goBack);
+//            finish();
+//            UnityPlayer.currentActivity.startActivity(goBack);
         }
     }
     class AlphapetsClickListner implements View.OnClickListener
     {
         Context context;
+        TextView alertTitle, alert_message;
+        Button okalert, cancelalert;
+        AlertDialog alertDialog;
+        int alertrate;
+        private SharedPreferences prefs;
 
         public AlphapetsClickListner(Context context)
         {
@@ -289,9 +366,46 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
         @Override
         public void onClick(View view) {
+            prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
+            int itemPosition = alphapetsList.getChildLayoutPosition(view);
+            alertrate = prefs.getInt(Constants.alertrate_pref, 0);
+            Log.d("Test_Value", "Value:" + alertrate);
+            if (parentModels.get(0).getAlphapetsModels().get(itemPosition).getIsPurchased()) {
+                alertrate = alertrate + 1;
+                prefs.edit().putInt(Constants.alertrate_pref, alertrate).apply();
+                if (alertrate == 4 || alertrate == 8 || alertrate == 12) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(UnityPlayerActivity.this);
+                    LayoutInflater inflater = getLayoutInflater();
+                    View dialogView = inflater.inflate(R.layout.alertdialog, null);
+                    builder.setView(dialogView);
+                    alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
+                    alertTitle.setText(R.string.alertString);
+                    alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
+                    alert_message.setText(R.string.alertmessage);
+                    okalert = (Button) dialogView.findViewById(R.id.okalert);
+                    okalert.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            alertDialog.dismiss();
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.supercell.clashofclans"));
+                            startActivity(intent);
+                            overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+                        }
+                    });
+                    cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+                    cancelalert.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            alertDialog.dismiss();
+                        }
+                    });
+                    alertDialog = builder.create();
+                    alertDialog.show();
+                }
+            }
             UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
-            int itemPosition=alphapetsList.getChildLayoutPosition(view);
-            UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeAlphapet",alphapets.get(itemPosition).getModelName());
+            //int itemPosition=alphapetsList.getChildLayoutPosition(view);
+            UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeAlphapet",parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelName());
             dialog.dismiss();
 
         }

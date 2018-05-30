@@ -5,4 +5,5 @@
     <string name="noInternet">No Internet Connection!</string>
     <string name="kidLabel">Please Tell Us Your Name</string>
     <string name="copyrights">Copyright © 2018 Deemsys Inc. All Right Reserved.</string>
+    <string name="alertmessage">Hope you enjoyed our app! Would you like to rate us?</string>
 </resources>
