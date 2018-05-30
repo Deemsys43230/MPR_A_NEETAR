@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/alphapets_dialog_root"
-    android:minHeight="500dp"
     android:minWidth="500dp"
-    >
+    android:minHeight="500dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+   <ImageView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/image_background"
+       android:src="@drawable/alphabets_theme"
+       android:scaleType="centerCrop"
+       android:visibility="visible"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/c_one"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp">
         <ImageView
@@ -46,22 +55,26 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
+        android:id="@+id/v_one"
         android:background="#cc8e35"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginRight="8dp"
+        android:layout_below="@id/c_one"/>
 
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/v_one"
         android:id="@+id/list_alphapets"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="15dp">
     </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
 <!--<View-->
     <!--android:layout_width="match_parent"-->
     <!--android:layout_height="40dp"/>-->
-</LinearLayout>
+</FrameLayout>

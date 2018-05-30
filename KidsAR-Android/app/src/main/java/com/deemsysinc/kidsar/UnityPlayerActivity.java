@@ -90,6 +90,8 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     LinearLayout rootDialogLayout;
 
+    ImageView imageBackground;
+
     // Setup activity layout
     @Override protected void onCreate(Bundle savedInstanceState)
     {
@@ -147,7 +149,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         dialog.setContentView(R.layout.dialog_alphapets);
         dialog.setCancelable(true);
         dialog.getWindow().getAttributes().windowAnimations=animationResource;
-        rootDialogLayout=(dialog).findViewById(R.id.alphapets_dialog_root);
+        imageBackground=(dialog).findViewById(R.id.image_background);
         closeAlphapets=(dialog).findViewById(R.id.alphapets_close);
         closeAlphapets.setOnClickListener(this);
         dialogHeader=(dialog).findViewById(R.id.dialog_header);
@@ -156,7 +158,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         onClickListener=new AlphapetsClickListner(this);
 
         LoadLevels(getSelectedPos);
-        mainHeaderName.setText(parentModels.get(0).getLevelName());
+
         UnityPlayer.UnitySendMessage("ARCore Device","NavigateScene",parentModels.get(0).getLevelName());
 //        setActionBar(USceneToolbar);
 //        getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -170,21 +172,25 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         switch (getSelectedPos)
         {
             case 0:
-                rootDialogLayout.setBackgroundResource(R.drawable.alphabet);
+                imageBackground.setImageResource(R.drawable.alphabets_theme);
                 dialogHeader.setText("ALPHABETS");
+                mainHeaderName.setText("ALPHABETS");
                 alphapetsList.addItemDecoration(new GridSpacingItemDecoration(4, 50, false));
                 layoutManager=new GridLayoutManager(UnityPlayerActivity.this,4);
                 alphapetsList.setLayoutManager(layoutManager);
                 break;
             case 1:
-                rootDialogLayout.setBackgroundResource(R.drawable.animals_theme);
+                imageBackground.setImageResource(R.drawable.animals_theme);
                 dialogHeader.setText("ANIMALS & BIRDS");
+                mainHeaderName.setText("ANIMALS & BIRDS");
                 alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 50, false));
                 layoutManager=new GridLayoutManager(UnityPlayerActivity.this,3);
                 alphapetsList.setLayoutManager(layoutManager);
                 break;
             case 2:
+                imageBackground.setImageResource(R.drawable.veggs_theme);
                 dialogHeader.setText("FRUITS & VEGETABLES");
+                mainHeaderName.setText("FRUITS & VEGETABLES");
                 alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 50, false));
                 layoutManager=new GridLayoutManager(UnityPlayerActivity.this,3);
                 alphapetsList.setLayoutManager(layoutManager);
