@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Products {
-    public static final List<String> getModelPurchaseList() {
+    public static List<String> getModelPurchaseList() {
         List<String> list = new ArrayList<>();
-        list.add("android.test.purchased");
-        list.add("android.test.canceled");
-        list.add("android.test.item_unavailable");
+        list.add("com.deemsysinc.kidsar.basicmodels");
+        list.add("com.deemsysinc.kidsar.premiummodel");
         return list;
     }
 }

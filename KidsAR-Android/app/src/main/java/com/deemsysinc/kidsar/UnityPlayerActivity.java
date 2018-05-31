@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -24,15 +25,23 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.android.billingclient.api.BillingClient;
+import com.android.billingclient.api.Purchase;
+import com.android.billingclient.api.SkuDetails;
 import com.deemsysinc.kidsar.adapter.AlphapetsAdapter;
 import com.deemsysinc.kidsar.models.AlphapetsModel;
 import com.deemsysinc.kidsar.models.ParentModel;
+import com.deemsysinc.kidsar.models.PurchaseModel;
+import com.deemsysinc.kidsar.utils.BillingManager;
 import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.GridSpacingItemDecoration;
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.unity3d.player.UnityPlayer;
 
 import org.json.JSONArray;
@@ -41,11 +50,12 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 
-
-public class UnityPlayerActivity extends Activity implements View.OnClickListener
+public class UnityPlayerActivity extends Activity implements View.OnClickListener,BillingManager.BillingUpdatesListener
 {
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
 
@@ -94,6 +104,14 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     ImageView imageBackground;
 
+    AudioManager audioManager;
+
+    SharedPreferences prefs;
+    Gson gson = new Gson();
+    Type type = new TypeToken<List<PurchaseModel>>() {
+    }.getType();
+    BillingManager billingManager;
+
     // Setup activity layout
     @Override protected void onCreate(Bundle savedInstanceState)
     {
@@ -110,6 +128,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             getSelectedPos=extras.getInt("selectedPos");
         }
         Log.d("PrintSelectedName",""+getSelectedPos);
+
+        billingManager = new BillingManager(UnityPlayerActivity.this, this);
+
+        audioManager=(AudioManager)this.getSystemService(Context.AUDIO_SERVICE);
 
 //        alphapets.add("Alligator");
 //        alphapets.add("Bear");
@@ -228,7 +250,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 {
                     JSONObject alphapetsObject=jsonArray.getJSONObject(k);
                     AlphapetsModel alphapetsModel=new AlphapetsModel();
-                    alphapetsModel.setModelid(alphapetsObject.getInt("modelId"));
+                    alphapetsModel.setModelid(alphapetsObject.getString("modelId"));
                     alphapetsModel.setModelName(alphapetsObject.getString("modelName"));
                     alphapetsModel.setModelImage(alphapetsObject.getString("modelImage"));
                     alphapetsModel.setAudioSource(alphapetsObject.getString("audioName"));
@@ -241,6 +263,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             Log.d("ParentModelSize",""+parentModels.size());
             alphapetsAdapter=new AlphapetsAdapter(UnityPlayerActivity.this,parentModels.get(0).getAlphapetsModels(),getSelectedPos);
             alphapetsList.setAdapter(alphapetsAdapter);
+            UpdateList();
             //JSONObject kidsObject=kidsArray.getJSONObject(position);
 
 
@@ -352,7 +375,8 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         }
         if(view==playAudio)
         {
-            UnityPlayer.UnitySendMessage("ObjectPlacer","PlayAudio","Yes");
+//
+            //UnityPlayer.UnitySendMessage("ObjectPlacer","PlayAudio","Yes");
         }
         if(view==showAlphapets)
         {
@@ -373,14 +397,60 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 //            UnityPlayer.currentActivity.startActivity(goBack);
         }
     }
+
+    @Override
+    public void onBillingClientSetupFinished() {
+
+    }
+
+    @Override
+    public void onConsumeFinished(String token, int result) {
+
+    }
+
+    @Override
+    public void onPurchasesUpdated(List<Purchase> purchases) {
+        List<PurchaseModel> model = new ArrayList<PurchaseModel>();
+        for (int i = 0; i < purchases.size(); i++) {
+            for (int j = 0; j < parentModels.get(0).getAlphapetsModels().size(); j++) {
+                if (parentModels.get(0).getAlphapetsModels().get(j).getModelid().equals(purchases.get(i).getSku())) {
+                    parentModels.get(0).getAlphapetsModels().get(j).isPurchased(true);
+                }
+            }
+            PurchaseModel pmodel = new PurchaseModel(purchases.get(i).getSku(), "", "", "", true);
+            //add the model list
+            model.add(pmodel);
+            String json = gson.toJson(model, type);
+            Log.d("PurchaseRestore", json);
+            prefs.edit().putString(Constants.purchased_product, json).apply();
+        }
+        if (alphapetsAdapter != null)
+            alphapetsAdapter.notifyDataSetChanged();
+
+    }
+
+    @Override
+    public void onPurchaseHistoryResponse(List<Purchase> purchases) {
+
+    }
+
+    @Override
+    public void onPurchaseReponse(String response) {
+
+    }
+
+    @Override
+    public void onSkuDetailsResponse(int responseCode, List<SkuDetails> skuDetailsList) {
+
+    }
+
     class AlphapetsClickListner implements View.OnClickListener
     {
         Context context;
         TextView alertTitle, alert_message;
         Button okalert, cancelalert;
-        AlertDialog alertDialog;
+        android.support.v7.app.AlertDialog alertDialog;
         int alertrate;
-        private SharedPreferences prefs;
 
         public AlphapetsClickListner(Context context)
         {
@@ -390,14 +460,14 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         @Override
         public void onClick(View view) {
             prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
-            int itemPosition = alphapetsList.getChildLayoutPosition(view);
+            final  int itemPosition = alphapetsList.getChildLayoutPosition(view);
             alertrate = prefs.getInt(Constants.alertrate_pref, 0);
             Log.d("Test_Value", "Value:" + alertrate);
             if (parentModels.get(0).getAlphapetsModels().get(itemPosition).getIsPurchased()) {
                 alertrate = alertrate + 1;
                 prefs.edit().putInt(Constants.alertrate_pref, alertrate).apply();
                 if (alertrate == 4 || alertrate == 8 || alertrate == 12) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(UnityPlayerActivity.this);
+                    android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
                     LayoutInflater inflater = getLayoutInflater();
                     View dialogView = inflater.inflate(R.layout.alertdialog, null);
                     builder.setView(dialogView);
@@ -424,7 +494,51 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                     });
                     alertDialog = builder.create();
                     alertDialog.show();
+
                 }
+                UnityPlayer.UnitySendMessage("ObjectPlacer", "DeleteObject", "Yes");
+                //int itemPosition=alphapetsList.getChildLayoutPosition(view);
+                UnityPlayer.UnitySendMessage("ObjectPlacer", "ChangeAlphapet", parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelName());
+                dialog.dismiss();
+            } else {
+                android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
+                LayoutInflater inflater = getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.alertdialog, null);
+                builder.setView(dialogView);
+                alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
+                alertTitle.setText(R.string.alertString);
+                alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
+                alert_message.setText(R.string.alertpurchase);
+                okalert = (Button) dialogView.findViewById(R.id.okalert);
+                okalert.setText("Yes");
+                okalert.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                        String productid = parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelid();
+                        Log.d("ProductId", productid);
+                        billingManager.initiatePurchaseFlow(productid, BillingClient.SkuType.INAPP);
+
+                        /*PurchaseModel pmodel = new PurchaseModel("com.deemsysinc.kidsar.basicmodels", "", "", "", true);
+                        //add the model list
+                        List<PurchaseModel> model = new ArrayList<>();
+                        model.add(pmodel);
+                        String json = gson.toJson(model, type);
+                        Log.d("PurchaseRestore", json);
+                        prefs.edit().putString(Constants.purchased_product, json).apply();
+                        UpdateList();*/
+                    }
+                });
+                cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+                cancelalert.setText("No");
+                cancelalert.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog = builder.create();
+                alertDialog.show();
             }
             UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
             //int itemPosition=alphapetsList.getChildLayoutPosition(view);
@@ -447,6 +561,24 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             return null;
         }
         return json;
+    }
+    private void UpdateList() {
+        prefs = getSharedPreferences(Constants.AppPreferences, Context.MODE_PRIVATE);
+        String mypurchases = prefs.getString(Constants.purchased_product, "");
+        if (!mypurchases.isEmpty()) {
+            Log.d("PurchaseOnCreate", mypurchases);
+            //Get the json value from Shared Preference and Convert to List in My Purchased values
+            List<PurchaseModel> fromJson = gson.fromJson(mypurchases, type);
+            for (int i = 0; i < parentModels.get(0).getAlphapetsModels().size(); i++) {
+                for (PurchaseModel mylist : fromJson) {
+                    if (parentModels.get(0).getAlphapetsModels().get(i).getModelid().equals(mylist.productid)) {
+                        parentModels.get(0).getAlphapetsModels().get(i).isPurchased(true);
+                    }
+                }
+            }
+            if (alphapetsAdapter != null)
+                alphapetsAdapter.notifyDataSetChanged();
+        }
     }
 
     @Override

@@ -4,16 +4,16 @@ public class AlphapetsModel {
 
 
 
-    int modelid;
+    String modelid;
 
     String modelImage,modelName,audioSource;
 
     boolean isPurchased;
-    public void setModelid(int modelid)
+    public void setModelid(String modelid)
     {
         this.modelid=modelid;
     }
-    public int getModelid()
+    public String getModelid()
     {
         return modelid;
     }

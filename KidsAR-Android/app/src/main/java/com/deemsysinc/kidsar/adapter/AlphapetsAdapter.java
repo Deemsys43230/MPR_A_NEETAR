@@ -46,6 +46,7 @@ public class AlphapetsAdapter extends RecyclerView.Adapter<AlphapetsAdapter.Alph
             view= LayoutInflater.from(parent.getContext()).inflate(R.layout.animals_item,parent,false);
 
         }
+
         view.setOnClickListener(UnityPlayerActivity.onClickListener);
         AlphapetsHolder alphapetsHolder=new AlphapetsHolder(view);
         return alphapetsHolder;
@@ -54,12 +55,20 @@ public class AlphapetsAdapter extends RecyclerView.Adapter<AlphapetsAdapter.Alph
     @Override
     public void onBindViewHolder(AlphapetsHolder holder, int position) {
         holder.alphapetLabel.setText(alphapetsList.get(position).getModelName());
-        if(alphapetsList.get(position).getModelid()==1||alphapetsList.get(position).getModelid()==2)
-        {
+//        if(alphapetsList.get(position).getModelid()==1||alphapetsList.get(position).getModelid()==2)
+//        {
+//            holder.purchaseLocker.setVisibility(View.GONE);
+//        }
+//        else
+//        {
+//            holder.purchaseLocker.setVisibility(View.VISIBLE);
+//        }
+        if (position == 0 || position == 1) {
+            alphapetsList.get(position).isPurchased(true);
             holder.purchaseLocker.setVisibility(View.GONE);
-        }
-        else
-        {
+        } else if (alphapetsList.get(position).getIsPurchased()) {
+            holder.purchaseLocker.setVisibility(View.GONE);
+        } else {
             holder.purchaseLocker.setVisibility(View.VISIBLE);
         }
         InputStream bitmap= null;

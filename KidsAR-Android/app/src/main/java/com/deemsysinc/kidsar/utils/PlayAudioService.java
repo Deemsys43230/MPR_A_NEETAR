@@ -46,7 +46,9 @@ public class PlayAudioService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        objPlayer.stop();
+        if(objPlayer!=null) {
+            objPlayer.stop();
+        }
     }
     /* @Override
     protected void onHandleWork(@NonNull Intent intent) {

@@ -6,4 +6,8 @@
     <string name="kidLabel">Please Tell Us Your Name</string>
     <string name="copyrights">Copyright © 2018 Deemsys Inc. All Right Reserved.</string>
     <string name="alertmessage">Hope you enjoyed our app! Would you like to rate us?</string>
+    <string name="alertpurchase">Would you like to purchase this product?</string>
+    <string name="nointernet_message">Make sure your device is connected to the internet.</string>
+
+
 </resources>

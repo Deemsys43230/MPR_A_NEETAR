@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Constants {
+
+    public static final String PUBLICKEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6p0vvycbWZWZGyci2MJO3M0c6Ld0X+RkgZQsvI4RTOqdhyiFsSi/3V8J1up+K+XhCj8/Oux2wKFEd204K/RXRGAgUnktgdjI683HDBgF/Ljc5UD7g2qy0LgJ4DZDbUKKjfH70MXvmTsXgNEupfrHVB1ZcbPhCwHNwltCxoUOQNnHIOg7ZovRRDFiWz9gxzPtQrjJWv6CqyqVn6zOyURXaS4KRf0E4WGJmRRrSaNlt8pdbvUIUgFV7X0g1/dmqZxqmLoVbzFux6VEmIxCOuRYiVASgeO6G/Nn32kTH7/ulAL/XF1kMMf90+EEJwgQO3aRmL9qFG1TF7LWXDU+5ae+RQIDAQAB";
+
     public static final int FIXED_JOB_ID = 10001;
     public static final String START_JOB = "Start";
     public static final String PAUSE_JOB = "Pause";

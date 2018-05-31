@@ -57,7 +57,7 @@ public class BillingManager implements PurchasesUpdatedListener {
 
     private int mBillingClientResponseCode = BILLING_MANAGER_NOT_INITIALIZED;
 
-    private static final String BASE_64_ENCODED_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAirdUXcXm3CXNNplNirD23gc0Cz+LNMlZUHnPnikTxaLvCMzYgPgoSHxVr55hZ6GyDVE8CQxNMqITcEWxav8IbTlIXAM3/aCL2ca11oT3oXBRJJhg/Wum0ojbVgA157UH+qIw6HajGU/IkJEvW1neqmO8nPPpmvPLGmZYvZN2dv8ERx3Env4WwHN5laMjDs+h4plQsAqjs8nvAJ+Z4Sz3JTvLfMVpijR1jtADC0HJK11OE7tCsuyc0BfDCWNgyy/vVGQ3qN7Oz8qjY/8XTD1VCcmJVCXMn5xUqvdjWzhO4euDL+2BsTPRkzY1XRqAhy6rPP8dPjcRe3CSO/XTK0CT6QIDAQAB";
+    private static final String BASE_64_ENCODED_PUBLIC_KEY = Constants.PUBLICKEY;
 
     /**
      * Listener to the updates that happen when purchases list was updated or consumption of the
