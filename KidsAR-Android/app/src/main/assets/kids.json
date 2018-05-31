@@ -1,7 +1,7 @@
 [
   {
     "levelid": 1,
-    "levelName": "Letters",
+    "levelName": "LEARN ALPHABETS",
     "models": [
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
@@ -163,7 +163,7 @@
   },
   {
     "levelid": 2,
-    "levelName": "Animals AR models",
+    "levelName": "Know about Animals",
     "models": [
       {
         "modelId": "com.deemsysinc.kidsar.premiummodel",
@@ -325,7 +325,7 @@
   },
   {
     "levelid": 3,
-    "levelName": "Fruits & Veg AR Model",
+    "levelName": "KNOW ABOUT FRUITS & VEGETABLES",
     "models": [
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",

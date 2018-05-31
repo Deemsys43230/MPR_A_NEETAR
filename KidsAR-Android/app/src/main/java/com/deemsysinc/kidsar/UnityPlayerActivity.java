@@ -11,10 +11,12 @@ import android.content.res.Configuration;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -112,6 +114,13 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     }.getType();
     BillingManager billingManager;
 
+    int mediaAlertCount=0;
+
+    TextView alertTitle, alert_message;
+    Button okalert, cancelalert;
+    android.support.v7.app.AlertDialog alertDialog;
+    int alertrate;
+
     // Setup activity layout
     @Override protected void onCreate(Bundle savedInstanceState)
     {
@@ -128,10 +137,11 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             getSelectedPos=extras.getInt("selectedPos");
         }
         Log.d("PrintSelectedName",""+getSelectedPos);
-
+        
         billingManager = new BillingManager(UnityPlayerActivity.this, this);
 
         audioManager=(AudioManager)this.getSystemService(Context.AUDIO_SERVICE);
+        ShowAlert();
 
 //        alphapets.add("Alligator");
 //        alphapets.add("Bear");
@@ -191,6 +201,37 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         sceneUnity=findViewById(R.id.unity_scene_view);
         sceneUnity.addView(mUnityPlayer.getView(),FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
         mUnityPlayer.requestFocus();
+    }
+
+    private void ShowAlert() {
+        prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
+        final SharedPreferences.Editor editor=prefs.edit();
+        if(prefs.getInt("alertMessageShow",0)==0)
+        {
+            android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
+            LayoutInflater inflater = getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.alertdialog, null);
+            builder.setView(dialogView);
+            alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
+            alertTitle.setText(R.string.alertString);
+            alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
+            alert_message.setText(R.string.plane_message);
+            okalert = (Button) dialogView.findViewById(R.id.okalert);
+            okalert.setGravity(Gravity.CENTER_HORIZONTAL);
+            cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+            cancelalert.setVisibility(View.GONE);
+
+            okalert.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    alertDialog.dismiss();
+                    editor.putInt("alertMessageShow",1);
+                    editor.commit();
+                }
+            });
+            alertDialog = builder.create();
+            alertDialog.show();
+        }
     }
 
     private void ChangeDialogHeaderName(int getSelectedPos) {
@@ -375,6 +416,55 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         }
         if(view==playAudio)
         {
+//            AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+//            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
+            int mediaVolume=audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+            android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
+            LayoutInflater inflater = getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.alertdialog, null);
+            builder.setView(dialogView);
+            alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
+            alertTitle.setText(R.string.alertString);
+            alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
+            alert_message.setText(R.string.media_mute_alert);
+            okalert = (Button) dialogView.findViewById(R.id.okalert);
+            okalert.setGravity(Gravity.CENTER_HORIZONTAL);
+            cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+            cancelalert.setVisibility(View.GONE);
+            alertDialog = builder.create();
+            okalert.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    alertDialog.dismiss();
+                }
+            });
+            if(mediaVolume==0&&mediaAlertCount==0)
+            {
+                alertDialog.show();
+
+            }
+            else if(mediaVolume==0&&mediaAlertCount==4)
+            {
+                alertDialog.show();
+
+            }
+            else if(mediaVolume==0&&mediaAlertCount==9)
+            {
+                alertDialog.show();
+
+            }
+            else if(mediaVolume==0&&mediaAlertCount==14)
+            {
+                alertDialog.show();
+
+            }
+                mediaAlertCount++;
+
+
+
+            //Log.d("PrintMediaVolume",""+audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+
+
 //
             //UnityPlayer.UnitySendMessage("ObjectPlacer","PlayAudio","Yes");
         }
@@ -447,10 +537,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     class AlphapetsClickListner implements View.OnClickListener
     {
         Context context;
-        TextView alertTitle, alert_message;
-        Button okalert, cancelalert;
-        android.support.v7.app.AlertDialog alertDialog;
-        int alertrate;
+
 
         public AlphapetsClickListner(Context context)
         {
@@ -518,7 +605,6 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                         String productid = parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelid();
                         Log.d("ProductId", productid);
                         billingManager.initiatePurchaseFlow(productid, BillingClient.SkuType.INAPP);
-
                         /*PurchaseModel pmodel = new PurchaseModel("com.deemsysinc.kidsar.basicmodels", "", "", "", true);
                         //add the model list
                         List<PurchaseModel> model = new ArrayList<>();

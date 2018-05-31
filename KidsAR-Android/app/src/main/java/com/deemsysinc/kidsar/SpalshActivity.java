@@ -15,6 +15,8 @@ public class SpalshActivity extends AppCompatActivity {
     TextView arkids;
     private SharedPreferences prefs;
 
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +31,14 @@ public class SpalshActivity extends AppCompatActivity {
             @Override
             public void run() {
                 prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
+                editor=prefs.edit();
                 String firstlogin = prefs.getString(Constants.kidname, "");
                 if (!firstlogin.isEmpty()) {
                     startActivity(new Intent(SpalshActivity.this, HomeActivity.class));
                 } else {
                     startActivity(new Intent(SpalshActivity.this, KidsAR_Main.class));
+                    editor.putInt("alertMessageShow",0);
+                    editor.commit();
                 }
             }
         }, 1000);
