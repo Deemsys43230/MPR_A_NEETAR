@@ -27,8 +27,10 @@ public class PlayAudioService extends Service {
     }
 
     public static void onPausePlayer() {
-        music = objPlayer.getCurrentPosition();
-        objPlayer.pause();
+        if (objPlayer != null) {
+            music = objPlayer.getCurrentPosition();
+            objPlayer.pause();
+        }
     }
 
     public static void onResumePlayer() {

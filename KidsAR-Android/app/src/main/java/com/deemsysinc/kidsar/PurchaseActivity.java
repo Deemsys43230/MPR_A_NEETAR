@@ -112,7 +112,10 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
         restore_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                billingManager.queryPurchases();
+                listposition = -1;
+                if (billingManager != null) {
+                    billingManager.queryPurchases();
+                }
             }
         });
     }
@@ -165,7 +168,7 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
     @Override
     public void onPurchasesUpdated(List<Purchase> purchases) {
         List<PurchaseModel> model = new ArrayList<PurchaseModel>();
-        for (int i = 0; i < modellist.size(); i++) {
+       /*for (int i = 0; i < modellist.size(); i++) {
             for (int j = 0; j < purchases.size(); j++) {
                 if (modellist.get(i).getProductid().equals(purchases.get(j).getSku())) {
                     modellist.get(i).setPurchased(true);
@@ -175,16 +178,26 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
                     String json = gson.toJson(model, type);
                     Log.d("PurchaseRestore", json);
                     prefs.edit().putString(Constants.purchased_product, json).apply();
-                    /*//Get the json value from Shared Preference and Convert to List in My Purchased values
-                    List<PurchaseModel> fromJson = gson.fromJson(json, type);
-                    for (PurchaseModel mylist : fromJson) {
-                        Log.d("ModelList", mylist.toString());
-                    }*/
                 }
             }
             if (purchaseAdapter != null)
                 purchaseAdapter.notifyDataSetChanged();
+        }*/
+        for (int i = 0; i < purchases.size(); i++) {
+            for (int j = 0; j < modellist.size(); j++) {
+                if (modellist.get(j).getProductid().equals(purchases.get(i).getSku())) {
+                    modellist.get(j).setPurchased(true);
+                }
+            }
+            PurchaseModel pmodel = new PurchaseModel(purchases.get(i).getSku(), "", "", "", true);
+            //add the model list
+            model.add(pmodel);
         }
+        String json = gson.toJson(model, type);
+        Log.d("PurchaseRestore", json);
+        prefs.edit().putString(Constants.purchased_product, json).apply();
+        if (purchaseAdapter != null)
+            purchaseAdapter.notifyDataSetChanged();
     }
 
     @Override

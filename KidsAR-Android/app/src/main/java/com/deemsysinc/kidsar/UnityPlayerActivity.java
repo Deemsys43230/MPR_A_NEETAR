@@ -2,6 +2,7 @@ package com.deemsysinc.kidsar;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Application;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -12,6 +13,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
@@ -122,6 +124,8 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     Button okalert, cancelalert;
     android.support.v7.app.AlertDialog alertDialog;
     int alertrate;
+
+    int itemPosition=-1;
 
     // Setup activity layout
     @Override protected void onCreate(Bundle savedInstanceState)
@@ -439,52 +443,52 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         if(view==takeScreenShot)
         {
             UnityPlayer.UnitySendMessage("ObjectPlacer","SaveImage","My img {0}.png");
+            Toast.makeText(this, R.string.screenshot_alert, Toast.LENGTH_LONG).show();
         }
         if(view==playAudio)
         {
 //            AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 //            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
             int mediaVolume=audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-            android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
-            LayoutInflater inflater = getLayoutInflater();
-            View dialogView = inflater.inflate(R.layout.alertdialog, null);
-            builder.setView(dialogView);
-            alertTitle =  dialogView.findViewById(R.id.alertTitle);
-            alertTitle.setText(R.string.alertString);
-            alert_message =  dialogView.findViewById(R.id.alert_message);
-            alert_message.setText(R.string.media_mute_alert);
-            okalert =  dialogView.findViewById(R.id.okalert);
-            okalert.setGravity(Gravity.CENTER_HORIZONTAL);
-            cancelalert =  dialogView.findViewById(R.id.cancelalert);
-            cancelalert.setVisibility(View.GONE);
-            alertDialog = builder.create();
-            okalert.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    alertDialog.dismiss();
-                }
-            });
-            if(mediaVolume==0&&mediaAlertCount==0)
+//            android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
+//            LayoutInflater inflater = getLayoutInflater();
+//            View dialogView = inflater.inflate(R.layout.alertdialog, null);
+//            builder.setView(dialogView);
+//            alertTitle =  dialogView.findViewById(R.id.alertTitle);
+//            alertTitle.setText(R.string.alertString);
+//            alert_message =  dialogView.findViewById(R.id.alert_message);
+//            alert_message.setText(R.string.media_mute_alert);
+//            okalert =  dialogView.findViewById(R.id.okalert);
+//            okalert.setGravity(Gravity.CENTER_HORIZONTAL);
+//            cancelalert =  dialogView.findViewById(R.id.cancelalert);
+//            cancelalert.setVisibility(View.GONE);
+//            alertDialog = builder.create();
+//            okalert.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    alertDialog.dismiss();
+//                }
+//            });
+            if(mediaVolume==0)
             {
-                alertDialog.show();
-
+                Toast.makeText(this, R.string.media_mute_alert, Toast.LENGTH_LONG).show();
             }
-            else if(mediaVolume==0&&mediaAlertCount==4)
-            {
-                alertDialog.show();
-
-            }
-            else if(mediaVolume==0&&mediaAlertCount==9)
-            {
-                alertDialog.show();
-
-            }
-            else if(mediaVolume==0&&mediaAlertCount==14)
-            {
-                alertDialog.show();
-
-            }
-                mediaAlertCount++;
+//            else if(mediaVolume==0&&mediaAlertCount==4)
+//            {
+//                alertDialog.show();
+//
+//            }
+//            else if(mediaVolume==0&&mediaAlertCount==9)
+//            {
+//                alertDialog.show();
+//
+//            }
+//            else if(mediaVolume==0&&mediaAlertCount==14)
+//            {
+//                alertDialog.show();
+//
+//            }
+//                mediaAlertCount++;
 
 
 
@@ -504,7 +508,12 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         }
         if(view==NavigateBack)
         {
-            //mUnityPlayer.quit();
+//            AsyncTask.execute(new Runnable() {
+//                @Override
+//                public void run() {
+//                    mUnityPlayer.quit();
+//                }
+//            });
             Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
             startActivity(goBack);
 //            goBack.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -552,6 +561,37 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onPurchaseReponse(String response) {
+        if (alphapetsAdapter != null) {
+            if (response.equals("You have already purchased this item. Click RESTORE to update your purchase list.") || response.equals("")) {
+                String mypurchases = prefs.getString(Constants.purchased_product, "");
+                if (itemPosition >= 0) {
+                    List<PurchaseModel> fromJson = gson.fromJson(mypurchases, type);
+                    List<PurchaseModel> model = new ArrayList<>();
+                    if (fromJson != null) {
+                        model = new ArrayList<>(fromJson);
+                    }
+                    String modelid = parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelid();
+                    PurchaseModel pmodel = new PurchaseModel(modelid, "", "", "", true);
+                    //add the model list
+                    model.add(pmodel);
+                    for (int i = 0; i < model.size(); i++) {
+                        for (int j = 1; j < model.size() - 1; j++) {
+                            if (model.get(i).productid.equals(model.get(j).productid)) {
+                                model.remove(j);
+                            }
+                        }
+                    }
+                    String json = gson.toJson(model, type);
+                    Log.d("PurchaseBuy", json);
+                    prefs.edit().putString(Constants.purchased_product, json).apply();
+                }
+                if (!response.equals(""))
+                    Toast.makeText(UnityPlayerActivity.this, "You have already purchased this item.", Toast.LENGTH_SHORT).show();
+                UpdateList();
+            } else {
+                Toast.makeText(UnityPlayerActivity.this, response, Toast.LENGTH_SHORT).show();
+            }
+        }
 
     }
 
@@ -573,7 +613,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         @Override
         public void onClick(View view) {
             prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
-            final  int itemPosition = alphapetsList.getChildLayoutPosition(view);
+              itemPosition = alphapetsList.getChildLayoutPosition(view);
             alertrate = prefs.getInt(Constants.alertrate_pref, 0);
             Log.d("Test_Value", "Value:" + alertrate);
             if (parentModels.get(0).getAlphapetsModels().get(itemPosition).getIsPurchased()) {

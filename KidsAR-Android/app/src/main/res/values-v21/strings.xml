@@ -10,5 +10,7 @@
     <string name="nointernet_message">Make sure your device is connected to the internet.</string>
     <string name="media_mute_alert">For the application to work correctly, you must increase ‘Media Volume’. If you did not , you can not hear the music.</string>
     <string name="plane_message">Point your device to a surface with detailed texture.</string>
+    <string name="screenshot_alert">Image saved! Tap the Gallery icon to view the image.</string>
+
 
 </resources>
