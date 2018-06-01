@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -238,40 +240,64 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         switch (getSelectedPos)
         {
             case 0:
+                InputStream bitmap= null;
+                try {
+                    bitmap = getAssets().open("alphabets_theme.jpg");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Log.d("PrintBitmap",""+bitmap);
+                Bitmap outImage= BitmapFactory.decodeStream(bitmap);
                 closeAlphapets.setImageResource(R.drawable.error);
-                imageBackground.setImageResource(R.drawable.alphabets_theme);
+                imageBackground.setImageBitmap(outImage);
                 dialogHeader.setText("ALPHABETS");
                 mainHeaderName.setText("ALPHABETS");
                 alphabetlayout.setVisibility(View.VISIBLE);
                 animallayout.setVisibility(View.GONE);
                 fruitlayout.setVisibility(View.GONE);
-                alphapetsList.addItemDecoration(new GridSpacingItemDecoration(4, 50, false));
+                alphapetsList.addItemDecoration(new GridSpacingItemDecoration(4, 2, false));
                 layoutManager=new GridLayoutManager(UnityPlayerActivity.this,4);
                 alphapetsList.setLayoutManager(layoutManager);
                 break;
             case 1:
+                InputStream bitmap1= null;
+                try {
+                    bitmap1 = getAssets().open("animals_theme.jpg");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Log.d("PrintBitmap",""+bitmap1);
+                Bitmap outImage1= BitmapFactory.decodeStream(bitmap1);
                 closeAlphapets.setImageResource(R.drawable.animal_close);
-                imageBackground.setImageResource(R.drawable.animals_theme);
+                imageBackground.setImageBitmap(outImage1);
                 dialogHeader.setText("ANIMALS & BIRDS");
                 dialogHeader.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
                 mainHeaderName.setText("ANIMALS & BIRDS");
                 animallayout.setVisibility(View.VISIBLE);
                 alphabetlayout.setVisibility(View.GONE);
                 fruitlayout.setVisibility(View.GONE);
-                alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 50, false));
+                alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 2, false));
                 layoutManager=new GridLayoutManager(UnityPlayerActivity.this,3);
                 alphapetsList.setLayoutManager(layoutManager);
                 break;
             case 2:
+                InputStream bitmap2= null;
+                try {
+                    bitmap2 = getAssets().open("veggs_theme.jpg");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Log.d("PrintBitmap",""+bitmap2);
+                Bitmap outImage2= BitmapFactory.decodeStream(bitmap2);
                 closeAlphapets.setImageResource(R.drawable.animal_close);
-                imageBackground.setImageResource(R.drawable.veggs_theme);
+                imageBackground.setImageBitmap(outImage2);
                 dialogHeader.setText("FRUITS & VEGETABLES");
                 mainHeaderName.setText("FRUITS & VEGETABLES");
                 dialogHeader.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
                 fruitlayout.setVisibility(View.VISIBLE);
                 animallayout.setVisibility(View.GONE);
                 alphabetlayout.setVisibility(View.GONE);
-                alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 50, false));
+                alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 2, false));
                 layoutManager=new GridLayoutManager(UnityPlayerActivity.this,3);
                 alphapetsList.setLayoutManager(layoutManager);
                 break;
@@ -423,13 +449,13 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             LayoutInflater inflater = getLayoutInflater();
             View dialogView = inflater.inflate(R.layout.alertdialog, null);
             builder.setView(dialogView);
-            alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
+            alertTitle =  dialogView.findViewById(R.id.alertTitle);
             alertTitle.setText(R.string.alertString);
-            alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
+            alert_message =  dialogView.findViewById(R.id.alert_message);
             alert_message.setText(R.string.media_mute_alert);
-            okalert = (Button) dialogView.findViewById(R.id.okalert);
+            okalert =  dialogView.findViewById(R.id.okalert);
             okalert.setGravity(Gravity.CENTER_HORIZONTAL);
-            cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+            cancelalert =  dialogView.findViewById(R.id.cancelalert);
             cancelalert.setVisibility(View.GONE);
             alertDialog = builder.create();
             okalert.setOnClickListener(new View.OnClickListener() {
@@ -478,7 +504,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         }
         if(view==NavigateBack)
         {
-            mUnityPlayer.quit();
+            //mUnityPlayer.quit();
             Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
             startActivity(goBack);
 //            goBack.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -551,6 +577,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             alertrate = prefs.getInt(Constants.alertrate_pref, 0);
             Log.d("Test_Value", "Value:" + alertrate);
             if (parentModels.get(0).getAlphapetsModels().get(itemPosition).getIsPurchased()) {
+                UnityPlayer.UnitySendMessage("ObjectPlacer", "DeleteObject", "Yes");
+                //int itemPosition=alphapetsList.getChildLayoutPosition(view);
+                UnityPlayer.UnitySendMessage("ObjectPlacer", "ChangeAlphapet", parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelName());
+                dialog.dismiss();
                 alertrate = alertrate + 1;
                 prefs.edit().putInt(Constants.alertrate_pref, alertrate).apply();
                 if (alertrate == 4 || alertrate == 8 || alertrate == 12) {
@@ -558,11 +588,11 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                     LayoutInflater inflater = getLayoutInflater();
                     View dialogView = inflater.inflate(R.layout.alertdialog, null);
                     builder.setView(dialogView);
-                    alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
+                    alertTitle =  dialogView.findViewById(R.id.alertTitle);
                     alertTitle.setText(R.string.alertString);
-                    alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
+                    alert_message =  dialogView.findViewById(R.id.alert_message);
                     alert_message.setText(R.string.alertmessage);
-                    okalert = (Button) dialogView.findViewById(R.id.okalert);
+                    okalert =  dialogView.findViewById(R.id.okalert);
                     okalert.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -583,25 +613,23 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                     alertDialog.show();
 
                 }
-                UnityPlayer.UnitySendMessage("ObjectPlacer", "DeleteObject", "Yes");
-                //int itemPosition=alphapetsList.getChildLayoutPosition(view);
-                UnityPlayer.UnitySendMessage("ObjectPlacer", "ChangeAlphapet", parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelName());
-                dialog.dismiss();
+
             } else {
                 android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
                 LayoutInflater inflater = getLayoutInflater();
                 View dialogView = inflater.inflate(R.layout.alertdialog, null);
                 builder.setView(dialogView);
-                alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
+                alertTitle =  dialogView.findViewById(R.id.alertTitle);
                 alertTitle.setText(R.string.alertString);
-                alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
+                alert_message =  dialogView.findViewById(R.id.alert_message);
                 alert_message.setText(R.string.alertpurchase);
-                okalert = (Button) dialogView.findViewById(R.id.okalert);
+                okalert =  dialogView.findViewById(R.id.okalert);
                 okalert.setText("Yes");
                 okalert.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         alertDialog.dismiss();
+                        //dialog.dismiss();
                         String productid = parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelid();
                         Log.d("ProductId", productid);
                         billingManager.initiatePurchaseFlow(productid, BillingClient.SkuType.INAPP);
@@ -615,21 +643,22 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                         UpdateList();*/
                     }
                 });
-                cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+                cancelalert =  dialogView.findViewById(R.id.cancelalert);
                 cancelalert.setText("No");
                 cancelalert.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         alertDialog.dismiss();
+                        //dialog.dismiss();
                     }
                 });
                 alertDialog = builder.create();
                 alertDialog.show();
             }
-            UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
-            //int itemPosition=alphapetsList.getChildLayoutPosition(view);
-            UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeAlphapet",parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelName());
-            dialog.dismiss();
+//            UnityPlayer.UnitySendMessage("ObjectPlacer","DeleteObject","Yes");
+//            //int itemPosition=alphapetsList.getChildLayoutPosition(view);
+//            UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeAlphapet",parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelName());
+//            dialog.dismiss();
 
         }
     }
