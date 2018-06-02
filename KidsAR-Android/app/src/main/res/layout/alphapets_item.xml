@@ -48,7 +48,7 @@
         android:id="@+id/alphapet_label"
         android:text="Labell"
         android:textSize="16sp"
-        android:textColor="@color/button_icon_color"
+        android:textColor="@color/ar_white"
         android:fontFamily="@font/comic_sans_ms_bold"
         android:layout_marginBottom="12dp"
         android:layout_gravity="center_horizontal"

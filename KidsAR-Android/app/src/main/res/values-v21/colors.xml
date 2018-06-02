@@ -23,4 +23,6 @@
     <color name="trans_related_label">#80FFFFFF</color>
     <color name="settings_apply">#5927ae60</color>
     <color name="disabled_color">#80AAAFB4</color>
+    <color name="gallery_line_color">#FFD944</color>
+
 </resources>

@@ -11,12 +11,15 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -201,6 +204,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         onClickListener=new AlphapetsClickListner(this);
         LoadLevels(getSelectedPos);
         UnityPlayer.UnitySendMessage("ARCore Device","NavigateScene",parentModels.get(0).getLevelName());
+        dialog.show();
 //        setActionBar(USceneToolbar);
 //        getActionBar().setDisplayHomeAsUpEnabled(true);
 //        getActionBar().setTitle("");
@@ -252,10 +256,13 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 }
                 Log.d("PrintBitmap",""+bitmap);
                 Bitmap outImage= BitmapFactory.decodeStream(bitmap);
-                closeAlphapets.setImageResource(R.drawable.error);
+                closeAlphapets.setImageResource(R.drawable.animal_close);
                 imageBackground.setImageBitmap(outImage);
                 dialogHeader.setText("ALPHABETS");
+                dialogHeader.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
                 mainHeaderName.setText("ALPHABETS");
+                CustomFontStyle(this, dialogHeader);
+                CustomFontStyle(this, mainHeaderName);
                 alphabetlayout.setVisibility(View.VISIBLE);
                 animallayout.setVisibility(View.GONE);
                 fruitlayout.setVisibility(View.GONE);
@@ -277,6 +284,8 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 dialogHeader.setText("ANIMALS & BIRDS");
                 dialogHeader.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
                 mainHeaderName.setText("ANIMALS & BIRDS");
+                CustomFontStyle(this, dialogHeader);
+                CustomFontStyle(this, mainHeaderName);
                 animallayout.setVisibility(View.VISIBLE);
                 alphabetlayout.setVisibility(View.GONE);
                 fruitlayout.setVisibility(View.GONE);
@@ -297,6 +306,8 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 imageBackground.setImageBitmap(outImage2);
                 dialogHeader.setText("FRUITS & VEGETABLES");
                 mainHeaderName.setText("FRUITS & VEGETABLES");
+                CustomFontStyle(this, dialogHeader);
+                CustomFontStyle(this, mainHeaderName);
                 dialogHeader.setTextColor(ContextCompat.getColor(this,R.color.ar_white));
                 fruitlayout.setVisibility(View.VISIBLE);
                 animallayout.setVisibility(View.GONE);
@@ -307,7 +318,12 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 break;
         }
     }
-
+    private void CustomFontStyle(Context context, TextView textView) {
+        Typeface font = ResourcesCompat.getFont(context, R.font.comic_sans_ms_bold);
+        if (font != null) {
+            textView.setTypeface(font);
+        }
+    }
     private void LoadLevels(int position) {
         try {
             ArrayList<AlphapetsModel> alphapetsModels=new ArrayList<>();
@@ -442,7 +458,14 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     public void onClick(View view) {
         if(view==takeScreenShot)
         {
-            UnityPlayer.UnitySendMessage("ObjectPlacer","SaveImage","My img {0}.png");
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    UnityPlayer.UnitySendMessage("ObjectPlacer","SaveImage","My img {0}.png");
+                    UnityPlayer.UnitySendMessage("ObjectPlacer","DisablePlane","No");
+                }
+            },2000);
+            UnityPlayer.UnitySendMessage("ObjectPlacer","DisablePlane","Yes");
             Toast.makeText(this, R.string.screenshot_alert, Toast.LENGTH_LONG).show();
         }
         if(view==playAudio)
@@ -508,18 +531,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         }
         if(view==NavigateBack)
         {
-//            AsyncTask.execute(new Runnable() {
-//                @Override
-//                public void run() {
-//                    mUnityPlayer.quit();
-//                }
-//            });
+
             Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
+            //goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(goBack);
-//            goBack.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//            //goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            finish();
-//            UnityPlayer.currentActivity.startActivity(goBack);
         }
     }
 
@@ -535,22 +550,22 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onPurchasesUpdated(List<Purchase> purchases) {
-        List<PurchaseModel> model = new ArrayList<PurchaseModel>();
-        for (int i = 0; i < purchases.size(); i++) {
-            for (int j = 0; j < parentModels.get(0).getAlphapetsModels().size(); j++) {
-                if (parentModels.get(0).getAlphapetsModels().get(j).getModelid().equals(purchases.get(i).getSku())) {
-                    parentModels.get(0).getAlphapetsModels().get(j).isPurchased(true);
-                }
-            }
-            PurchaseModel pmodel = new PurchaseModel(purchases.get(i).getSku(), "", "", "", true);
-            //add the model list
-            model.add(pmodel);
-            String json = gson.toJson(model, type);
-            Log.d("PurchaseRestore", json);
-            prefs.edit().putString(Constants.purchased_product, json).apply();
-        }
-        if (alphapetsAdapter != null)
-            alphapetsAdapter.notifyDataSetChanged();
+//        List<PurchaseModel> model = new ArrayList<PurchaseModel>();
+//        for (int i = 0; i < purchases.size(); i++) {
+//            for (int j = 0; j < parentModels.get(0).getAlphapetsModels().size(); j++) {
+//                if (parentModels.get(0).getAlphapetsModels().get(j).getModelid().equals(purchases.get(i).getSku())) {
+//                    parentModels.get(0).getAlphapetsModels().get(j).isPurchased(true);
+//                }
+//            }
+//            PurchaseModel pmodel = new PurchaseModel(purchases.get(i).getSku(), "", "", "", true);
+//            //add the model list
+//            model.add(pmodel);
+//            String json = gson.toJson(model, type);
+//            Log.d("PurchaseRestore", json);
+//            prefs.edit().putString(Constants.purchased_product, json).apply();
+//        }
+//        if (alphapetsAdapter != null)
+//            alphapetsAdapter.notifyDataSetChanged();
 
     }
 
@@ -738,8 +753,8 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onBackPressed() {
-        mUnityPlayer.quit();
         Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
+//        goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(goBack);
 //        Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
 //        goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
