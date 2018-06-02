@@ -127,19 +127,6 @@ public class KidsSettings_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(KidsSettings_Activity.this);
-               /* builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (editTextKidAlert.getText().toString().isEmpty()) {
-                            Toast.makeText(KidsSettings_Activity.this, "Please Enter Your Name", Toast.LENGTH_SHORT).show();
-                        } else {
-                            String kidnamefromalter = editTextKidAlert.getText().toString();
-                            prefs.edit().putString("KidName", kidnamefromalter).apply();
-                            kidname.setText(kidnamefromalter);
-                        }
-                    }
-                });
-                builder.setNegativeButton("Cancel", null);*/
                 LayoutInflater inflater = getLayoutInflater();
                 View dialogView = inflater.inflate(R.layout.settings_name_layout, null);
                 builder.setView(dialogView);

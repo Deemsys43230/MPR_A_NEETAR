@@ -2,15 +2,19 @@
 <resources>
     <string name="app_name">KidsAR</string>
     <string name="alertString">Alert</string>
+    <string name="alertStringInfo">Info</string>
     <string name="noInternet">No Internet Connection!</string>
     <string name="kidLabel">Please Tell Us Your Name</string>
     <string name="copyrights">Copyright © 2018 Deemsys Inc. All Right Reserved.</string>
-    <string name="alertmessage">Hope you enjoyed our app! Would you like to rate us?</string>
-    <string name="alertpurchase">Would you like to purchase this product?</string>
+    <string name="alertStringRateus">Rate us</string>
+    <string name="alertmessage">Hope you enjoyed using our app! Would you like to rate us?</string>
+    <string name="alertpurchase">Purchase</string>
+    <string name="alertpurchasemessage">Would you like to purchase this product?</string>
     <string name="nointernet_message">Make sure your device is connected to the internet.</string>
     <string name="media_mute_alert">For the application to work correctly, you must increase ‘Media Volume’. If you did not , you can not hear the music.</string>
     <string name="plane_message">Point your device to a surface with detailed texture.</string>
     <string name="screenshot_alert">Image saved! Tap the Gallery icon to view the image.</string>
-
-
+    <string name="alertMailfailure">Failure</string>
+    <string name="alertMailSuccess">Success</string>
+    <string name="alertSuccess">Success</string>
 </resources>

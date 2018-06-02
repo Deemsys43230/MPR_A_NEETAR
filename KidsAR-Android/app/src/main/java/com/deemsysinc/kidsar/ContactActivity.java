@@ -1,13 +1,16 @@
 package com.deemsysinc.kidsar;
 
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.MyApplication;
@@ -41,6 +45,12 @@ public class ContactActivity extends AppCompatActivity {
     private boolean response = false;
     private ProgressBar progressnavigation;
     NetworkDetector networkDetector;
+
+    TextView alertTitle, alert_message;
+    Button okalert, cancelalert;
+    View dialogView;
+    AlertDialog alertDialog, alertDialogemail, alertDialogquery, alertDialoginternet, alertDialogvalidemail, alertDialogemailsend;
+    private boolean isback = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -84,6 +94,7 @@ public class ContactActivity extends AppCompatActivity {
                 return false;
             }
         });
+
         contact_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,26 +102,11 @@ public class ContactActivity extends AppCompatActivity {
                 cemail = contact_email.getText().toString();
                 cquery = contact_querybox.getText().toString();
                 if (cname.isEmpty()) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(ContactActivity.this, R.style.AlertDialogStyle);
-                    builder.setTitle(R.string.alertString);
-                    builder.setMessage("Enter name");
-                    builder.setPositiveButton("OK", null);
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
+                    showAlert(R.string.alertStringInfo, "Enter name");
                 } else if (cemail.isEmpty()) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(ContactActivity.this, R.style.AlertDialogStyle);
-                    builder.setTitle(R.string.alertString);
-                    builder.setMessage("Enter email ID");
-                    builder.setPositiveButton("OK", null);
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
+                    showAlert(R.string.alertStringInfo, "Enter email ID");
                 } else if (cquery.isEmpty()) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(ContactActivity.this, R.style.AlertDialogStyle);
-                    builder.setTitle(R.string.alertString);
-                    builder.setMessage("Enter query");
-                    builder.setPositiveButton("OK", null);
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
+                    showAlert(R.string.alertStringInfo, "Enter query");
                 } else {
                     String email = contact_email.getText().toString().trim();
                     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -119,24 +115,38 @@ public class ContactActivity extends AppCompatActivity {
                             SendMail sendMail = new SendMail();
                             sendMail.execute();
                         } else {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(ContactActivity.this, R.style.AlertDialogStyle);
-                            builder.setTitle(R.string.noInternet);
-                            builder.setMessage("Make sure your device is connected to the internet.");
-                            builder.setPositiveButton("OK", null);
-                            AlertDialog alertDialog = builder.create();
-                            alertDialog.show();
+                            showAlert(R.string.noInternet, "Make sure your device is connected to the internet.");
                         }
                     } else {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(ContactActivity.this, R.style.AlertDialogStyle);
-                        builder.setTitle(R.string.alertString);
-                        builder.setMessage("Enter a valid email ID");
-                        builder.setPositiveButton("OK", null);
-                        AlertDialog alertDialog = builder.create();
-                        alertDialog.show();
+                        showAlert(R.string.alertStringInfo, "Enter a valid email ID");
                     }
                 }
             }
         });
+    }
+
+    private void showAlert(int title, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ContactActivity.this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.alertdialog, null);
+        builder.setView(dialogView);
+        TextView alertTitle = dialogView.findViewById(R.id.alertTitle);
+        TextView alert_message = dialogView.findViewById(R.id.alert_message);
+        alertTitle.setText(title);
+        alert_message.setText(message);
+        Button okalert = dialogView.findViewById(R.id.okalert);
+        okalert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+        Button cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+        cancelalert.setVisibility(View.GONE);
+        alertDialog = builder.create();
+        if (alertDialog != null) {
+            alertDialog.show();
+        }
     }
 
     @Override
@@ -162,6 +172,7 @@ public class ContactActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        isback = true;
         ((MyApplication) this.getApplication()).startActivityTransitionTimer(this);
     }
 
@@ -227,17 +238,15 @@ public class ContactActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
             progressnavigation.setVisibility(View.GONE);
             contact_submit.setEnabled(true);
+            int resStringTitle = R.string.alertMailfailure;
             String resString = "Sorry! We encountered a problem while submitting your query. Please try again later.";
             if (response) {
+                resStringTitle = R.string.alertMailSuccess;
                 resString = "Query submitted";
             }
-            AlertDialog.Builder builder = new AlertDialog.Builder(ContactActivity.this, R.style.AlertDialogStyle);
-            builder.setTitle(R.string.alertString);
-            builder.setMessage(resString);
-            builder.setPositiveButton("OK", null);
-            AlertDialog alertDialog = builder.create();
-            if (alertDialog != null)
-                alertDialog.show();
+            //For App is in Foreground or background.
+            if (!isback)
+                showAlert(resStringTitle, resString);
         }
     }
 }

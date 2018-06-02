@@ -82,7 +82,7 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
             alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
             alertTitle.setText(R.string.noInternet);
             alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
-            alert_message.setText("Make sure your device is connected to the internet.");
+            alert_message.setText(R.string.nointernet_message);
             okalert = (Button) dialogView.findViewById(R.id.okalert);
             okalert.setOnClickListener(new View.OnClickListener() {
                 @Override
