@@ -150,7 +150,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         billingManager = new BillingManager(UnityPlayerActivity.this, this);
 
         audioManager=(AudioManager)this.getSystemService(Context.AUDIO_SERVICE);
-        ShowAlert();
+
 
 //        alphapets.add("Alligator");
 //        alphapets.add("Bear");
@@ -204,7 +204,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         onClickListener=new AlphapetsClickListner(this);
         LoadLevels(getSelectedPos);
         UnityPlayer.UnitySendMessage("ARCore Device","NavigateScene",parentModels.get(0).getLevelName());
-        dialog.show();
+        ShowAlert();
 //        setActionBar(USceneToolbar);
 //        getActionBar().setDisplayHomeAsUpEnabled(true);
 //        getActionBar().setTitle("");
@@ -214,6 +214,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     }
 
     private void ShowAlert() {
+
         prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
         final SharedPreferences.Editor editor=prefs.edit();
         if(prefs.getInt("alertMessageShow",0)==0)
@@ -222,26 +223,57 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             LayoutInflater inflater = getLayoutInflater();
             View dialogView = inflater.inflate(R.layout.alertdialog, null);
             builder.setView(dialogView);
-            alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
+            alertTitle =  dialogView.findViewById(R.id.alertTitle);
             alertTitle.setText(R.string.alertString);
-            alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
+            alert_message =  dialogView.findViewById(R.id.alert_message);
             alert_message.setText(R.string.plane_message);
-            okalert = (Button) dialogView.findViewById(R.id.okalert);
+            okalert =  dialogView.findViewById(R.id.okalert);
             okalert.setGravity(Gravity.CENTER_HORIZONTAL);
-            cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+            cancelalert =  dialogView.findViewById(R.id.cancelalert);
             cancelalert.setVisibility(View.GONE);
-
             okalert.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     alertDialog.dismiss();
                     editor.putInt("alertMessageShow",1);
                     editor.commit();
+                    dialog.show();
                 }
             });
             alertDialog = builder.create();
+            alertDialog.setCancelable(false);
             alertDialog.show();
         }
+        else
+        {
+            dialog.show();
+        }
+//        if(prefs.getInt("alertMessageShow",0)==0)
+//        {
+//            android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
+//            LayoutInflater inflater = getLayoutInflater();
+//            View dialogView = inflater.inflate(R.layout.alertdialog, null);
+//            builder.setView(dialogView);
+//            alertTitle = (TextView) dialogView.findViewById(R.id.alertTitle);
+//            alertTitle.setText(R.string.alertString);
+//            alert_message = (TextView) dialogView.findViewById(R.id.alert_message);
+//            alert_message.setText(R.string.plane_message);
+//            okalert = (Button) dialogView.findViewById(R.id.okalert);
+//            okalert.setGravity(Gravity.CENTER_HORIZONTAL);
+//            cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+//            cancelalert.setVisibility(View.GONE);
+//
+//            okalert.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    alertDialog.dismiss();
+//                    editor.putInt("alertMessageShow",1);
+//                    editor.commit();
+//                }
+//            });
+//            alertDialog = builder.create();
+//            alertDialog.show();
+//        }
     }
 
     private void ChangeDialogHeaderName(int getSelectedPos) {
@@ -657,7 +689,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                             overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
                         }
                     });
-                    cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+                    cancelalert =  dialogView.findViewById(R.id.cancelalert);
                     cancelalert.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
