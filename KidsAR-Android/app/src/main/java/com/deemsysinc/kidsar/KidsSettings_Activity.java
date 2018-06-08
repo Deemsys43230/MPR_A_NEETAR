@@ -2,6 +2,7 @@ package com.deemsysinc.kidsar;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -32,7 +33,7 @@ import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
 
-public class KidsSettings_Activity extends AppCompatActivity {
+public class KidsSettings_Activity extends AppCompatActivity implements DialogInterface.OnDismissListener, DialogInterface.OnCancelListener {
     PopupWindow popupWindow;
     View popup;
     private int height = 300, width = 200;
@@ -76,6 +77,8 @@ public class KidsSettings_Activity extends AppCompatActivity {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(KidsSettings_Activity.this, HomeActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
@@ -132,6 +135,8 @@ public class KidsSettings_Activity extends AppCompatActivity {
                 builder.setView(dialogView);
 
                 editTextKidAlert = (EditText) dialogView.findViewById(R.id.kidnameupdate);
+                editTextKidAlert.setText(kidname.getText().toString());
+                editTextKidAlert.setSelection(editTextKidAlert.getText().length());
                 editTextKidAlert.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
                 editTextKidAlert.addTextChangedListener(new TextWatcher() {
                     @Override
@@ -178,6 +183,8 @@ public class KidsSettings_Activity extends AppCompatActivity {
                 });
 
                 alertDialog = builder.create();
+                alertDialog.setOnDismissListener(KidsSettings_Activity.this);
+                alertDialog.setOnCancelListener(KidsSettings_Activity.this);
                 alertDialog.show();
             }
         });
@@ -273,5 +280,24 @@ public class KidsSettings_Activity extends AppCompatActivity {
             }
         }
         return false;
+    }
+
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        getWindow().setSoftInputMode
+                (WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    }
+
+    @Override
+    public void onCancel(DialogInterface dialog) {
+        getWindow().setSoftInputMode
+                (WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(KidsSettings_Activity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

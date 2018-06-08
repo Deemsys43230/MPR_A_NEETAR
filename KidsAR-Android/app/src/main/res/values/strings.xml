@@ -5,7 +5,7 @@
     <string name="alertStringInfo">Info</string>
     <string name="noInternet">No Internet Connection!</string>
     <string name="kidLabel">Please Tell Us Your Name</string>
-    <string name="copyrights">Copyright © 2018 Deemsys Inc. All Right Reserved.</string>
+    <string name="copyrights">Copyright © 2018 Deemsys Inc. All Rights Reserved.</string>
     <string name="alertStringRateus">Rate us</string>
     <string name="alertmessage">Hope you enjoyed using our app! Would you like to rate us?</string>
     <string name="alertpurchase">Purchase</string>
@@ -17,4 +17,7 @@
     <string name="alertMailfailure">Failure</string>
     <string name="alertMailSuccess">Success</string>
     <string name="alertSuccess">Success</string>
+    <string name="welcometext">Welcome to </string>
+    <string name="welcometext2">Kids AR</string>
+    <string name="welcomesubtext">Learn alphabets and explore various fruits, vegetables, animals, and birds using augmented reality</string>
 </resources>

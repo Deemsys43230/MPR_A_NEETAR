@@ -2,15 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/home_background"
     android:orientation="vertical">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background" />
 
     <RelativeLayout
         android:id="@+id/tool_layout"
@@ -19,27 +12,44 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="20dp">
 
-        <ImageView
-            android:id="@+id/buttonclose"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="15dp"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_close" />
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/buttonclose"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/cancel" />
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="2dp"
+                android:indeterminateTint="@color/colorHome"
+                android:scrollbarSize="36dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:visibility="gone" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/prefences"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/comic_sans_ms_bold"
+            android:fontFamily="@font/gothamrounded_bold"
             android:padding="5dp"
             android:text="Purchase"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorHome"
             android:textSize="25sp" />
 
         <TextView
@@ -50,7 +60,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
             android:background="@drawable/button_back_icon"
-            android:fontFamily="@font/comic_sans_ms_bold"
+            android:fontFamily="@font/gothamrounded_bold"
             android:paddingBottom="5dp"
             android:paddingEnd="7dp"
             android:paddingStart="7dp"

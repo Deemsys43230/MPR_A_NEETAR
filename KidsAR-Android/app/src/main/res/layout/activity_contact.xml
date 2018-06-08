@@ -2,15 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/welcome_bg"
     android:orientation="vertical">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background" />
 
     <RelativeLayout
         android:id="@+id/tool_layout"
@@ -35,10 +28,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/comic_sans_ms_bold"
+            android:fontFamily="@font/gothamrounded_bold"
             android:text="Contact"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="25sp" />
 
         <ProgressBar
@@ -71,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/comic_sans_ms"
+                android:fontFamily="@font/gothamrounded_medium"
                 android:paddingEnd="15dp"
                 android:paddingStart="15dp"
                 android:text="Name"
@@ -84,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_round_back"
-                android:fontFamily="@font/comic_sans_ms"
+                android:fontFamily="@font/gothamrounded_medium"
                 android:imeOptions="actionNext"
                 android:paddingBottom="5dp"
                 android:paddingEnd="15dp"
@@ -92,7 +85,7 @@
                 android:paddingTop="5dp"
                 android:singleLine="true"
                 android:textAllCaps="false"
-                android:textColor="@color/text_color"
+                android:textColor="@color/colorHome"
                 android:textSize="20sp" />
 
             <TextView
@@ -100,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/comic_sans_ms"
+                android:fontFamily="@font/gothamrounded_medium"
                 android:paddingEnd="15dp"
                 android:paddingStart="15dp"
                 android:text="Email ID"
@@ -113,7 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_round_back"
-                android:fontFamily="@font/comic_sans_ms"
+                android:fontFamily="@font/gothamrounded_medium"
                 android:imeOptions="actionNext"
                 android:paddingBottom="5dp"
                 android:paddingEnd="15dp"
@@ -121,7 +114,7 @@
                 android:paddingTop="5dp"
                 android:singleLine="true"
                 android:textAllCaps="false"
-                android:textColor="@color/text_color"
+                android:textColor="@color/colorHome"
                 android:textSize="20sp" />
 
             <TextView
@@ -129,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/comic_sans_ms"
+                android:fontFamily="@font/gothamrounded_medium"
                 android:paddingEnd="15dp"
                 android:paddingStart="15dp"
                 android:text="Query"
@@ -137,21 +130,23 @@
                 android:textColor="#FFFFFF"
                 android:textSize="19sp" />
 
-            <EditText
+            <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/contact_querybox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="110dp"
                 android:background="@drawable/edittext_round_back"
-                android:fontFamily="@font/comic_sans_ms"
+                android:fontFamily="@font/gothamrounded_medium"
                 android:gravity="start|top"
                 android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
                 android:lines="5"
+                android:maxLines="5"
                 android:paddingBottom="5dp"
                 android:paddingEnd="15dp"
                 android:paddingStart="15dp"
                 android:paddingTop="5dp"
                 android:textAllCaps="false"
-                android:textColor="@color/text_color"
+                android:textColor="@color/colorHome"
                 android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>
@@ -164,10 +159,13 @@
         android:layout_marginBottom="30dp"
         android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"
-        android:background="@drawable/button_back_icon"
-        android:fontFamily="@font/comic_sans_ms_bold"
+        android:background="@drawable/button_back_icon_noshad"
+        android:fontFamily="@font/gothamrounded_book"
+        android:minHeight="0dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:text="Submit"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="@color/colorHome"
         android:textSize="20sp" />
 </RelativeLayout>

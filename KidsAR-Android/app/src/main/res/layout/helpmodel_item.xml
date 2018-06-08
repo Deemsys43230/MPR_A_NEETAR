@@ -10,19 +10,20 @@
         android:id="@+id/kidmodel_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/gothamrounded_book"
         android:gravity="center"
         android:text="✣"
         android:textColor="@color/button_icon_color"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/helptext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:fontFamily="@font/comic_sans_ms"
+        android:fontFamily="@font/gothamrounded_light"
         android:padding="3dp"
         android:text="Sample Text"
         android:textColor="@color/button_icon_color"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 </LinearLayout>

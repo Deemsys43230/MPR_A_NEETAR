@@ -2,15 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/home_background"
     android:orientation="vertical">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background" />
 
     <RelativeLayout
         android:id="@+id/tool_layout"
@@ -28,17 +21,17 @@
             android:layout_marginStart="15dp"
             android:padding="5dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_close" />
+            android:src="@drawable/cancel" />
 
         <TextView
             android:id="@+id/prefences"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/comic_sans_ms_bold"
+            android:fontFamily="@font/gothamrounded_bold"
             android:text="Help"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorHome"
             android:textSize="25sp" />
 
     </RelativeLayout>

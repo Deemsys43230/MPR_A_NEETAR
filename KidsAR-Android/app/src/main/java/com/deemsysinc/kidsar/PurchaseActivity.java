@@ -1,9 +1,7 @@
 package com.deemsysinc.kidsar;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -17,32 +15,27 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.SkuDetails;
-import com.deemsysinc.kidsar.R;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-import java.io.Serializable;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import com.deemsysinc.kidsar.adapter.PurchaseAdapter;
 import com.deemsysinc.kidsar.models.PurchaseModel;
 import com.deemsysinc.kidsar.utils.BillingManager;
 import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.NetworkDetector;
-
 import com.deemsysinc.kidsar.utils.PlayAudioService;
 import com.deemsysinc.kidsar.utils.Products;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PurchaseActivity extends AppCompatActivity implements BillingManager.BillingUpdatesListener {
     public static View.OnClickListener onClickListener;
@@ -61,6 +54,7 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
     private AlertDialog alertDialog;
     private TextView alertTitle, alert_message;
     private Button okalert, cancelalert;
+    private ProgressBar progressbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,10 +63,12 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_purchase);
+        progressbar = findViewById(R.id.progressbar);
         prefs = getSharedPreferences(Constants.AppPreferences, Context.MODE_PRIVATE);
         onClickListener = new PurchaseClick(this);
         NetworkDetector networkDetector = new NetworkDetector(this);
         if (networkDetector.isConnectingToInternet()) {
+            progressbar.setVisibility(View.VISIBLE);
             billingManager = new BillingManager(PurchaseActivity.this, this);
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(PurchaseActivity.this);
@@ -101,6 +97,8 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
         layoutManager = new LinearLayoutManager(this);
         purchaseAdapter = new PurchaseAdapter(this, this, modellist);
         listrecycler.setLayoutManager(layoutManager);
+        listrecycler.setHasFixedSize(true);
+        listrecycler.setNestedScrollingEnabled(false);
         close = findViewById(R.id.buttonclose);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,7 +112,13 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
             public void onClick(View v) {
                 listposition = -1;
                 if (billingManager != null) {
-                    billingManager.queryPurchases();
+                    NetworkDetector networkDetector = new NetworkDetector(PurchaseActivity.this);
+                    if (networkDetector.isConnectingToInternet()) {
+                        progressbar.setVisibility(View.VISIBLE);
+                        billingManager.queryPurchases();
+                    } else {
+                        showAlert(R.string.noInternet, "Make sure your device is connected to the internet.");
+                    }
                 }
             }
         });
@@ -168,22 +172,33 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
     @Override
     public void onPurchasesUpdated(List<Purchase> purchases) {
         List<PurchaseModel> model = new ArrayList<PurchaseModel>();
-       /*for (int i = 0; i < modellist.size(); i++) {
-            for (int j = 0; j < purchases.size(); j++) {
-                if (modellist.get(i).getProductid().equals(purchases.get(j).getSku())) {
-                    modellist.get(i).setPurchased(true);
-                    PurchaseModel pmodel = modellist.get(i);
-                    //add the model list
-                    model.add(pmodel);
-                    String json = gson.toJson(model, type);
-                    Log.d("PurchaseRestore", json);
-                    prefs.edit().putString(Constants.purchased_product, json).apply();
+        String mypurchases = prefs.getString(Constants.purchased_product, "");
+        List<PurchaseModel> fromJson = gson.fromJson(mypurchases, type);
+        if (fromJson != null) {
+            model = new ArrayList<>(fromJson);
+        }
+
+        for (int k = 0; k < purchases.size(); k++) {
+            PurchaseModel pmodel = new PurchaseModel(purchases.get(k).getSku(), "", "", "", true);
+            model.add(pmodel);
+        }
+
+        for (int i = 0; i < model.size(); i++) {
+            for (int j = i + 1; j < model.size(); j++) {
+                if (model.get(j).getProductid().equals(model.get(i).getProductid())) {
+                    model.remove(j);
                 }
             }
-            if (purchaseAdapter != null)
-                purchaseAdapter.notifyDataSetChanged();
-        }*/
-        for (int i = 0; i < purchases.size(); i++) {
+        }
+
+        for (int i = 0; i < model.size(); i++) {
+            for (int j = 0; j < modellist.size(); j++) {
+                if (modellist.get(j).getProductid().equals(model.get(i).getProductid())) {
+                    modellist.get(j).setPurchased(true);
+                }
+            }
+        }
+       /* for (int i = 0; i < purchases.size(); i++) {
             for (int j = 0; j < modellist.size(); j++) {
                 if (modellist.get(j).getProductid().equals(purchases.get(i).getSku())) {
                     modellist.get(j).setPurchased(true);
@@ -193,6 +208,13 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
             //add the model list
             model.add(pmodel);
         }
+        for (int i = 0; i < model.size(); i++) {
+            for (int j = 1; j < model.size() - 1; j++) {
+                if (model.get(i).productid.equals(model.get(j).productid)) {
+                    model.remove(j);
+                }
+            }
+        }*/
         String json = gson.toJson(model, type);
         Log.d("PurchaseRestore", json);
         prefs.edit().putString(Constants.purchased_product, json).apply();
@@ -208,6 +230,7 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
     @Override
     public void onPurchaseReponse(String response) {
         if (purchaseAdapter != null) {
+            progressbar.setVisibility(View.GONE);
             if (response.equals("You have already purchased this item. Click RESTORE to update your purchase list.") || response.equals("")) {
                 String mypurchases = prefs.getString(Constants.purchased_product, "");
                 if (listposition >= 0) {
@@ -221,8 +244,8 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
                     //add the model list
                     model.add(pmodel);
                     for (int i = 0; i < model.size(); i++) {
-                        for (int j = 1; j < model.size() - 1; j++) {
-                            if (model.get(i).productid.equals(model.get(j).productid)) {
+                        for (int j = i + 1; j < model.size(); j++) {
+                            if (model.get(j).getProductid().equals(model.get(i).getProductid())) {
                                 model.remove(j);
                             }
                         }
@@ -245,11 +268,16 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
         for (int i = 0; i < skuDetailsList.size(); i++) {
             String productid = skuDetailsList.get(i).getSku();
             String productname = skuDetailsList.get(i).getTitle();
+            if (productname.contains("\\(Kids")) {
+                String[] parts = productname.split("\\(Kids");
+                productname = parts[0];
+            }
             String productdesc = skuDetailsList.get(i).getDescription();
             String productprice = skuDetailsList.get(i).getPrice();
             modellist.add(new PurchaseModel(productid, productname, productdesc, productprice, false));
         }
         listrecycler.setAdapter(purchaseAdapter);
+        progressbar.setVisibility(View.GONE);
         String mypurchases = prefs.getString(Constants.purchased_product, "");
         if (!mypurchases.isEmpty()) {
             Log.d("PurchaseOnCreate", mypurchases);
@@ -262,8 +290,9 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
                     }
                 }
             }
-            if (purchaseAdapter != null)
+            if (purchaseAdapter != null) {
                 purchaseAdapter.notifyDataSetChanged();
+            }
         }
     }
 
@@ -285,6 +314,30 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
             if (!modellist.get(itemPosition).isPurchased()) {
 
             }
+        }
+    }
+
+    private void showAlert(int title, String message) {
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(PurchaseActivity.this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.alertdialog, null);
+        builder.setView(dialogView);
+        TextView alertTitle = dialogView.findViewById(R.id.alertTitle);
+        TextView alert_message = dialogView.findViewById(R.id.alert_message);
+        alertTitle.setText(title);
+        alert_message.setText(message);
+        Button okalert = dialogView.findViewById(R.id.okalert);
+        okalert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+        Button cancelalert = (Button) dialogView.findViewById(R.id.cancelalert);
+        cancelalert.setVisibility(View.GONE);
+        alertDialog = builder.create();
+        if (alertDialog != null) {
+            alertDialog.show();
         }
     }
 }

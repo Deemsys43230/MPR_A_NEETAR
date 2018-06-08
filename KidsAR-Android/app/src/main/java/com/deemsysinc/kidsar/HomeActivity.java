@@ -5,11 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,34 +15,38 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.deemsysinc.kidsar.models.PurchaseModel;
 import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
-import com.yarolegovich.discretescrollview.DSVOrientation;
-import com.yarolegovich.discretescrollview.DiscreteScrollView;
-import com.yarolegovich.discretescrollview.InfiniteScrollAdapter;
-import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import java.util.Arrays;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity implements DiscreteScrollView.OnItemChangedListener<RecyclerView.ViewHolder> {
+public class HomeActivity extends AppCompatActivity {
     List<KidsModel> list;
-    InfiniteScrollAdapter<KidsAdapter.MyKidsHolder> adapter;
+    KidsAdapter adapter;
     ImageView buttonBack;
     TextView kidmodelname;
     Button playmodule;
 
 
     private ImageView infosettings;
-    private DiscreteScrollView kidrecycler;
+    private RecyclerView kidrecycler;
     private boolean music_pref;
     private SharedPreferences prefs;
     private boolean firstlogin;
 
 
-
-    int SelectedItemPOs=0;
+    int SelectedItemPOs = 0;
+    Gson gson = new Gson();
+    Type type = new TypeToken<List<PurchaseModel>>() {
+    }.getType();
+    List<PurchaseModel> mymodel = new ArrayList<PurchaseModel>();
+    private LinearLayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,21 +57,27 @@ public class HomeActivity extends AppCompatActivity implements DiscreteScrollVie
         setContentView(R.layout.activity_home);
 
         infosettings = findViewById(R.id.info_settings);
-        playmodule = findViewById(R.id.playmodule);
+        infosettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, KidsSettings_Activity.class));
+            }
+        });
+       /* playmodule = findViewById(R.id.playmodule);
         playmodule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(HomeActivity.this, "Button hit", Toast.LENGTH_SHORT).show();
-                Bundle bundle=new Bundle();
-                bundle.putInt("selectedPos",SelectedItemPOs);
-                Intent goPlayer=new Intent(HomeActivity.this,UnityPlayerActivity.class);
+                Toast.makeText(HomeActivity.this, "Button hit", Toast.LENGTH_SHORT).show();
+                Bundle bundle = new Bundle();
+                bundle.putInt("selectedPos", SelectedItemPOs);
+                Intent goPlayer = new Intent(HomeActivity.this, UnityPlayerActivity.class);
                 goPlayer.putExtras(bundle);
                 //bundle.putInt("position",pos);
                 startActivity(goPlayer);
             }
-        });
+        });*/
 
-        playmodule.setOnTouchListener(new View.OnTouchListener() {
+       /* playmodule.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -88,7 +96,7 @@ public class HomeActivity extends AppCompatActivity implements DiscreteScrollVie
                 }
                 return false;
             }
-        });
+        });*/
 
         prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
         music_pref = prefs.getBoolean(Constants.music, true);
@@ -103,53 +111,60 @@ public class HomeActivity extends AppCompatActivity implements DiscreteScrollVie
             }
         }
 
-        infosettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, KidsSettings_Activity.class));
-            }
-        });
+        /*list = Arrays.asList(
+                new KidsModel(1, "com.deemsysinc.kidsar.basicmodels", R.drawable.alphabets_banner_locked, R.drawable.alphabets_banner_unlocked, false),
+                new KidsModel(2, "com.deemsysinc.kidsar.premiummodel", R.drawable.animals_banner_locked, R.drawable.animals_banner_unlocked, false),
+                new KidsModel(3, "com.deemsysinc.kidsar.basicmodels", R.drawable.fruits_banner_locked, R.drawable.fruits_banner_unlocked, false),
+                new KidsModel(4, "", R.drawable.puzzles_banner, R.drawable.puzzles_banner, false));*/
 
 
-        list = Arrays.asList(
-                new KidsModel(1, "Learn Alphabets", R.drawable.alphabet),
-                new KidsModel(2, "Know about Animals", R.drawable.animals),
-                new KidsModel(3, "Know about Fruits & Vegetables", R.drawable.fruit_vegetable),
-                new KidsModel(4, "Play Puzzles", R.drawable.puzzles));
+//        kidmodelname = (TextView) findViewById(R.id.kidmodelname);
+        kidrecycler = (RecyclerView) findViewById(R.id.kidrecycler);
+//        kidrecycler.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(getApplicationContext());
+        kidrecycler.setLayoutManager(layoutManager);
+        /*kidrecycler.setItemViewCacheSize(20);
+        kidrecycler.setDrawingCacheEnabled(true);
+        kidrecycler.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);*/
+        String mypurchases = prefs.getString(Constants.purchased_product, "");
+        List<PurchaseModel> fromJson = gson.fromJson(mypurchases, type);
+        if (fromJson != null) {
+            mymodel = new ArrayList<>(fromJson);
+        }
 
-        kidmodelname = (TextView) findViewById(R.id.kidmodelname);
-        kidrecycler = (DiscreteScrollView) findViewById(R.id.kidrecycler);
-        kidrecycler.setOrientation(DSVOrientation.HORIZONTAL);
-        kidrecycler.addOnItemChangedListener(this);
-        adapter = InfiniteScrollAdapter.wrap(new KidsAdapter(this, list));
+        list = new ArrayList<>();
+        list.add(new KidsModel(1, "com.deemsysinc.kidsar.basicmodels", "alphabets_banner_locked.png", "alphabets_banner_unlocked.png", false));
+        list.add(new KidsModel(2, "com.deemsysinc.kidsar.premiummodel", "animals_banner_locked.png", "animals_banner_unlocked.png", false));
+        list.add(new KidsModel(3, "com.deemsysinc.kidsar.basicmodels", "fruits_banner_locked.png", "fruits_banner_unlocked.png", false));
+        list.add(new KidsModel(4, "", "puzzles_banner.png", "puzzles_banner.png", false));
+
+        adapter = new KidsAdapter(getApplicationContext(), list, mymodel);
         kidrecycler.setAdapter(adapter);
-        kidrecycler.setItemTransitionTimeMillis(200);
+      /*  kidrecycler.setItemTransitionTimeMillis(200);
         kidrecycler.setItemTransformer(new ScaleTransformer.Builder()
                 .setMinScale(0.8f)
                 .build());
-
-        onItemChanged(list.get(0));
+        onItemChanged(list.get(0));*/
     }
 
-    private void onItemChanged(KidsModel kidsModel) {
+    /*private void onItemChanged(KidsModel kidsModel) {
         kidmodelname.setText(kidsModel.getName());
-        switch (kidsModel.getName())
-        {
+        switch (kidsModel.getName()) {
             case "Learn Alphabets":
-                SelectedItemPOs=0;
+                SelectedItemPOs = 0;
                 break;
             case "Know about Animals":
-                SelectedItemPOs=1;
+                SelectedItemPOs = 1;
                 break;
             case "Know about Fruits & Vegetables":
-                SelectedItemPOs=2;
+                SelectedItemPOs = 2;
                 break;
             case "Play Puzzles":
-                SelectedItemPOs=3;
+                SelectedItemPOs = 3;
                 break;
         }
 
-    }
+    }*/
 
     @Override
     protected void onResume() {
@@ -172,12 +187,12 @@ public class HomeActivity extends AppCompatActivity implements DiscreteScrollVie
 
     }
 
-    @Override
+    /*@Override
     public void onCurrentItemChanged(@Nullable RecyclerView.ViewHolder viewHolderkids, int adapterPosition) {
         int positionInDataSet = adapter.getRealPosition(adapterPosition);
         onItemChanged(list.get(positionInDataSet));
     }
-
+*/
     private boolean isMyServiceRunning(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {

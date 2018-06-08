@@ -9,12 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.deemsysinc.kidsar.PurchaseActivity;
 import com.deemsysinc.kidsar.R;
+import com.deemsysinc.kidsar.models.PurchaseModel;
 
 import java.util.List;
-
-import com.deemsysinc.kidsar.PurchaseActivity;
-import com.deemsysinc.kidsar.models.PurchaseModel;
 
 public class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.MyPurchaseHolder> {
     private List<com.deemsysinc.kidsar.models.PurchaseModel> modelList;
@@ -67,7 +66,8 @@ public class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.MyPurc
 
     public class MyPurchaseHolder extends RecyclerView.ViewHolder {
         TextView productdesc, productname, price;
-        ImageView alreadyowned, buybutton;
+        ImageView alreadyowned;
+        TextView buybutton;
 
         public MyPurchaseHolder(View itemView) {
             super(itemView);

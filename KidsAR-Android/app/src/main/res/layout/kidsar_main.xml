@@ -1,125 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/welcome_bg"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background" />
-
-    <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="20dp">
-
-        <ImageView
-            android:id="@+id/buttonMusic"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="15dp"
-            android:background="@drawable/button_back_icon"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/audio_speaker_on" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/comic_sans_ms_bold"
-            android:text="KIDS AR"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
-
-        <ImageView
-            android:id="@+id/info_image"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/button_back_icon"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/info_white" />
-    </RelativeLayout>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_below="@+id/header"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        card_view:cardElevation="2dp"
-        card_view:cardMaxElevation="2dp"
-        card_view:cardPreventCornerOverlap="true"
-        card_view:contentPadding="0dp">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@mipmap/ic_launcher" />
-    </android.support.v7.widget.CardView>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/contentview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/comic_sans_ms"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:text="@string/kidLabel"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/arkids_name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="0.2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothamrounded_bold"
+                android:text="@string/welcometext"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:fontFamily="@font/gothamrounded_bold"
+                android:text="@string/welcometext2"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gothamrounded_book"
+                android:text="@string/welcomesubtext"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:background="@drawable/arbackborder"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/welcome_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/contentview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/gothamrounded_medium"
+                android:paddingBottom="5dp"
+                android:paddingTop="8dp"
+                android:text="@string/kidLabel"
+                android:textColor="#ffffff"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/arkids_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="35dp"
+                android:layout_marginStart="35dp"
+                android:background="@drawable/edittext_round_back"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                android:fontFamily="@font/gothamrounded_medium"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textAllCaps="true"
+                android:textColor="@color/colorHome"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_weight="0.2"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/buttonMusic"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/music_on" />
+
+                <TextView
+                    android:id="@+id/musictext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gothamrounded_medium"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Unmute"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/info_image"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/info" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gothamrounded_medium"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Help"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/start_kidsAR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:layout_marginEnd="35dp"
             android:layout_marginStart="35dp"
-            android:background="@drawable/edittext_round_back"
-            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
-            android:fontFamily="@font/comic_sans_ms"
-            android:padding="12dp"
-            android:singleLine="true"
-            android:textAllCaps="true"
-            android:textColor="@color/text_color"
-            android:textSize="20sp" />
+            android:background="@drawable/button_back_icon_noshad"
+            android:fontFamily="@font/gothamrounded_book"
+            android:minHeight="0dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="GET STARTED"
+            android:textColor="@color/colorHome"
+            android:textSize="18sp"
+            android:visibility="invisible" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/start_kidsAR"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginStart="35dp"
-        android:background="@drawable/button_back_icon_noshad"
-        android:fontFamily="@font/comic_sans_ms_bold"
-        android:text="GET STARTED"
-        android:textColor="#ffffff"
-        android:textSize="23sp"
-        android:visibility="gone" />
-
 </RelativeLayout>

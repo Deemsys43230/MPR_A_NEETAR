@@ -163,7 +163,7 @@
   },
   {
     "levelid": 2,
-    "levelName": "Know about Animals",
+    "levelName": "KNOW ABOUT ANIMALS",
     "models": [
       {
         "modelId": "com.deemsysinc.kidsar.premiummodel",
@@ -354,7 +354,7 @@
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "EGG FRUIT",
-        "modelImage": "modelImages/fruits/dragonfruit.jpg",
+        "modelImage": "modelImages/fruits/eggfruit.jpg",
         "audioName": "audio_fruit"
       },
       {
@@ -372,13 +372,13 @@
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "HONEYDEW MELON",
-        "modelImage": "modelImages/fruits/grapes.jpg",
+        "modelImage": "modelImages/fruits/honeydewmelon.jpg",
         "audioName": "audio_honeydrewmelon"
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "IVY FRUIT",
-        "modelImage": "modelImages/fruits/grapes.jpg",
+        "modelImage": "modelImages/fruits/ivyfruit.jpg",
         "audioName": "audio_ivyfruit"
       },
       {
@@ -408,7 +408,7 @@
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "NECTARINE",
-        "modelImage": "modelImages/fruits/mango.jpg",
+        "modelImage": "modelImages/fruits/nectarine.jpg",
         "audioName": "audio_nectarine"
       },
       {
@@ -426,7 +426,7 @@
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "QUINCE",
-        "modelImage": "modelImages/fruits/papaya.jpg",
+        "modelImage": "modelImages/fruits/quince.jpg",
         "audioName": "audio_quince"
       },
       {
@@ -450,13 +450,13 @@
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "UGNI",
-        "modelImage": "modelImages/fruits/tomato.jpg",
+        "modelImage": "modelImages/fruits/ugni.jpg",
         "audioName": "audio_ugni"
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "VELVET BEAN",
-        "modelImage": "modelImages/fruits/tomato.jpg",
+        "modelImage": "modelImages/fruits/velvetbean.jpg",
         "audioName": "audio_velvetbean"
       },
       {
@@ -468,19 +468,19 @@
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "XIMENIA",
-        "modelImage": "modelImages/fruits/watermelon.jpg",
+        "modelImage": "modelImages/fruits/ximenia.jpg",
         "audioName": "audio_ximenia"
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "YAM",
-        "modelImage": "modelImages/fruits/watermelon.jpg",
+        "modelImage": "modelImages/fruits/yam.jpg",
         "audioName": "audio_yam"
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "ZUCCHINI",
-        "modelImage": "modelImages/fruits/watermelon.jpg",
+        "modelImage": "modelImages/fruits/zucchini.jpg",
         "audioName": "audio_zucchini"
       }
     ]

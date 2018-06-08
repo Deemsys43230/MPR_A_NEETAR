@@ -2,14 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background" />
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome_bg">
 
     <RelativeLayout
         android:id="@+id/tool_layout"
@@ -34,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/comic_sans_ms_bold"
+            android:fontFamily="@font/gothamrounded_bold"
             android:text="Preferences"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
@@ -59,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/comic_sans_ms_bold"
+                android:fontFamily="@font/gothamrounded_bold"
                 android:text="Customize"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
@@ -77,12 +71,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:fontFamily="@font/gothamrounded_medium"
                     android:paddingEnd="5dp"
                     android:paddingStart="15dp"
                     android:text="Music"
                     android:textAllCaps="false"
-                    android:textColor="@color/button_icon_color"
+                    android:textColor="@color/colorHome"
                     android:textSize="17sp" />
 
                 <android.support.v7.widget.SwitchCompat
@@ -108,12 +102,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:fontFamily="@font/gothamrounded_medium"
                     android:paddingEnd="5dp"
                     android:paddingStart="15dp"
                     android:text="Purchase"
                     android:textAllCaps="false"
-                    android:textColor="@color/button_icon_color"
+                    android:textColor="@color/colorHome"
                     android:textSize="17sp" />
             </LinearLayout>
 
@@ -129,12 +123,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:fontFamily="@font/gothamrounded_medium"
                     android:paddingEnd="5dp"
                     android:paddingStart="15dp"
                     android:text="Rate us"
                     android:textAllCaps="false"
-                    android:textColor="@color/button_icon_color"
+                    android:textColor="@color/colorHome"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -151,12 +145,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:fontFamily="@font/gothamrounded_medium"
                     android:paddingEnd="5dp"
                     android:paddingStart="15dp"
                     android:text="Name"
                     android:textAllCaps="false"
-                    android:textColor="@color/button_icon_color"
+                    android:textColor="@color/colorHome"
                     android:textSize="17sp" />
 
 
@@ -164,13 +158,13 @@
                     android:id="@+id/kidname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:fontFamily="@font/gothamrounded_light"
                     android:gravity="end"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
                     android:text="Vimal"
                     android:textAllCaps="false"
-                    android:textColor="@color/button_icon_color"
+                    android:textColor="@color/colorHome"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -178,7 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/comic_sans_ms_bold"
+                android:fontFamily="@font/gothamrounded_bold"
                 android:text="Extras"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
@@ -196,12 +190,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:fontFamily="@font/gothamrounded_medium"
                     android:paddingEnd="5dp"
                     android:paddingStart="15dp"
                     android:text="Help"
                     android:textAllCaps="false"
-                    android:textColor="@color/button_icon_color"
+                    android:textColor="@color/colorHome"
                     android:textSize="17sp" />
             </LinearLayout>
 
@@ -217,12 +211,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:fontFamily="@font/gothamrounded_medium"
                     android:paddingEnd="5dp"
                     android:paddingStart="15dp"
                     android:text="Contact"
                     android:textAllCaps="false"
-                    android:textColor="@color/button_icon_color"
+                    android:textColor="@color/colorHome"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -239,12 +233,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comic_sans_ms_bold"
+                    android:fontFamily="@font/gothamrounded_medium"
                     android:paddingEnd="5dp"
                     android:paddingStart="15dp"
                     android:text="Privacy"
                     android:textAllCaps="false"
-                    android:textColor="@color/button_icon_color"
+                    android:textColor="@color/colorHome"
                     android:textSize="17sp" />
             </LinearLayout>
         </LinearLayout>

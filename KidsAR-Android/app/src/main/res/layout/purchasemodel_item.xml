@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="3dp"
-    android:background="#CCFFFFFF"
+    android:background="@drawable/productpurchaseback"
     android:padding="8dp">
 
     <LinearLayout
@@ -17,28 +17,31 @@
             android:id="@+id/productname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/comic_sans_ms"
+            android:layout_margin="3dp"
+            android:fontFamily="@font/gothamrounded_medium"
             android:text="Product Name"
-            android:textColor="@color/button_icon_color"
-            android:textSize="18sp" />
+            android:textColor="@color/ar_black"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/productdesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/comic_sans_ms"
+            android:layout_margin="3dp"
+            android:fontFamily="@font/gothamrounded_medium"
             android:text="Product Description"
-            android:textColor="@color/button_icon_color"
-            android:textSize="15sp" />
+            android:textColor="@color/dark"
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/comic_sans_ms"
+            android:layout_margin="3dp"
+            android:fontFamily="@font/gothamrounded_medium"
             android:text="$0.00"
-            android:textColor="@color/ar_neet_theme"
-            android:textSize="15sp" />
+            android:textColor="@color/green"
+            android:textSize="14sp" />
     </LinearLayout>
 
 
@@ -48,18 +51,24 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
-        <ImageView
+        <TextView
             android:id="@+id/buybutton"
-            android:layout_width="75.6dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
+            android:background="@drawable/buy_back"
+            android:paddingBottom="3dp"
+            android:paddingEnd="30dp"
+            android:paddingStart="30dp"
+            android:paddingTop="3dp"
             android:scaleType="fitXY"
-            android:src="@drawable/buybutton" />
+            android:text="Buy"
+            android:textColor="@color/white" />
 
         <ImageView
             android:id="@+id/alreadyowned"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginEnd="10dp"
             android:scaleType="fitXY"
             android:src="@drawable/tick_icon"

@@ -23,6 +23,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.deemsysinc.kidsar.utils.Constants;
@@ -34,6 +35,7 @@ import java.util.Locale;
 public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private ImageView imageinfoicon, playstopmusicbtn;
     private EditText arkidsname;
+    private TextView musictext;
     private Button startkidsAR;
     private MediaPlayer objPlayer;
     private View contentview;
@@ -53,6 +55,7 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
         imageinfoicon = findViewById(R.id.info_image);
         playstopmusicbtn = findViewById(R.id.buttonMusic);
         arkidsname = findViewById(R.id.arkids_name);
+        musictext = findViewById(R.id.musictext);
         arkidsname.setVisibility(View.GONE);
         startkidsAR = findViewById(R.id.start_kidsAR);
         contentview = findViewById(R.id.contentview);
@@ -91,11 +94,13 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
             startkidsAR.setVisibility(View.GONE);
         }*/
         if (music_pref) {
-            playstopmusicbtn.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.audio_speaker_on));
+            playstopmusicbtn.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.music_off));
+            musictext.setText("Mute");
             if (!isMyServiceRunning(PlayAudioService.class))
                 startService(new Intent(this, PlayAudioService.class));
         } else {
-            playstopmusicbtn.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.audio_speaker_off));
+            playstopmusicbtn.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.music_on));
+            musictext.setText("Unmute");
             if (isMyServiceRunning(PlayAudioService.class))
                 stopService(new Intent(KidsAR_Main.this, PlayAudioService.class));
         }
@@ -106,12 +111,14 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
             public void onClick(View v) {
                 music_pref = prefs.getBoolean(Constants.music, true);
                 if (music_pref) {
-                    playstopmusicbtn.setImageDrawable(ContextCompat.getDrawable(KidsAR_Main.this, R.drawable.audio_speaker_off));
+                    playstopmusicbtn.setImageDrawable(ContextCompat.getDrawable(KidsAR_Main.this, R.drawable.music_on));
+                    musictext.setText("Unmute");
                     prefs.edit().putBoolean(Constants.music, false).apply();
                     if (isMyServiceRunning(PlayAudioService.class))
                         stopService(new Intent(KidsAR_Main.this, PlayAudioService.class));
                 } else {
-                    playstopmusicbtn.setImageDrawable(ContextCompat.getDrawable(KidsAR_Main.this, R.drawable.audio_speaker_on));
+                    playstopmusicbtn.setImageDrawable(ContextCompat.getDrawable(KidsAR_Main.this, R.drawable.music_off));
+                    musictext.setText("Mute");
                     prefs.edit().putBoolean(Constants.music, true).apply();
                     if (!isMyServiceRunning(PlayAudioService.class))
                         startService(new Intent(KidsAR_Main.this, PlayAudioService.class));
@@ -159,7 +166,7 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
                 if (s.length() >= 1) {
                     startkidsAR.setVisibility(View.VISIBLE);
                 } else {
-                    startkidsAR.setVisibility(View.GONE);
+                    startkidsAR.setVisibility(View.INVISIBLE);
                 }
             }
 

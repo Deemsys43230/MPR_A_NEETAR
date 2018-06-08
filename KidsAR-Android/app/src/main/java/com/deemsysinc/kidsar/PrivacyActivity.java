@@ -7,15 +7,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
 
 public class PrivacyActivity extends AppCompatActivity {
     ImageView close;
-    private WebView webview;
+    WebView webview;
+    ProgressBar progressbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +29,8 @@ public class PrivacyActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_privacy);
         close = findViewById(R.id.buttonclose);
+        progressbar = findViewById(R.id.progressbar);
+        progressbar.setVisibility(View.VISIBLE);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +49,18 @@ public class PrivacyActivity extends AppCompatActivity {
         webview.getSettings().setSupportZoom(true);
         webview.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         webview.loadUrl("file:///android_asset/privacy.html");
+        webview.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                return super.shouldOverrideUrlLoading(view, request);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                progressbar.setVisibility(View.GONE);
+                super.onPageFinished(view, url);
+            }
+        });
     }
 
     @Override

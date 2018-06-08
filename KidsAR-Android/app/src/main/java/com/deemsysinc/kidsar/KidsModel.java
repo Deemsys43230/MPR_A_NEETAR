@@ -1,26 +1,24 @@
 package com.deemsysinc.kidsar;
 
 public class KidsModel {
-    public int id;
-    public int image;
-    public String name;
+    int id;
+    String image, imageunlock;
+    String name;
+    boolean purchased;
 
-    public KidsModel(int id, String name, int image) {
+    public KidsModel(int id, String name, String image, String imageunlock, boolean islock) {
         this.id = id;
         this.name = name;
         this.image = image;
+        this.imageunlock = imageunlock;
+        this.purchased = islock;
     }
 
-    public KidsModel(int image, String name) {
-        this.image = image;
-        this.name = name;
-    }
-
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -38,5 +36,21 @@ public class KidsModel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isPurchased() {
+        return purchased;
+    }
+
+    public void setPurchased(boolean purchased) {
+        this.purchased = purchased;
+    }
+
+    public String getImageunlock() {
+        return imageunlock;
+    }
+
+    public void setImageunlock(String imageunlock) {
+        this.imageunlock = imageunlock;
     }
 }

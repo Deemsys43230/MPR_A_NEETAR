@@ -1,20 +1,20 @@
 package com.deemsysinc.kidsar;
 
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatEditText;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,7 +39,8 @@ import javax.mail.internet.MimeMessage;
 
 public class ContactActivity extends AppCompatActivity {
     ImageView close;
-    EditText contact_name, contact_email, contact_querybox;
+    EditText contact_name, contact_email;
+    AppCompatEditText contact_querybox;
     Button contact_submit;
     String cname, cemail, cquery, emailbodytext;
     private boolean response = false;
@@ -69,6 +70,10 @@ public class ContactActivity extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (getCurrentFocus() != null) {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                }
                 finish();
                 overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down);
             }
@@ -178,6 +183,10 @@ public class ContactActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        if (getCurrentFocus() != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
         finish();
         overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down);
     }

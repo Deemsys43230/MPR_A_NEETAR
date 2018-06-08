@@ -3,7 +3,6 @@ package com.deemsysinc.kidsar;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -39,9 +38,9 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.MyHelpHolder> 
             holder.kidmodel_image.setVisibility(View.GONE);
         }
         if (modelList.get(position).isBold()) {
-            Typeface face = ResourcesCompat.getFont(context, R.font.comic_sans_ms_bold);
+            Typeface face = ResourcesCompat.getFont(context, R.font.gothamrounded_book);
             holder.helptext.setTypeface(face);
-            holder.helptext.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+            holder.helptext.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         }
     }
 
