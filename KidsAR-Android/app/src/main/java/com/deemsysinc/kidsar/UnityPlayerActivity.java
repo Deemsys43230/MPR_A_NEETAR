@@ -9,7 +9,9 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -20,7 +22,6 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -44,9 +45,8 @@ import com.deemsysinc.kidsar.models.PurchaseModel;
 import com.deemsysinc.kidsar.utils.BillingManager;
 import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.GridSpacingItemDecoration;
-import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.NetworkDetector;
-import com.deemsysinc.kidsar.utils.PlayAudioService;
+import com.deemsysinc.kidsar.utils.ShowButtons;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.unity3d.player.UnityPlayer;
@@ -127,6 +127,22 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     int itemPosition = -1;
     int temp = 0;
 
+    Dialog pointerDialog;
+
+    Button gotItButton;
+
+    String audionName="audio_apple";
+
+
+    ImageView arBackgroundImage;
+
+
+    boolean isBooleanSelected=false;
+
+
+
+
+
     // Setup activity layout
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,6 +201,14 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         takeScreenShot.setOnClickListener(this);
         playAudio.setOnClickListener(this);
         int animationResource = R.style.DialogAnimation_2;
+        pointerDialog=new Dialog(UnityPlayerActivity.this);
+        pointerDialog.setContentView(R.layout.ar_dialog);
+        pointerDialog.setCancelable(true);
+        pointerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        gotItButton=(pointerDialog).findViewById(R.id.got_it_button);
+        gotItButton.getBackground().setAlpha(0);
+        gotItButton.setOnClickListener(UnityPlayerActivity.this);
         dialog = new Dialog(UnityPlayerActivity.this);
         dialog.setContentView(R.layout.dialog_alphapets);
         dialog.setCancelable(true);
@@ -199,6 +223,8 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         alphapetsList = (dialog).findViewById(R.id.list_alphapets);
         ChangeDialogHeaderName(getSelectedPos);
         onClickListener = new AlphapetsClickListner(this);
+        ShowButtons showButtons =new ShowButtons();
+        showButtons.setButtons(takeScreenShot,playAudio);
         LoadLevels(getSelectedPos);
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -207,10 +233,6 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             }
         }, 4000);
         UnityPlayer.UnitySendMessage("ARCore Device", "NavigateScene", parentModels.get(0).getLevelName());
-//        ShowAlert();
-//        setActionBar(USceneToolbar);
-//        getActionBar().setDisplayHomeAsUpEnabled(true);
-//        getActionBar().setTitle("");
         sceneUnity = findViewById(R.id.unity_scene_view);
         sceneUnity.addView(mUnityPlayer.getView(), FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
         mUnityPlayer.requestFocus();
@@ -221,30 +243,31 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
         final SharedPreferences.Editor editor = prefs.edit();
         if (prefs.getInt("alertMessageShow", 0) == 0) {
-            android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
-            LayoutInflater inflater = getLayoutInflater();
-            View dialogView = inflater.inflate(R.layout.alertdialog, null);
-            builder.setView(dialogView);
-            alertTitle = dialogView.findViewById(R.id.alertTitle);
-            alertTitle.setText(R.string.alertStringInfo);
-            alert_message = dialogView.findViewById(R.id.alert_message);
-            alert_message.setText(R.string.plane_message);
-            okalert = dialogView.findViewById(R.id.okalert);
-            okalert.setGravity(Gravity.CENTER_HORIZONTAL);
-            cancelalert = dialogView.findViewById(R.id.cancelalert);
-            cancelalert.setVisibility(View.GONE);
-            okalert.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    alertDialog.dismiss();
-                    editor.putInt("alertMessageShow", 1);
-                    editor.commit();
-                    dialog.show();
-                }
-            });
-            alertDialog = builder.create();
-            alertDialog.setCancelable(false);
-            alertDialog.show();
+//            android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(UnityPlayerActivity.this);
+//            LayoutInflater inflater = getLayoutInflater();
+//            View dialogView = inflater.inflate(R.layout.alertdialog, null);
+//            builder.setView(dialogView);
+//            alertTitle = dialogView.findViewById(R.id.alertTitle);
+//            alertTitle.setText(R.string.alertStringInfo);
+//            alert_message = dialogView.findViewById(R.id.alert_message);
+//            alert_message.setText(R.string.plane_message);
+//            okalert = dialogView.findViewById(R.id.okalert);
+//            okalert.setGravity(Gravity.CENTER_HORIZONTAL);
+//            cancelalert = dialogView.findViewById(R.id.cancelalert);
+//            cancelalert.setVisibility(View.GONE);
+//            okalert.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    alertDialog.dismiss();
+//                    editor.putInt("alertMessageShow", 1);
+//                    editor.commit();
+//                    dialog.show();
+//                }
+//            });
+//            alertDialog = builder.create();
+//            alertDialog.setCancelable(false);
+//            alertDialog.show();
+            pointerDialog.show();
         } else {
             dialog.show();
         }
@@ -337,7 +360,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 closeAlphapets.setImageResource(R.drawable.animal_close);
                 imageBackground.setImageBitmap(outImage2);
                 dialogHeader.setText("FRUITS & VEGETABLES");
-                mainHeaderName.setText("FRUITS & VEGETABLES");
+                mainHeaderName.setText("APPLE");
                 CustomFontStyle(this, dialogHeader);
                 CustomFontStyle(this, mainHeaderName);
                 dialogHeader.setTextColor(ContextCompat.getColor(this, R.color.ar_white));
@@ -414,7 +437,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     protected void onPause() {
         super.onPause();
         mUnityPlayer.pause();
-        ((MyApplication) this.getApplication()).startActivityTransitionTimer(this);
+        //((MyApplication) this.getApplication()).startActivityTransitionTimer(this);
     }
 
     // Resume Unity
@@ -431,6 +454,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             Log.d("PrintGetSelectedPos", "" + getSelectedPos);
             ChangeDialogHeaderName(getSelectedPos);
             LoadLevels(getSelectedPos);
+            ShowButtons showButtons =new ShowButtons();
+            showButtons.setButtons(takeScreenShot,playAudio);
+            takeScreenShot.setVisibility(View.GONE);
+            playAudio.setVisibility(View.GONE);
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -440,11 +467,11 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             new HandleTheScene().execute();
         }
         //UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeTheScene",parentModels.get(0).getLevelName());
-        MyApplication myApp = (MyApplication) this.getApplication();
-        if (myApp.wasInBackground) {
-            PlayAudioService.onResumePlayer();
-        }
-        myApp.stopActivityTransitionTimer();
+//        MyApplication myApp = (MyApplication) this.getApplication();
+//        if (myApp.wasInBackground) {
+//            PlayAudioService.onResumePlayer();
+//        }
+//        myApp.stopActivityTransitionTimer();
     }
 
     @Override
@@ -558,6 +585,22 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             if (mediaVolume == 0) {
                 Toast.makeText(this, R.string.media_mute_alert, Toast.LENGTH_LONG).show();
             }
+            else
+            {
+                Log.d("PrintAudioName",audionName);
+                UnityPlayer.UnitySendMessage("ObjectPlacer","PlaySpeak",audionName);
+
+//                switch (audionName)
+//                {
+//                    case "audio_apple":
+//                        UnityPlayer.UnitySendMessage("ObjectPlacer","PlaySpeak",parentModels.get(0).getAlphapetsModels().get(0).getAudioSource());
+//                        break;
+//                    case "audio_banana":
+//                        UnityPlayer.UnitySendMessage("ObjectPlacer","PlaySpeak",parentModels.get(0).getAlphapetsModels().get(1).getAudioSource());
+//                        break;
+//                }
+
+            }
 //            else if(mediaVolume==0&&mediaAlertCount==4)
 //            {
 //                alertDialog.show();
@@ -593,6 +636,16 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             Intent goBack = new Intent(UnityPlayerActivity.this, HomeActivity.class);
             //goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(goBack);
+        }
+        if(view==gotItButton)
+        {
+            prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
+            final SharedPreferences.Editor editor = prefs.edit();
+            pointerDialog.dismiss();
+            dialog.show();
+            editor.putInt("alertMessageShow",1);
+            editor.commit();
+
         }
     }
 
@@ -671,8 +724,19 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             Log.d("Test_Value", "Value:" + alertrate);
             if (parentModels.get(0).getAlphapetsModels().get(itemPosition).getIsPurchased()) {
                 UnityPlayer.UnitySendMessage("ObjectPlacer", "DeleteObject", "Yes");
+
                 //int itemPosition=alphapetsList.getChildLayoutPosition(view);
+                if(parentModels.get(0).getLevelId()==2||parentModels.get(0).getLevelId()==3)
+                {
+                    mainHeaderName.setText(parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelName());
+                }
                 UnityPlayer.UnitySendMessage("ObjectPlacer", "ChangeAlphapet", parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelName());
+                //isBooleanSelected=true;
+                UnityPlayer.UnitySendMessage("ObjectPlacer","StopPlayAudio","Yes");
+                UnityPlayer.UnitySendMessage("ObjectPlacer","whichObjectSelected","Yes");
+                audionName=parentModels.get(0).getAlphapetsModels().get(itemPosition).getAudioSource();
+                takeScreenShot.setVisibility(View.GONE);
+                playAudio.setVisibility(View.GONE);
                 dialog.dismiss();
                 alertrate = alertrate + 1;
                 prefs.edit().putInt(Constants.alertrate_pref, alertrate).apply();
@@ -798,12 +862,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onBackPressed() {
+        UnityPlayer.UnitySendMessage("ObjectPlacer", "ClearScene", "Yes");
         Intent goBack = new Intent(UnityPlayerActivity.this, HomeActivity.class);
-//        goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        //goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(goBack);
-//        Intent goBack=new Intent(UnityPlayerActivity.this,HomeActivity.class);
-//        goBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        startActivity(goBack);
     }
 
     private void showAlert(int title, String message) {
@@ -854,4 +916,40 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             //progressDialog.dismiss();
         }
     }
+    public void ChangeTheVariable()
+    {
+
+    }
+    public void HideTheButton()
+    {
+        Log.d("Hidethe","Called");
+        UnityPlayerActivity.this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                TheCall(1);
+            }
+        });
+
+//        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
+//        UnityPlayer.currentActivity.runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        });
+//        UnityPlayer.currentActivity.runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                Toast.makeText(UnityPlayerActivity.this, "Hello World", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+    }
+
+    private void TheCall(int i) {
+        if(i==1)
+        {
+            Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }

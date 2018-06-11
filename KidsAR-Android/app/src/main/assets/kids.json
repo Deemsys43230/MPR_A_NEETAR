@@ -349,13 +349,13 @@
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "DRAGON FRUIT",
         "modelImage": "modelImages/fruits/dragonfruit.jpg",
-        "audioName": "audio_fruit"
+        "audioName": "audio_dragonfruit"
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
         "modelName": "EGG FRUIT",
         "modelImage": "modelImages/fruits/eggfruit.jpg",
-        "audioName": "audio_fruit"
+        "audioName": "audio_eggfruit"
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",

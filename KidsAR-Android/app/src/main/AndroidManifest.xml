@@ -53,7 +53,7 @@
                 android:value="true" />
         </activity>
         <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
-        <meta-data android:name="unity.build-id" android:value="fea5629c-f144-4800-87c8-492be7145440" />
+        <meta-data android:name="unity.build-id" android:value="1363ea93-6f8f-4f09-8e44-7c66fb46bfdb" />
         <meta-data android:name="unity.splash-mode" android:value="0" />
         <meta-data android:name="unity.splash-enable" android:value="True" />
         <meta-data android:name="android.max_aspect" android:value="2.1" />

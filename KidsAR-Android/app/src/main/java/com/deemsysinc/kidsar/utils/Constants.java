@@ -47,8 +47,8 @@ public class Constants {
         modelList.add(new HelpModel(3, "Choose a category on your home screen to start.", false, true));
         modelList.add(new HelpModel(4, "You will be given few models for free and you need to purchase locked models for using it.", false, true));
         modelList.add(new HelpModel(5, "You can customize your app under settings button.", false, true));
-        modelList.add(new HelpModel(6, "For unlocking all models go to Settings -> Purchase ->  click Buy", false, true));
-        modelList.add(new HelpModel(7, "For restoring your purchases on a new device or reinstalling app goto Settings ->  Purchase  ->  click Restore.", false, true));
+        modelList.add(new HelpModel(6, "For unlocking all models go to Settings -> Purchase -> click Buy", false, true));
+        modelList.add(new HelpModel(7, "For restoring your purchases on a new device or reinstalling app goto Settings -> Purchase -> click Restore.", false, true));
         modelList.add(new HelpModel(8, "Any Queries? Please send us through Settings -> Contact us.", false, true));
         modelList.add(new HelpModel(9, "", false, false));
         modelList.add(new HelpModel(10, " How to use 3d models?", true, false));
