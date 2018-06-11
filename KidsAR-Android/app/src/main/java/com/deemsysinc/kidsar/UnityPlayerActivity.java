@@ -131,7 +131,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     Button gotItButton;
 
-    String audionName="audio_apple";
+    String audionName="";
 
 
     ImageView arBackgroundImage;
@@ -309,6 +309,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                audionName="audio_a";
                 Log.d("PrintBitmap", "" + bitmap);
                 Bitmap outImage = BitmapFactory.decodeStream(bitmap);
                 closeAlphapets.setImageResource(R.drawable.animal_close);
@@ -355,6 +356,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                audionName="audio_apple";
                 Log.d("PrintBitmap", "" + bitmap2);
                 Bitmap outImage2 = BitmapFactory.decodeStream(bitmap2);
                 closeAlphapets.setImageResource(R.drawable.animal_close);
