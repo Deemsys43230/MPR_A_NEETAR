@@ -23,7 +23,7 @@
         android:text="Got it"
         android:textAllCaps="false"
         android:textColor="@color/colorHome"
-        android:fontFamily="@font/comic_sans_ms_bold"
+        android:fontFamily="@font/gothamrounded_medium"
         android:layout_centerHorizontal="true"
         android:textSize="20sp"/>
     </RelativeLayout>
