@@ -40,7 +40,7 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.MyHelpHolder> 
         }
         if (modelList.get(position).isBold()) {
             if ((position + 1) == modelList.size()) {
-                Typeface face = ResourcesCompat.getFont(context, R.font.trebuchet_ms);
+                Typeface face = ResourcesCompat.getFont(context, R.font.trebuchet_ms_bold_italic);
                 holder.helptext.setTypeface(face);
                 holder.helptext.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
             } else {
