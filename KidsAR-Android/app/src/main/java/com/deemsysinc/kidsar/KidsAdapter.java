@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.MyKidsHolder> 
         this.mymodel = mymodel;
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         float width = metrics.widthPixels;
-        height = (int) (width * 0.625f);
+        height = (int) (width * 0.650f);
     }
 
     @NonNull
@@ -50,7 +51,7 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.MyKidsHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyKidsHolder holder, int position) {
-//        KidsModel model = modelList.get(position);
+//        PuzzleModel model = modelList.get(position);
         Bitmap decoded = null;
         try {
             Bitmap bitmap1 = BitmapFactory.decodeStream(context.getAssets().open(modelList.get(position).getImage()));
@@ -97,11 +98,19 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.MyKidsHolder> 
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("selectedPos", pos);
-                    Intent goPlayer = new Intent(context, UnityPlayerActivity.class);
-                    goPlayer.putExtras(bundle);
-                    context.startActivity(goPlayer);
+                    if (pos != 3) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("selectedPos", pos);
+                        Intent goPlayer = new Intent(context, UnityPlayerActivity.class);
+                        goPlayer.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        goPlayer.putExtras(bundle);
+                        context.startActivity(goPlayer);
+                    } else {
+                        Log.d("OnClick", "Value");
+                        Intent goPlayer = new Intent(context, PuzzleActivity.class);
+                        goPlayer.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(goPlayer);
+                    }
                 }
             });
         }

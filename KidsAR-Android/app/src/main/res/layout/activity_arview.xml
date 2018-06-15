@@ -1,84 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/ar_background_image"
-        android:src="@drawable/color_header"
-        android:scaleType="centerCrop"
-        android:visibility="visible"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/kid_ar_toolbar">
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:id="@+id/custom_navigation"
-            android:src="@drawable/btn_back"
-            android:layout_centerVertical="true"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/model_name"
-            android:text="Animals"
-            android:textSize="22sp"
-            android:textColor="@color/ar_white"
-            android:singleLine="true"
-            android:layout_toRightOf="@+id/custom_navigation"
-            android:fontFamily="@font/comic_sans_ms_bold"
-            android:layout_marginLeft="15dp"
-            android:layout_centerVertical="true"/>
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:id="@+id/alphapet_collections"
-            android:src="@drawable/show_alphabet"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:tint="@color/ar_white"/>
-    </RelativeLayout>
+            android:id="@+id/ar_background_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/color_header"
+            android:visibility="visible" />
 
-    <Button
-        android:id="@+id/take_screenshot"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/camera"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:layout_toLeftOf="@+id/button_view_one"
-        android:visibility="gone"/>
+        <RelativeLayout
+            android:id="@+id/kid_ar_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/custom_navigation"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_back" />
+
+            <TextView
+                android:id="@+id/model_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/custom_navigation"
+                android:fontFamily="@font/gothamrounded_medium"
+                android:singleLine="true"
+                android:text="Animals"
+                android:textColor="@color/ar_white"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/alphapet_collections"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/show_alphabet"
+                android:tint="@color/ar_white" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/take_screenshot"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/button_view_one"
+            android:background="@drawable/camera"
+            android:visibility="gone" />
+
         <View
+            android:id="@+id/button_view_one"
             android:layout_width="30dp"
             android:layout_height="40dp"
-            android:id="@+id/button_view_one"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"/>
-    <Button
-        android:id="@+id/play_music"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/volume"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/button_view_one"
-        android:layout_marginBottom="10dp"
-        android:visibility="gone"/>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/unity_scene_view"
-        android:layout_below="@+id/kid_ar_toolbar">
-    </FrameLayout>
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/play_music"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/button_view_one"
+            android:background="@drawable/volume"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:id="@+id/unity_scene_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/kid_ar_toolbar"></FrameLayout>
     </RelativeLayout>
 </FrameLayout>

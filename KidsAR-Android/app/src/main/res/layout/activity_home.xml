@@ -6,7 +6,7 @@
     android:background="@drawable/home_background"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/tool_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.9"
+            android:layout_centerInParent="true"
             android:fontFamily="@font/gothamrounded_bold"
             android:gravity="center"
             android:text="Home"
@@ -29,11 +29,12 @@
             android:id="@+id/info_settings"
             android:layout_width="35dp"
             android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginEnd="15dp"
             android:padding="5dp"
             android:scaleType="fitXY"
             android:src="@drawable/kids_settings" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/kidrecycler"

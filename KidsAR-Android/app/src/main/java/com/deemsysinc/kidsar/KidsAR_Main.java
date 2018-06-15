@@ -41,6 +41,7 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
     private View contentview;
     private SharedPreferences prefs;
     private boolean music_pref;
+
     TextToSpeech Speech;
     String settheVoice = "en-us-x-sfg#male_1-local";
     private boolean speak = false;

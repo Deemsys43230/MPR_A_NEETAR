@@ -112,10 +112,10 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         /*list = Arrays.asList(
-                new KidsModel(1, "com.deemsysinc.kidsar.basicmodels", R.drawable.alphabets_banner_locked, R.drawable.alphabets_banner_unlocked, false),
-                new KidsModel(2, "com.deemsysinc.kidsar.premiummodel", R.drawable.animals_banner_locked, R.drawable.animals_banner_unlocked, false),
-                new KidsModel(3, "com.deemsysinc.kidsar.basicmodels", R.drawable.fruits_banner_locked, R.drawable.fruits_banner_unlocked, false),
-                new KidsModel(4, "", R.drawable.puzzles_banner, R.drawable.puzzles_banner, false));*/
+                new PuzzleModel(1, "com.deemsysinc.kidsar.basicmodels", R.drawable.alphabets_banner_locked, R.drawable.alphabets_banner_unlocked, false),
+                new PuzzleModel(2, "com.deemsysinc.kidsar.premiummodel", R.drawable.animals_banner_locked, R.drawable.animals_banner_unlocked, false),
+                new PuzzleModel(3, "com.deemsysinc.kidsar.basicmodels", R.drawable.fruits_banner_locked, R.drawable.fruits_banner_unlocked, false),
+                new PuzzleModel(4, "", R.drawable.puzzles_banner, R.drawable.puzzles_banner, false));*/
 
 
 //        kidmodelname = (TextView) findViewById(R.id.kidmodelname);
@@ -140,6 +140,7 @@ public class HomeActivity extends AppCompatActivity {
 
         adapter = new KidsAdapter(getApplicationContext(), list, mymodel);
         kidrecycler.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
       /*  kidrecycler.setItemTransitionTimeMillis(200);
         kidrecycler.setItemTransformer(new ScaleTransformer.Builder()
                 .setMinScale(0.8f)
@@ -147,7 +148,7 @@ public class HomeActivity extends AppCompatActivity {
         onItemChanged(list.get(0));*/
     }
 
-    /*private void onItemChanged(KidsModel kidsModel) {
+    /*private void onItemChanged(PuzzleModel kidsModel) {
         kidmodelname.setText(kidsModel.getName());
         switch (kidsModel.getName()) {
             case "Learn Alphabets":
