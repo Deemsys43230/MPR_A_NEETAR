@@ -36,7 +36,7 @@ public class Constants {
     public static final String contacttoemail = "deemmobtest@gmail.com";
 
     //Testing
-    //    public static final String contacttoemail = "deemmobtest@gmail.com";
+    //    public static final String contacttoemail = "deemsystesting@gmail.com";
 
     //Production
     //    public static final String contacttoemail = "incdeemsys@gmail.com";
@@ -65,7 +65,7 @@ public class Constants {
         modelList.add(new HelpModel(14, "To zoom your models use two-finger pinch gesture.", false, true));
         modelList.add(new HelpModel(15, "To rotate your models use the single finger and slide left or right.", false, true));
         modelList.add(new HelpModel(16, "", false, false));
-        modelList.add(new HelpModel(17, "Happy Learning!", false, false));
+        modelList.add(new HelpModel(17, "Happy Learning!", true, false));
         return modelList;
     }
 }

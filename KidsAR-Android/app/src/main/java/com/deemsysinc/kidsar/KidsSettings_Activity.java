@@ -171,14 +171,14 @@ public class KidsSettings_Activity extends AppCompatActivity implements DialogIn
                             String kidnamefromalter = editTextKidAlert.getText().toString();
                             prefs.edit().putString(Constants.kidname, kidnamefromalter).apply();
                             kidname.setText(kidnamefromalter);
-                            alertDialog.dismiss();
+                            alertDialog.cancel();
                         }
                     }
                 });
                 cancelname.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        alertDialog.dismiss();
+                        alertDialog.cancel();
                     }
                 });
 

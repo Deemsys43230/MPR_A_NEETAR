@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,9 +39,15 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.MyHelpHolder> 
             holder.kidmodel_image.setVisibility(View.GONE);
         }
         if (modelList.get(position).isBold()) {
-            Typeface face = ResourcesCompat.getFont(context, R.font.gothamrounded_book);
-            holder.helptext.setTypeface(face);
-            holder.helptext.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+            if ((position + 1) == modelList.size()) {
+                Typeface face = ResourcesCompat.getFont(context, R.font.trebuchet_ms);
+                holder.helptext.setTypeface(face);
+                holder.helptext.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+            } else {
+                Typeface face = ResourcesCompat.getFont(context, R.font.gothamrounded_medium);
+                holder.helptext.setTypeface(face);
+                holder.helptext.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+            }
         }
     }
 

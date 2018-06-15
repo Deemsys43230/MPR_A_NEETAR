@@ -352,7 +352,6 @@ public class PuzzleDetail extends AppCompatActivity implements View.OnDragListen
                     dropview.clearAnimation();
                     dialog = new Dialog(PuzzleDetail.this);
                     dialog.setContentView(R.layout.dialog_congrats);
-                    ViewGroup laycontainer = dialog.findViewById(R.id.shower);
                     KonfettiView konfettiView = dialog.findViewById(R.id.konfettiView);
                     DisplayMetrics displayMetrics = new DisplayMetrics();
                     getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -395,7 +394,7 @@ public class PuzzleDetail extends AppCompatActivity implements View.OnDragListen
                             mediaPlayerStop();
                             dropview.clearAnimation();
                         }
-                    }, 500);
+                    }, 100);
                 }
                 break;
             case DragEvent.ACTION_DRAG_ENDED:

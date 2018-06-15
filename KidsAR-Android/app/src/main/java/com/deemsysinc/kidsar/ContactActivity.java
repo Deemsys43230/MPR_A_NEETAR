@@ -250,6 +250,9 @@ public class ContactActivity extends AppCompatActivity {
             int resStringTitle = R.string.alertMailfailure;
             String resString = "Sorry! We encountered a problem while submitting your query. Please try again later.";
             if (response) {
+                contact_name.setText("");
+                contact_email.setText("");
+                contact_querybox.setText("");
                 resStringTitle = R.string.alertMailSuccess;
                 resString = "Query submitted";
             }
