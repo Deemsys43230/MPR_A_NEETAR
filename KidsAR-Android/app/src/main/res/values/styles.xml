@@ -45,7 +45,7 @@
 
     <style name="TextAlertTitle" parent="TextAppearance.AppCompat.Title">
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:fontFamily">@font/comic_sans_ms_bold</item>
+        <item name="android:fontFamily">@font/gothamrounded_medium</item>
 
     </style>
 

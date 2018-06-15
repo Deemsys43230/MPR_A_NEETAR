@@ -41,12 +41,12 @@
         <item name="android:windowTitleStyle">@style/PauseDialogTitle</item>
         <item name="android:subtitleTextStyle">@style/TextAlertTitle</item>
         <item name="android:titleTextStyle">@style/TextAlertTitle</item>
-        <item name="android:fontFamily">@font/comic_sans_ms</item>
+        <item name="android:fontFamily">@font/gothamrounded_book</item>
     </style>
 
     <style name="TextAlertTitle" parent="TextAppearance.AppCompat.Title">
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:fontFamily">@font/comic_sans_ms_bold</item>
+        <item name="android:fontFamily">@font/gothamrounded_medium</item>
     </style>
     <style name="Theme.MyFancyTheme" parent="android:Theme.Holo">
         <item name="android:homeAsUpIndicator">@drawable/btn_back</item>

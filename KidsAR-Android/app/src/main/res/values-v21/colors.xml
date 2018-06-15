@@ -29,4 +29,12 @@
     <color name="disabled_color">#80AAAFB4</color>
     <color name="gallery_line_color">#F7DC47</color>
     <color name="green">#008F00</color>
+    <color name="colorGold1">#FFD700</color>
+    <color name="colorGold2">#DAA520</color>
+    <color name="colorGold3">#D2691E</color>
+    <color name="colorGold4">#A0522D</color>
+    <color name="puzzlebackgray">#2b2b2b</color>
+    <color name="puzzletitlecolor">#FFFB00</color>
+    <color name="puzzlecongratsback">#531B93</color>
+    <color name="puzzlebackiconcolor">#0433FF</color>
 </resources>
