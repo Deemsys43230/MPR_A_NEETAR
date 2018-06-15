@@ -31,9 +31,16 @@ public class Constants {
     public static final String DeviceName = Build.MANUFACTURER + " " + Build.MODEL;
     public static final String contactfromemail = "deemmobtest@gmail.com";
     public static final String contactfrompassword = "deemsys@123";
+
+    //Development
     public static final String contacttoemail = "deemmobtest@gmail.com";
 
+    //Testing
+    //    public static final String contacttoemail = "deemmobtest@gmail.com";
+
+    //Production
     //    public static final String contacttoemail = "incdeemsys@gmail.com";
+
     public static final String contacthost = "smtp.gmail.com";
     public static final String contactemailsubject = "Kids AR - User query";
     public static final String contactemailbody = "Hello,\n\n User from Kids AR Android application has sent a query to you.\n\n USER DETAILS : \n\n";
