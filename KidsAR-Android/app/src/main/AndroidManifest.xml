@@ -15,6 +15,7 @@
     <application
         android:name=".utils.MyApplication"
         android:allowBackup="true"
+        android:largeHeap="true"
         android:banner="@drawable/app_banner"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -53,7 +54,7 @@
                 android:value="true" />
         </activity>
         <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
-        <meta-data android:name="unity.build-id" android:value="01248ee8-222f-4909-83e1-431c7f36d28b" />
+        <meta-data android:name="unity.build-id" android:value="5e3a2730-c28c-4bc2-87ab-5771915384b2" />
         <meta-data android:name="unity.splash-mode" android:value="0" />
         <meta-data android:name="unity.splash-enable" android:value="True" />
         <meta-data android:name="android.max_aspect" android:value="2.1" />
@@ -105,6 +106,17 @@
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".KidsSettings_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".PuzzleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".PuzzleDetail"
+            android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="adjustPan|stateHidden" />

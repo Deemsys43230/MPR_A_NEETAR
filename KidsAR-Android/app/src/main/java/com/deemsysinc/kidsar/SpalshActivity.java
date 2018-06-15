@@ -38,6 +38,8 @@ public class SpalshActivity extends AppCompatActivity {
                 } else {
                     startActivity(new Intent(SpalshActivity.this, KidsAR_Main.class));
                     editor.putInt("alertMessageShow",0);
+                        editor.putInt("TheResume",1);
+                        editor.putInt("ScreenShotClicked",0);
                     editor.commit();
                 }
             }

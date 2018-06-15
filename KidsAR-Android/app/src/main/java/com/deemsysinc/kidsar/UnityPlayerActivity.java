@@ -127,28 +127,25 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     int itemPosition = -1;
     int temp = 0;
 
+
+    int b=1;
+
     Dialog pointerDialog;
 
     Button gotItButton;
 
     String audionName="";
 
-
-    ImageView arBackgroundImage;
-
-
-    boolean isBooleanSelected=false;
+    int c=0,d=0;
 
 
+    //Dialog progressDialogWindow;
 
-
-
-    // Setup activity layout
+   // Setup activity layout
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-
         mUnityPlayer = new UnityPlayer(this);
         //setContentView(mUnityPlayer);
         setContentView(R.layout.activity_arview);
@@ -205,6 +202,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         pointerDialog.setContentView(R.layout.ar_dialog);
         pointerDialog.setCancelable(true);
         pointerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+//        progressDialogWindow=new Dialog(UnityPlayerActivity.this);
+//        progressDialogWindow.setContentView(R.layout.progressdialogwindow);
+//        progressDialogWindow.setCancelable(true);
 
         gotItButton=(pointerDialog).findViewById(R.id.got_it_button);
         gotItButton.getBackground().setAlpha(0);
@@ -305,7 +306,6 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 InputStream bitmap = null;
                 try {
                     bitmap = getAssets().open("alphabet_banner.jpg");
-//                    bitmap = getAssets().open("alphabets_theme.jpg");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -439,6 +439,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     protected void onPause() {
         super.onPause();
         mUnityPlayer.pause();
+        Log.d("OnPauseCalled","True");
+
+
+
         //((MyApplication) this.getApplication()).startActivityTransitionTimer(this);
     }
 
@@ -447,27 +451,79 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     protected void onResume() {
         super.onResume();
         mUnityPlayer.resume();
-        if (temp == 1) {
-            temp = 0;
-        } else if (temp == 0) {
-            extras = getIntent().getExtras();
-            getSelectedPos = extras.getInt("selectedPos");
-            parentModels = new ArrayList<>();
-            Log.d("PrintGetSelectedPos", "" + getSelectedPos);
-            ChangeDialogHeaderName(getSelectedPos);
-            LoadLevels(getSelectedPos);
-            ShowButtons showButtons =new ShowButtons();
-            showButtons.setButtons(takeScreenShot,playAudio);
-            takeScreenShot.setVisibility(View.GONE);
-            playAudio.setVisibility(View.GONE);
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    ShowAlert();
-                }
-            }, 4000);
-            new HandleTheScene().execute();
+        prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
+        SharedPreferences.Editor editor=prefs.edit();
+        if(c==1)
+        {
+            c++;
         }
+        else
+        {
+            if(prefs.getInt("TheResume",0)==1)
+            {
+                if(b==1)
+                {
+                    if (temp == 1) {
+                        temp = 0;
+                    }
+                    else if (temp == 0) {
+                        extras = getIntent().getExtras();
+                        getSelectedPos = extras.getInt("selectedPos");
+                        parentModels = new ArrayList<>();
+                        Log.d("PrintGetSelectedPos", "" + getSelectedPos);
+                        ChangeDialogHeaderName(getSelectedPos);
+                        LoadLevels(getSelectedPos);
+                        ShowButtons showButtons = new ShowButtons();
+                        showButtons.setButtons(takeScreenShot, playAudio);
+                        takeScreenShot.setVisibility(View.GONE);
+                        playAudio.setVisibility(View.GONE);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                ShowAlert();
+                            }
+                        }, 4000);
+                        //new HandleTheScene().execute();
+                        UnityPlayer.UnitySendMessage("ObjectPlacer", "ChangeTheScene", parentModels.get(0).getLevelName());
+                    }
+                    b++;
+
+                }
+                else if(b==2)
+                {
+                    editor.putInt("TheResume",0);
+                    editor.commit();
+                }
+            }
+            else
+            {
+                if (temp == 1) {
+                    temp = 0;
+                } else if (temp == 0) {
+                    extras = getIntent().getExtras();
+                    getSelectedPos = extras.getInt("selectedPos");
+                    parentModels = new ArrayList<>();
+                    Log.d("PrintGetSelectedPos", "" + getSelectedPos);
+                    ChangeDialogHeaderName(getSelectedPos);
+                    LoadLevels(getSelectedPos);
+                    ShowButtons showButtons = new ShowButtons();
+                    showButtons.setButtons(takeScreenShot, playAudio);
+                    takeScreenShot.setVisibility(View.GONE);
+                    playAudio.setVisibility(View.GONE);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            ShowAlert();
+                        }
+                    }, 4000);
+                    //new HandleTheScene().execute();
+                    UnityPlayer.UnitySendMessage("ObjectPlacer", "ChangeTheScene", parentModels.get(0).getLevelName());
+                }
+            }
+        }
+
+
+
         //UnityPlayer.UnitySendMessage("ObjectPlacer","ChangeTheScene",parentModels.get(0).getLevelName());
 //        MyApplication myApp = (MyApplication) this.getApplication();
 //        if (myApp.wasInBackground) {
@@ -551,6 +607,8 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     @Override
     public void onClick(View view) {
         if (view == takeScreenShot) {
+            c++;
+            //isScreenshotClicled=true;
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -900,6 +958,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            //progressDialogWindow.show();
             Log.d("CalledWhat", "onPreExecute");
 //            Toast.makeText(UnityPlayerActivity.this, "Please wait", Toast.LENGTH_SHORT).show();
             //progressDialog=ProgressDialog.show(UnityPlayerActivity.this,"","Loading");
@@ -908,13 +967,18 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         @Override
         protected Integer doInBackground(Integer... integers) {
             UnityPlayer.UnitySendMessage("ObjectPlacer", "ChangeTheScene", parentModels.get(0).getLevelName());
-            return null;
+            return 1;
         }
 
         @Override
         protected void onPostExecute(Integer integer) {
             super.onPostExecute(integer);
             Log.d("CalledWhat", "onPostExecute");
+            if(integer==1)
+            {
+                //progressDialogWindow.dismiss();
+            }
+
             //progressDialog.dismiss();
         }
     }
