@@ -14,7 +14,6 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:contentDescription="Kid Model"
-        android:scaleType="fitXY"
         android:visibility="visible" />
 
     <TextView

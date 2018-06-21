@@ -17,19 +17,16 @@ import java.util.List;
 public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.MyHelpHolder> {
     private List<HelpModel> modelList;
     private Context context;
-
     public HelpAdapter(Context context, List<HelpModel> modelList) {
         this.context = context;
         this.modelList = modelList;
     }
-
     @NonNull
     @Override
     public MyHelpHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View kidsview = LayoutInflater.from(context).inflate(R.layout.helpmodel_item, parent, false);
         return new MyHelpHolder(kidsview, context, modelList);
     }
-
     @Override
     public void onBindViewHolder(MyHelpHolder holder, final int position) {
         holder.helptext.setText(modelList.get(position).name);

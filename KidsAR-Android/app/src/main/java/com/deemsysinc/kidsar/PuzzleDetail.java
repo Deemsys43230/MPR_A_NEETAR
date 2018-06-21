@@ -30,6 +30,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -83,6 +84,8 @@ public class PuzzleDetail extends AppCompatActivity implements View.OnDragListen
     String name;
     BitmapDrawable background;
     int position = 1;
+
+    TextView exitCograts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -374,6 +377,17 @@ public class PuzzleDetail extends AppCompatActivity implements View.OnDragListen
                         }
                     });
                     TextView playnext = dialog.findViewById(R.id.playnext);
+                    exitCograts=dialog.findViewById(R.id.playexit);
+                    exitCograts.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            mediaPlayerStop();
+                            dialog.dismiss();
+                            stopTimer();
+                            Intent goMain=new Intent(PuzzleDetail.this,PuzzleActivity.class);
+                            startActivity(goMain);
+                        }
+                    });
                     playnext.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {

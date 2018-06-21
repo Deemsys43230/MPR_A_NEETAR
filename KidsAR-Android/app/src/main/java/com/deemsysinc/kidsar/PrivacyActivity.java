@@ -12,14 +12,21 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
+
+import java.util.Calendar;
 
 public class PrivacyActivity extends AppCompatActivity {
     ImageView close;
     WebView webview;
     ProgressBar progressbar;
+
+
+
+    TextView copyright;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,6 +38,8 @@ public class PrivacyActivity extends AppCompatActivity {
         close = findViewById(R.id.buttonclose);
         progressbar = findViewById(R.id.progressbar);
         progressbar.setVisibility(View.VISIBLE);
+        copyright=findViewById(R.id.cpyrgt);
+        copyright.setText("Copyright ©"+" "+Calendar.getInstance().get(Calendar.YEAR)+" "+"Deemsys Inc. All Rights Reserved.");
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

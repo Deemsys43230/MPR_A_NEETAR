@@ -2,7 +2,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -13,20 +12,25 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/color_header"
-            android:visibility="visible" />
+            android:visibility="visible"
+            />
 
         <RelativeLayout
             android:id="@+id/kid_ar_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
 
             <ImageView
                 android:id="@+id/custom_navigation"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_centerVertical="true"
                 android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
+                android:layout_marginStart="15dp"
+                android:padding="5dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/btn_back" />
 
             <TextView
@@ -35,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
-                android:layout_toRightOf="@+id/custom_navigation"
+                android:layout_centerHorizontal="true"
                 android:fontFamily="@font/gothamrounded_medium"
                 android:singleLine="true"
                 android:text="Animals"
@@ -61,15 +65,34 @@
             android:layout_marginBottom="10dp"
             android:layout_toLeftOf="@+id/button_view_one"
             android:background="@drawable/camera"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:layout_marginRight="10dp"/>
 
-        <View
+        <Button
             android:id="@+id/button_view_one"
-            android:layout_width="30dp"
+            android:layout_width="50dp"
             android:layout_height="40dp"
+            android:text="Stop"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:textAllCaps="false"
+            android:background="@color/button_icon_color"
+            android:fontFamily="@font/gothamrounded_bold"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+        <!--<View-->
+            <!--android:id="@+id/button_view_two"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:background="@color/button_icon_color"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:visibility="gone"/>-->
+
 
         <Button
             android:id="@+id/play_music"
@@ -79,7 +102,8 @@
             android:layout_marginBottom="10dp"
             android:layout_toRightOf="@+id/button_view_one"
             android:background="@drawable/volume"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"/>
 
         <FrameLayout
             android:id="@+id/unity_scene_view"

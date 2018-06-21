@@ -62,7 +62,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/gothamrounded_light"
-        android:text="@string/copyrights"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/button_icon_color"

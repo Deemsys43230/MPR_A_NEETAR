@@ -31,6 +31,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -71,7 +72,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     Toolbar USceneToolbar;
 
-    Button takeScreenShot, playAudio;
+    Button takeScreenShot, playAudio,startAnimation,stopAnimation;
 
     ArrayList<ParentModel> parentModels;
 
@@ -136,7 +137,13 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 
     String audionName="";
 
+    ShowButtons showButtons;
+
     int c=0,d=0;
+
+    Handler handler;
+
+    ImageView arBackgroundImage;
 
 
     //Dialog progressDialogWindow;
@@ -197,6 +204,11 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         playAudio = findViewById(R.id.play_music);
         takeScreenShot.setOnClickListener(this);
         playAudio.setOnClickListener(this);
+        startAnimation=findViewById(R.id.button_view_one);
+        startAnimation.setOnClickListener(this);
+        arBackgroundImage=findViewById(R.id.ar_background_image);
+        //stopAnimation=findViewById(R.id.button_view_two);
+        //stopAnimation.setOnClickListener(this);
         int animationResource = R.style.DialogAnimation_2;
         pointerDialog=new Dialog(UnityPlayerActivity.this);
         pointerDialog.setContentView(R.layout.ar_dialog);
@@ -224,8 +236,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         alphapetsList = (dialog).findViewById(R.id.list_alphapets);
         ChangeDialogHeaderName(getSelectedPos);
         onClickListener = new AlphapetsClickListner(this);
-        ShowButtons showButtons =new ShowButtons();
-        showButtons.setButtons(takeScreenShot,playAudio);
+        handler=new Handler();
+        showButtons =new ShowButtons();
+        showButtons.setActivity(UnityPlayerActivity.this);
+        showButtons.setButtons(takeScreenShot,playAudio,startAnimation);
         LoadLevels(getSelectedPos);
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -309,6 +323,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                arBackgroundImage.setImageResource(R.drawable.alphabet_header);
                 audionName="audio_a";
                 Log.d("PrintBitmap", "" + bitmap);
                 Bitmap outImage = BitmapFactory.decodeStream(bitmap);
@@ -322,6 +337,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 alphabetlayout.setVisibility(View.VISIBLE);
                 animallayout.setVisibility(View.GONE);
                 fruitlayout.setVisibility(View.GONE);
+                startAnimation.setVisibility(View.INVISIBLE);
+//                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+//                        RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                params.addRule();
                 alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 2, false));
                 layoutManager = new GridLayoutManager(UnityPlayerActivity.this, 3);
                 alphapetsList.setLayoutManager(layoutManager);
@@ -333,6 +352,8 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                arBackgroundImage.setImageResource(R.drawable.animals_header);
+                audionName="audio_alligator";
                 Log.d("PrintBitmap", "" + bitmap1);
                 Bitmap outImage1 = BitmapFactory.decodeStream(bitmap1);
                 closeAlphapets.setImageResource(R.drawable.animal_close);
@@ -356,6 +377,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                arBackgroundImage.setImageResource(R.drawable.fruits_header);
                 audionName="audio_apple";
                 Log.d("PrintBitmap", "" + bitmap2);
                 Bitmap outImage2 = BitmapFactory.decodeStream(bitmap2);
@@ -369,6 +391,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 fruitlayout.setVisibility(View.VISIBLE);
                 animallayout.setVisibility(View.GONE);
                 alphabetlayout.setVisibility(View.GONE);
+                startAnimation.setVisibility(View.INVISIBLE);
                 alphapetsList.addItemDecoration(new GridSpacingItemDecoration(3, 2, false));
                 layoutManager = new GridLayoutManager(UnityPlayerActivity.this, 3);
                 alphapetsList.setLayoutManager(layoutManager);
@@ -474,9 +497,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                         ChangeDialogHeaderName(getSelectedPos);
                         LoadLevels(getSelectedPos);
                         ShowButtons showButtons = new ShowButtons();
-                        showButtons.setButtons(takeScreenShot, playAudio);
+                        showButtons.setButtons(takeScreenShot, playAudio,startAnimation);
                         takeScreenShot.setVisibility(View.GONE);
                         playAudio.setVisibility(View.GONE);
+                        startAnimation.setVisibility(View.GONE);
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -507,9 +531,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                     ChangeDialogHeaderName(getSelectedPos);
                     LoadLevels(getSelectedPos);
                     ShowButtons showButtons = new ShowButtons();
-                    showButtons.setButtons(takeScreenShot, playAudio);
+                    showButtons.setButtons(takeScreenShot, playAudio,startAnimation);
                     takeScreenShot.setVisibility(View.GONE);
                     playAudio.setVisibility(View.GONE);
+                    startAnimation.setVisibility(View.GONE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -620,6 +645,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             Toast.makeText(this, R.string.screenshot_alert, Toast.LENGTH_LONG).show();
         }
         if (view == playAudio) {
+
 //            AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 //            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
             int mediaVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -649,6 +675,15 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             {
                 Log.d("PrintAudioName",audionName);
                 UnityPlayer.UnitySendMessage("ObjectPlacer","PlaySpeak",audionName);
+//                UnityPlayer.UnitySendMessage("ObjectPlacer","StopAnimationAndAudio","");
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        UnityPlayer.UnitySendMessage("ObjectPlacer","StopAnimationAndAudio","");
+//                    }
+//                },1000);
+
+                //showButtons.setIsAnimationPlayingCompleted(1);
 
 //                switch (audionName)
 //                {
@@ -685,6 +720,25 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
 //
             //UnityPlayer.UnitySendMessage("ObjectPlacer","PlayAudio","Yes");
         }
+        if(view==startAnimation)
+        {
+            if(startAnimation.getText().toString().equals("Start"))
+            {
+                startAnimation.setText("Stop");
+//                handler.removeCallbacks(runnable);
+//                handler.postDelayed(runnable,14000);
+                UnityPlayer.UnitySendMessage("ObjectPlacer","PlayAnimationAndAudio","");
+            }
+            else if(startAnimation.getText().toString().equals("Stop"))
+            {
+//                handler.removeCallbacks(runnable);
+//                showButtons.RemoveCallBacks();
+                startAnimation.setText("Start");
+                UnityPlayer.UnitySendMessage("ObjectPlacer","StopAnimationAndAudio","");
+            }
+
+        }
+
         if (view == showAlphapets) {
             dialog.show();
         }
@@ -797,6 +851,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 audionName=parentModels.get(0).getAlphapetsModels().get(itemPosition).getAudioSource();
                 takeScreenShot.setVisibility(View.GONE);
                 playAudio.setVisibility(View.GONE);
+                startAnimation.setVisibility(View.GONE);
                 dialog.dismiss();
                 alertrate = alertrate + 1;
                 prefs.edit().putInt(Constants.alertrate_pref, alertrate).apply();
@@ -810,6 +865,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                     alert_message = dialogView.findViewById(R.id.alert_message);
                     alert_message.setText(R.string.alertmessage);
                     okalert = dialogView.findViewById(R.id.okalert);
+                    okalert.setText("Rate");
                     okalert.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -820,6 +876,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                         }
                     });
                     cancelalert = dialogView.findViewById(R.id.cancelalert);
+                    cancelalert.setText("Cancel");
                     cancelalert.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -1016,6 +1073,28 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         {
             Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
         }
+    }
+    Runnable runnable=new Runnable() {
+        @Override
+        public void run() {
+            startAnimation.setText("Start");
+
+        }
+    };
+    public void RemovesCallbacks()
+    {
+        handler.removeCallbacks(runnable);
+    }
+    public void ResumeAnimation()
+    {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                UnityPlayer.UnitySendMessage("ObjectPlacer","ResumeTheAnimation","");
+
+            }
+        },500);
+
     }
 
 }
