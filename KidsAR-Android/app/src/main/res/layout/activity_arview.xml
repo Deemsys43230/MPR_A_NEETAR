@@ -80,7 +80,7 @@
             android:background="@color/button_icon_color"
             android:fontFamily="@font/gothamrounded_bold"
             android:textColor="@color/white"
-            android:visibility="gone"/>
+            android:visibility="invisible"/>
         <!--<View-->
             <!--android:id="@+id/button_view_two"-->
             <!--android:layout_width="40dp"-->

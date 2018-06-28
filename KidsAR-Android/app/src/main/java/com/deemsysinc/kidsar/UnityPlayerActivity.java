@@ -500,7 +500,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                         showButtons.setButtons(takeScreenShot, playAudio,startAnimation);
                         takeScreenShot.setVisibility(View.GONE);
                         playAudio.setVisibility(View.GONE);
-                        startAnimation.setVisibility(View.GONE);
+                        startAnimation.setVisibility(View.INVISIBLE);
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -534,7 +534,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                     showButtons.setButtons(takeScreenShot, playAudio,startAnimation);
                     takeScreenShot.setVisibility(View.GONE);
                     playAudio.setVisibility(View.GONE);
-                    startAnimation.setVisibility(View.GONE);
+                    startAnimation.setVisibility(View.INVISIBLE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -851,7 +851,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 audionName=parentModels.get(0).getAlphapetsModels().get(itemPosition).getAudioSource();
                 takeScreenShot.setVisibility(View.GONE);
                 playAudio.setVisibility(View.GONE);
-                startAnimation.setVisibility(View.GONE);
+                startAnimation.setVisibility(View.INVISIBLE);
                 dialog.dismiss();
                 alertrate = alertrate + 1;
                 prefs.edit().putInt(Constants.alertrate_pref, alertrate).apply();
