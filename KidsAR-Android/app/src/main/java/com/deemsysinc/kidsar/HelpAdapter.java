@@ -29,11 +29,13 @@ public class HelpAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<HelpModel> modelList;
     private Context context;
     Activity activity;
+    String nameString;
 
-    public HelpAdapter(Context context, Activity activity, List<HelpModel> modelList) {
+    public HelpAdapter(Context context, Activity activity, List<HelpModel> modelList, String nameintent) {
         this.context = context;
         this.modelList = modelList;
         this.activity = activity;
+        this.nameString = nameintent;
     }
 
     @NonNull
@@ -102,7 +104,10 @@ public class HelpAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 public void onClick(View v) {
                     /*activity.videoItemClickInitialize(itemView);*/
 //                    activity.videoItemClick(itemView);
-                    context.startActivity(new Intent(context, VideoPlayerActivity.class));
+                    Intent intent = new Intent(context, VideoPlayerActivity.class);
+                    intent.putExtra("ActivityString", nameString);
+                    Log.d("VideoIntentString", nameString);
+                    context.startActivity(intent);
                     activity.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
                    /* Uri uri = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.video);
                     Intent intent = new Intent();

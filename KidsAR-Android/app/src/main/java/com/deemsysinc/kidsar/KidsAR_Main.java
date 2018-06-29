@@ -45,6 +45,7 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
     TextToSpeech Speech;
     String settheVoice = "en-us-x-sfg#male_1-local";
     private boolean speak = false;
+    private String navigateintent = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +59,13 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
         arkidsname = findViewById(R.id.arkids_name);
         musictext = findViewById(R.id.musictext);
         arkidsname.setVisibility(View.GONE);
+        Intent intent = getIntent();
+        if (intent != null) {
+            navigateintent = intent.getStringExtra("Navigate");
+        }
         startkidsAR = findViewById(R.id.start_kidsAR);
         contentview = findViewById(R.id.contentview);
         Speech = new TextToSpeech(KidsAR_Main.this, KidsAR_Main.this);
-
 
         prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
         music_pref = prefs.getBoolean(Constants.music, true);
@@ -154,6 +158,12 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
             public void run() {
                 arkidsname.setVisibility(View.VISIBLE);
                 arkidsname.startAnimation(ViewAnimation.RightAnimation_in());
+                if (navigateintent == null) {
+                    Intent intent = new Intent(KidsAR_Main.this, HelpActivity.class);
+                    intent.putExtra("ActivityString", "kidsmain");
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+                }
             }
         }, 500);
 
@@ -197,7 +207,9 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
         imageinfoicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(KidsAR_Main.this, HelpActivity.class));
+                Intent intent = new Intent(KidsAR_Main.this, HelpActivity.class);
+                intent.putExtra("ActivityString", "kidsmain");
+                startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
             }
         });

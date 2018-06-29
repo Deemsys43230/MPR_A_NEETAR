@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -26,6 +27,7 @@ public class VideoPlayerActivity extends AppCompatActivity implements MediaPlaye
     VideoView videoView;
     private ImageView buttonclose;
     MediaController mediaController;
+    private String nameString = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,12 +36,17 @@ public class VideoPlayerActivity extends AppCompatActivity implements MediaPlaye
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_video_player);
+        Intent intent = getIntent();
+        nameString = intent.getStringExtra("ActivityString");
+        Log.d("VideoIntentString", nameString);
         videoView = findViewById(R.id.videoView);
         buttonclose = findViewById(R.id.buttonclose);
         buttonclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(VideoPlayerActivity.this, HelpActivity.class));
+                Intent intent = new Intent(VideoPlayerActivity.this, HelpActivity.class);
+                intent.putExtra("ActivityString", nameString);
+                startActivity(intent);
                 overridePendingTransition(R.anim.zoom_out_back, R.anim.zoom_in_back);
             }
         });
@@ -92,5 +99,14 @@ public class VideoPlayerActivity extends AppCompatActivity implements MediaPlaye
     @Override
     public void onPrepared(MediaPlayer mp) {
         mediaController.show(3000);
+        MediaPlayer mMediaPlayer = MediaPlayer.create(this, R.raw.video);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(VideoPlayerActivity.this, HelpActivity.class);
+        intent.putExtra("ActivityString", nameString);
+        startActivity(intent);
+        overridePendingTransition(R.anim.zoom_out_back, R.anim.zoom_in_back);
     }
 }

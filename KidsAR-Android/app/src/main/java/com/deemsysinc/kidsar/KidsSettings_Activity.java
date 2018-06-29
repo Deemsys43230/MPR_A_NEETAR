@@ -224,6 +224,7 @@ public class KidsSettings_Activity extends AppCompatActivity implements DialogIn
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(KidsSettings_Activity.this, HelpActivity.class);
+                intent.putExtra("ActivityString","kidssettings");
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
             }

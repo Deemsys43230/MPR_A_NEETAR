@@ -37,6 +37,7 @@ public class HelpActivity extends AppCompatActivity {
     private RelativeLayout itemViewlinearvideo;
     private ImageView itemViewvideoplay;
     private boolean videopause = false;
+    private String nameintent = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,18 +46,31 @@ public class HelpActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_help);
-
+        Intent intent = getIntent();
+        nameintent = intent.getStringExtra("ActivityString");
+        Log.d("VideoIntentStringfromK", nameintent);
         modellist = Constants.getModelList();
         close = findViewById(R.id.buttonclose);
         helplist = findViewById(R.id.helplist);
         layoutManager = new LinearLayoutManager(this);
-        adapter = new HelpAdapter(this, HelpActivity.this, modellist);
+        adapter = new HelpAdapter(this, HelpActivity.this, modellist, nameintent);
         helplist.setLayoutManager(layoutManager);
         helplist.setAdapter(adapter);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                switch (nameintent) {
+                    case "":
+                        break;
+                    case "kidsmain":
+                        Intent intent = new Intent(HelpActivity.this, KidsAR_Main.class);
+                        intent.putExtra("Navigate", "Navigate");
+                        startActivity(intent);
+                        break;
+                    case "kidssettings":
+                        startActivity(new Intent(HelpActivity.this, KidsSettings_Activity.class));
+                        break;
+                }
                 overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down);
             }
         });
@@ -125,7 +139,18 @@ public class HelpActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        finish();
+        switch (nameintent) {
+            case "":
+                break;
+            case "kidsmain":
+                Intent intent = new Intent(HelpActivity.this, KidsAR_Main.class);
+                intent.putExtra("Navigate", "Navigate");
+                startActivity(intent);
+                break;
+            case "kidssettings":
+                startActivity(new Intent(HelpActivity.this, KidsSettings_Activity.class));
+                break;
+        }
         overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down);
     }
 
@@ -167,9 +192,9 @@ public class HelpActivity extends AppCompatActivity {
         itemViewvideoView.setMediaController(mediaController);*/
         /*itemViewvideoView.setOnCompletionListener(this);*/
 
-        Intent videoIntent = new Intent(Intent.ACTION_VIEW);
+      /*  Intent videoIntent = new Intent(Intent.ACTION_VIEW);
         videoIntent.setDataAndType(Uri.parse("android.resource://" + getPackageName() + R.raw.video), "video/*");
-        startActivity(videoIntent);
+        startActivity(videoIntent);*/
     }
 
     /*@Override
@@ -178,4 +203,5 @@ public class HelpActivity extends AppCompatActivity {
         stopPosition = 0;
         itemViewvideoplay.setImageDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_play));
     }*/
+
 }

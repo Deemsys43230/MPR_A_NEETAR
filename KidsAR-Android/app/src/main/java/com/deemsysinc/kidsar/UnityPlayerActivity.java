@@ -360,7 +360,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 imageBackground.setImageBitmap(outImage1);
                 dialogHeader.setText("ANIMALS");
                 dialogHeader.setTextColor(ContextCompat.getColor(this, R.color.ar_white));
-                mainHeaderName.setText("ANIMALS");
+                mainHeaderName.setText("ALLIGATOR");
                 CustomFontStyle(this, dialogHeader);
                 CustomFontStyle(this, mainHeaderName);
                 animallayout.setVisibility(View.VISIBLE);
