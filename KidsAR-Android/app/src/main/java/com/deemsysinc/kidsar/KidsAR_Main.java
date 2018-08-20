@@ -25,7 +25,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
@@ -43,7 +42,10 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
     private boolean music_pref;
 
     TextToSpeech Speech;
-    String settheVoice = "en-us-x-sfg#male_1-local";
+    //String settheVoice = "en-us-x-sfg#male_1-local";
+
+    String settheVoice="en-us-x-sfg#female_2-local";
+
     private boolean speak = false;
     private String navigateintent = "";
 
@@ -65,7 +67,7 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
         }
         startkidsAR = findViewById(R.id.start_kidsAR);
         contentview = findViewById(R.id.contentview);
-        Speech = new TextToSpeech(KidsAR_Main.this, KidsAR_Main.this);
+        Speech = new TextToSpeech(KidsAR_Main.this, KidsAR_Main.this,"com.google.android.tts");
 
         prefs = getSharedPreferences(Constants.AppPreferences, MODE_PRIVATE);
         music_pref = prefs.getBoolean(Constants.music, true);
@@ -272,13 +274,14 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
         CharSequence getts = "Welcome " + arkidsname.getText();
         Speech.setPitch(1f);
         Speech.setSpeechRate(0.7f);
-        Speech.speak(getts, TextToSpeech.QUEUE_FLUSH, null, "id1");
-
         for (Voice voice : Speech.getVoices()) {
             if (voice.getName().equals(settheVoice)) {
                 Speech.setVoice(voice);
             }
         }
+
+        Speech.speak(getts, TextToSpeech.QUEUE_FLUSH, null, "id1");
+
 
     }
 }

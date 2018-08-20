@@ -66,6 +66,10 @@ public class ShowButtons {
 //        handler.removeCallbacks(runnable);
 //        handler.postDelayed(runnable,14000);
         }
+        else if(message.equals("URCHIN"))
+        {
+            animation.setVisibility(View.INVISIBLE);
+        }
 
     }
     public void HideButtons(String message)

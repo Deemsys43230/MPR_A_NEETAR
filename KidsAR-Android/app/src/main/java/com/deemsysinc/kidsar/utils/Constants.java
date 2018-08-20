@@ -70,12 +70,12 @@ public class Constants {
         modelList.add(new HelpModel(1, "How to use 3d models?", true, false));
         modelList.add(new HelpModel(2, "", false, false));
         modelList.add(new HelpModel(3, "INSTRUCTIONS", true, false));
-        modelList.add(new HelpModel(4, "To get started, give your name on the welcome screen to explore the fun of augmented realities.", false, true));
+        modelList.add(new HelpModel(4, "Enter your name on the welcome screen to explore the fun of augmented realities.", false, true));
         modelList.add(new HelpModel(5, "To start, choose a category on your home screen.", false, true));
         modelList.add(new HelpModel(6, "Try our free models. Locked models are for purchase.", false, true));
         modelList.add(new HelpModel(7, "You can customize your app using the settings button.", false, true));
-        modelList.add(new HelpModel(8, "For unlocking all models go to Settings -> Purchase -> Buy.", false, true));
-        modelList.add(new HelpModel(9, "For restoring your purchases on a new device or reinstalling app go to Settings -> Purchase -> Restore.", false, true));
+        modelList.add(new HelpModel(8, "To unlock all models go to Settings -> Purchase -> Buy.", false, true));
+        modelList.add(new HelpModel(9, "To restore your purchases on a new device or reinstall the app, go to Settings -> Purchase -> Restore.", false, true));
         modelList.add(new HelpModel(10, "Any queries? Please go to Settings -> Contact us.", false, true));
         modelList.add(new HelpModel(11, "", false, false));
 

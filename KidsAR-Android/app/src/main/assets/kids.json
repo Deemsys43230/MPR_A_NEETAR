@@ -377,9 +377,9 @@
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
-        "modelName": "IVY FRUIT",
-        "modelImage": "modelImages/fruits/ivyfruit.jpg",
-        "audioName": "audio_ivyfruit"
+        "modelName": "ICE APPLE",
+        "modelImage": "modelImages/fruits/iceapple.jpg",
+        "audioName": "audio_iceapple"
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",

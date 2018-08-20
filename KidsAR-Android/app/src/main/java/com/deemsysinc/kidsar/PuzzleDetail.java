@@ -78,7 +78,8 @@ public class PuzzleDetail extends AppCompatActivity implements View.OnDragListen
     Handler mTimerHandler = new Handler();
 
     TextToSpeech Speech;
-    String settheVoice = "en-us-x-sfg#male_1-local";
+    //String settheVoice = "en-us-x-sfg#male_1-local";
+    String settheVoice="en-us-x-sfg#female_2-local";
     String objectHeaderString, headertext = "";
 
     String name;
@@ -98,7 +99,7 @@ public class PuzzleDetail extends AppCompatActivity implements View.OnDragListen
         //Greeeting pages dynamically change the image
         arraycongrats = new int[]{R.drawable.greet1, R.drawable.greet3, R.drawable.greet4};
 
-        Speech = new TextToSpeech(PuzzleDetail.this, PuzzleDetail.this);
+        Speech = new TextToSpeech(PuzzleDetail.this, PuzzleDetail.this,"com.google.android.tts");
         //Drag and DropView
         dragview = findViewById(R.id.dragview);
         dropview = findViewById(R.id.dropview);
@@ -537,14 +538,16 @@ public class PuzzleDetail extends AppCompatActivity implements View.OnDragListen
     private void Speak(String name) {
         Speech.setPitch(1f);
         Speech.setSpeechRate(0.7f);
-        Speech.speak(name, TextToSpeech.QUEUE_FLUSH, null, "id1");
         if (Speech.getVoices() != null) {
             for (Voice voice : Speech.getVoices()) {
                 if (voice.getName().equals(settheVoice)) {
+                    Log.d("PrintVoice",voice.getName());
                     Speech.setVoice(voice);
                 }
             }
         }
+        Speech.speak(name, TextToSpeech.QUEUE_FLUSH, null, "id1");
+
 
     }
 
