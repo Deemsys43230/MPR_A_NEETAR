@@ -383,7 +383,7 @@
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
-        "modelName": "JACK FRUIT",
+        "modelName": "JACKFRUIT",
         "modelImage": "modelImages/fruits/jackfruit.jpg",
         "audioName": "audio_jackfruit"
       },
@@ -461,7 +461,7 @@
       },
       {
         "modelId": "com.deemsysinc.kidsar.basicmodels",
-        "modelName": "WATER MELON",
+        "modelName": "WATERMELON",
         "modelImage": "modelImages/fruits/watermelon.jpg",
         "audioName": "audio_watermelon"
       },
