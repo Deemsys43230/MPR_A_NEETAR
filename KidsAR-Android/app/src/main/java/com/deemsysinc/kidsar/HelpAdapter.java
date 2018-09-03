@@ -41,20 +41,23 @@ public class HelpAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType == 1) {
-            View kidsview = LayoutInflater.from(context).inflate(R.layout.helpmodel_item_video, parent, false);
-            return new MyHelpVideoHolder(kidsview);
-        } else {
+//        if (viewType == 1) {
+//            View kidsview = LayoutInflater.from(context).inflate(R.layout.helpmodel_item_video, parent, false);
+//            return new MyHelpVideoHolder(kidsview);
+//        } else {
             View kidsview = LayoutInflater.from(context).inflate(R.layout.helpmodel_item, parent, false);
             return new MyHelpHolder(kidsview);
-        }
+//        }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder.getItemViewType() != 1) {
             MyHelpHolder textholder = (MyHelpHolder) holder;
+
+            Log.d("TheModelListSize",""+modelList.get(position).name);
             textholder.helptext.setText(modelList.get(position).name);
+
             if (modelList.get(position).isIcon()) {
                 textholder.kidmodel_image.setVisibility(View.VISIBLE);
             } else {

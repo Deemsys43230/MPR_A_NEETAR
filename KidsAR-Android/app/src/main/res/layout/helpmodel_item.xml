@@ -14,7 +14,8 @@
         android:gravity="center"
         android:text="✣"
         android:textColor="@color/button_icon_color"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/helptext"
@@ -24,7 +25,8 @@
         android:fontFamily="@font/gothamrounded_book"
         android:lineSpacingExtra="10dp"
         android:padding="1dp"
-        android:text="Sample Text"
+        android:text=""
         android:textColor="@color/button_icon_color"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        />
 </LinearLayout>
