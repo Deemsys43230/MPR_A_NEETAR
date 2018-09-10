@@ -52,11 +52,10 @@ public class HelpAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (holder.getItemViewType() != 1) {
+//        if (holder.getItemViewType() != 1) {
             MyHelpHolder textholder = (MyHelpHolder) holder;
-
-            Log.d("TheModelListSize",""+modelList.get(position).name);
-            textholder.helptext.setText(modelList.get(position).name);
+            Log.d("TheModelListSize",""+position);
+            textholder.helptext.setText(modelList.get(position).getName());
 
             if (modelList.get(position).isIcon()) {
                 textholder.kidmodel_image.setVisibility(View.VISIBLE);
@@ -75,7 +74,7 @@ public class HelpAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     textholder.helptext.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
                 }
             }
-        }
+
     }
 
     @Override

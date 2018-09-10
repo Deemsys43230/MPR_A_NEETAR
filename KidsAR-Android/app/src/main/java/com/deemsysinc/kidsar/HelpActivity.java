@@ -50,6 +50,10 @@ public class HelpActivity extends AppCompatActivity {
         nameintent = intent.getStringExtra("ActivityString");
         Log.d("VideoIntentStringfromK", nameintent);
         modellist = Constants.getModelList();
+        for(int k=0; k<modellist.size(); k++)
+        {
+            Log.d("HelpActivityMName",modellist.get(k).getName());
+        }
         close = findViewById(R.id.buttonclose);
         helplist = findViewById(R.id.helplist);
         layoutManager = new LinearLayoutManager(this);

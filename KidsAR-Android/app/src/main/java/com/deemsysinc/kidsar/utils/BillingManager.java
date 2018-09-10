@@ -89,7 +89,6 @@ public class BillingManager implements PurchasesUpdatedListener {
         mActivity = activity;
         mBillingUpdatesListener = updatesListener;
         mBillingClient = BillingClient.newBuilder(mActivity).setListener(this).build();
-
         Log.d(TAG, "Starting setup.");
 
         // Start setup. This is asynchronous and the specified listener will be called

@@ -215,7 +215,7 @@ public class KidsSettings_Activity extends AppCompatActivity implements DialogIn
         rateuscontainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.supercell.clashofclans"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.KIDS_AR_APP_PLAY_STORE_URL));
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
             }

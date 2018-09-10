@@ -36,15 +36,18 @@ public class Constants {
     //public static final String contacttoemail = "deemmobtest@gmail.com";
 
     //Testing
-    public static final String contacttoemail = "deemsystesting@gmail.com";
+    //public static final String contacttoemail = "deemsystesting@gmail.com";
 
     //Production
-    //    public static final String contacttoemail = "incdeemsys@gmail.com";
+    public static final String contacttoemail = "incdeemsys@gmail.com";
 
     public static final String contacthost = "smtp.gmail.com";
     public static final String contactemailsubject = "Kids AR - User query";
     public static final String contactemailbody = "Hello,\n\n User from Kids AR Android application has sent a query to you.\n\n USER DETAILS : \n\n";
     public static final String contactemailbody2 = "\n\n DEVICE DETAILS : \n\n Device Name : " + DeviceName + "\n OS Version : " + osName + "\n App Version : ";
+
+
+    public static final String KIDS_AR_APP_PLAY_STORE_URL="https://play.google.com/store/apps/details?id=com.deemsysinc.kidsar";
 
 
     public static final List<HelpModel> getModelList() {

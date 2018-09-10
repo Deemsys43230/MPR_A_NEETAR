@@ -461,7 +461,10 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     @Override
     protected void onPause() {
         super.onPause();
+        UnityPlayer.UnitySendMessage("ObjectPlacer","StopPlayAudio","Yes");
+        UnityPlayer.UnitySendMessage("ObjectPlacer","whichObjectSelected","Yes");
         mUnityPlayer.pause();
+
         Log.d("OnPauseCalled","True");
 
 
@@ -870,7 +873,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                         @Override
                         public void onClick(View v) {
                             alertDialog.dismiss();
-                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.supercell.clashofclans"));
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.KIDS_AR_APP_PLAY_STORE_URL));
                             startActivity(intent);
                             overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
                         }
