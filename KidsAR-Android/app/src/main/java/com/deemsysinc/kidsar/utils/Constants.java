@@ -71,24 +71,28 @@ public class Constants {
         modelList.add(new HelpModel(17, "Happy Learning!", true, false));*/
 
         //modelList.add(new HelpModel(1, "How to use 3d models?", true, false));
-        modelList.add(new HelpModel(1,"INSTRUCTIONS",true,false));
+        modelList.add(new HelpModel(1,"ADVISORY",true,false));
+        modelList.add(new HelpModel(2, "Kids Alphabets AR app uses augmented reality to place virtual objects in the real world. Please be aware of your surroundings while using the app.", false, true));
+        modelList.add(new HelpModel(3, "Kids Alphabets AR app is recommended to be used under parental guidance.", false, true));
+
+        modelList.add(new HelpModel(4,"INSTRUCTIONS",true,false));
         //modelList.add(new HelpModel(2, "", false, false));
         //modelList.add(new HelpModel(3, "INSTRUCTIONS", true, false));
-        modelList.add(new HelpModel(2, "Enter your name on the welcome screen to explore the fun of augmented realities.", false, true));
-        modelList.add(new HelpModel(3, "To start, choose a category on your home screen.", false, true));
-        modelList.add(new HelpModel(4, "Try our free models. Locked models are for purchase.", false, true));
-        modelList.add(new HelpModel(5, "You can customize your app using the settings button.", false, true));
-        modelList.add(new HelpModel(6, "To unlock all models go to Settings -> Purchase -> Buy.", false, true));
-        modelList.add(new HelpModel(7, "To restore your purchases on a new device or reinstall the app, go to Settings -> Purchase -> Restore.", false, true));
-        modelList.add(new HelpModel(8, "Any queries? Please go to Settings -> Contact us.", false, true));
-        modelList.add(new HelpModel(9, "", false, false));
+        modelList.add(new HelpModel(5, "Enter your name on the welcome screen to explore the fun of augmented realities.", false, true));
+        modelList.add(new HelpModel(6, "To start, choose a category on your home screen.", false, true));
+        modelList.add(new HelpModel(7, "Try our free models. Locked models are for purchase.", false, true));
+        modelList.add(new HelpModel(8, "You can customize your app using the settings button.", false, true));
+        modelList.add(new HelpModel(9, "To unlock all models go to Settings -> Purchase -> Buy.", false, true));
+        modelList.add(new HelpModel(10, "To restore your purchases on a new device or reinstall the app, go to Settings -> Purchase -> Restore.", false, true));
+        modelList.add(new HelpModel(11, "Any queries? Please go to Settings -> Contact us.", false, true));
+        modelList.add(new HelpModel(12, "", false, false));
 
        /* modelList.add(new HelpModel(11, "To simulate a 3d model, press the menu button above your camera screen and choose a model from the list.", false, true));
         modelList.add(new HelpModel(12, "Hold your camera still while we detect flat surfaces for placing models.", false, true));
         modelList.add(new HelpModel(13, "Once the detected surface is seen, Tap on the surface to place your models.", false, true));
         modelList.add(new HelpModel(14, "To zoom your models use two-finger pinch gesture.", false, true));
         modelList.add(new HelpModel(15, "To rotate your models use a single finger and slide left or right.", false, true));*/
-        modelList.add(new HelpModel(10, "Happy Learning!", true, false));
+        modelList.add(new HelpModel(13, "Happy Learning!", true, false));
         return modelList;
     }
 }
