@@ -50,6 +50,32 @@ public class Constants {
     public static final String KIDS_AR_APP_PLAY_STORE_URL="https://play.google.com/store/apps/details?id=com.deemsysinc.kidsar";
 
 
+
+    public static final List<String> getFireBaseEventName()
+    {
+        List<String> eventList=new ArrayList<>();
+        eventList.add("GetStarted_Tapped_Android");
+        eventList.add("Alphabets_Tapped_Android");
+        eventList.add("Animals_Tapped_Android");
+        eventList.add("Fruits_Tapped_Android");
+        eventList.add("Puzzles_Tapped_Android");
+        eventList.add("Menu_Tapped_Android");
+        eventList.add("AlphabetsModel_Tapped_Android");
+        eventList.add("Alphabets_Iap_Start_Android");
+        eventList.add("Alphabets_Iap_Success_Android");
+        eventList.add("Alphabets_Iap_Cancel_Android");
+        eventList.add("AnimalsModel_Tapped_Android");
+        eventList.add("Animals_Iap_Start_Android");
+        eventList.add("Animals_Iap_Success_Android");
+        eventList.add("Animals_Iap_Cancel_Android");
+        eventList.add("FruitsModel_Tapped_Android");
+        eventList.add("Fruits_Iap_Start_Android");
+        eventList.add("Fruits_Iap_Success_Android");
+        eventList.add("Fruits_Iap_Cancel_Android");
+        return eventList;
+    }
+
+
     public static final List<HelpModel> getModelList() {
         List<HelpModel> modelList = new ArrayList<>();
         /*modelList.add(new HelpModel(1, "Welcome to our augmented reality kids AR app.", false, true));
