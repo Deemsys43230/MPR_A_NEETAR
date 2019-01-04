@@ -45,6 +45,7 @@ import com.deemsysinc.kidsar.models.ParentModel;
 import com.deemsysinc.kidsar.models.PurchaseModel;
 import com.deemsysinc.kidsar.utils.BillingManager;
 import com.deemsysinc.kidsar.utils.Constants;
+import com.deemsysinc.kidsar.utils.EventLoggerFireBase;
 import com.deemsysinc.kidsar.utils.GridSpacingItemDecoration;
 import com.deemsysinc.kidsar.utils.NetworkDetector;
 import com.deemsysinc.kidsar.utils.ShowButtons;
@@ -146,6 +147,12 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     ImageView arBackgroundImage;
 
 
+    EventLoggerFireBase eventLoggerFireBase;
+
+
+    ArrayList<String> PlayBillingKeywords=new ArrayList<>();
+
+
     //Dialog progressDialogWindow;
 
    // Setup activity layout
@@ -154,8 +161,12 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         mUnityPlayer = new UnityPlayer(this);
+        PlayBillingKeywords.add("android.test.purchased");
+        PlayBillingKeywords.add("android.test.canceled");
+        PlayBillingKeywords.add("android.test.item_unavailable");
         //setContentView(mUnityPlayer);
         setContentView(R.layout.activity_arview);
+        eventLoggerFireBase=new EventLoggerFireBase(UnityPlayerActivity.this);
         parentModels = new ArrayList<>();
         if (getIntent().getExtras() != null) {
             extras = getIntent().getExtras();
@@ -636,15 +647,17 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
     public void onClick(View view) {
         if (view == takeScreenShot) {
             c++;
+            UnityPlayer.UnitySendMessage("ObjectPlacer", "SaveImage", "My img {0}.png");
             //isScreenshotClicled=true;
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    UnityPlayer.UnitySendMessage("ObjectPlacer", "SaveImage", "My img {0}.png");
-                    UnityPlayer.UnitySendMessage("ObjectPlacer", "DisablePlane", "No");
-                }
-            }, 2000);
-            UnityPlayer.UnitySendMessage("ObjectPlacer", "DisablePlane", "Yes");
+
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    UnityPlayer.UnitySendMessage("ObjectPlacer", "SaveImage", "My img {0}.png");
+//                    UnityPlayer.UnitySendMessage("ObjectPlacer", "DisablePlane", "No");
+//                }
+//            }, 2000);
+//            UnityPlayer.UnitySendMessage("ObjectPlacer", "DisablePlane", "Yes");
             Toast.makeText(this, R.string.screenshot_alert, Toast.LENGTH_LONG).show();
         }
         if (view == playAudio) {
@@ -743,6 +756,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
         }
 
         if (view == showAlphapets) {
+            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(5),null);
             dialog.show();
         }
         if (view == closeAlphapets) {
@@ -811,12 +825,93 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                     prefs.edit().putString(Constants.purchased_product, json).apply();
                 }
                 if (!response.equals(""))
+                {
                     Toast.makeText(UnityPlayerActivity.this, "You have already purchased this item.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    if(parentModels.get(0).getLevelId()==1)
+                    {
+                        eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(8),null);
+                    }
+                    else if(parentModels.get(0).getLevelId()==2)
+                    {
+                        eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(12),null);
+                    }
+                    else if(parentModels.get(0).getLevelId()==3)
+                    {
+                        eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(16),null);
+                    }
+                }
                 UpdateList();
             } else {
                 Toast.makeText(UnityPlayerActivity.this, response, Toast.LENGTH_SHORT).show();
+                if(parentModels.get(0).getLevelId()==1)
+                {
+                    switch (response)
+                    {
+                        case "":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(8),null);
+                            break;
+                        case "User cancelled payment":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(9),null);
+                            break;
+                        case "Slow Network connection. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(9),null);
+                            break;
+                        case "Payment failed due to technical error. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(9),null);
+                            break;
+
+                    }
+                }
+                else if(parentModels.get(0).getLevelId()==2)
+                {
+                    switch (response)
+                    {
+                        case "":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(12),null);
+                            break;
+                        case "User cancelled payment":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(13),null);
+                            break;
+                        case "Slow Network connection. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(13),null);
+                            break;
+                        case "Payment failed due to technical error. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(13),null);
+                            break;
+
+                    }
+
+                }
+                else if(parentModels.get(0).getLevelId()==3)
+                {
+                    switch (response)
+                    {
+                        case "":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(16),null);
+                            break;
+                        case "User cancelled payment":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(17),null);
+                            break;
+                        case "Slow Network connection. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(17),null);
+                            break;
+                        case "Payment failed due to technical error. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(17),null);
+                            break;
+
+                    }
+
+                }
             }
         }
+
+    }
+
+    private void LogCancelAndErrorEvent(String eventName,String response) {
+
 
     }
 
@@ -839,6 +934,18 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
             itemPosition = alphapetsList.getChildLayoutPosition(view);
             alertrate = prefs.getInt(Constants.alertrate_pref, 0);
             Log.d("Test_Value", "Value:" + alertrate);
+            switch (parentModels.get(0).getLevelId())
+            {
+                case 1:
+                    eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(6),null);
+                    break;
+                case 2:
+                    eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(10),null);
+                    break;
+                case 3:
+                    eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(14),null);
+                    break;
+            }
             if (parentModels.get(0).getAlphapetsModels().get(itemPosition).getIsPurchased()) {
                 UnityPlayer.UnitySendMessage("ObjectPlacer", "DeleteObject", "Yes");
 
@@ -911,6 +1018,18 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                             //dialog.dismiss();
                             String productid = parentModels.get(0).getAlphapetsModels().get(itemPosition).getModelid();
                             Log.d("ProductId", productid);
+                            switch (parentModels.get(0).getLevelId())
+                            {
+                                case 1:
+                                    eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(7),null);
+                                    break;
+                                case 2:
+                                    eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(11),null);
+                                    break;
+                                case 3:
+                                    eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(15),null);
+                                    break;
+                            }
                             billingManager.initiatePurchaseFlow(productid, BillingClient.SkuType.INAPP);
                         /*PurchaseModel pmodel = new PurchaseModel("com.deemsysinc.kidsar.basicmodels", "", "", "", true);
                         //add the model list

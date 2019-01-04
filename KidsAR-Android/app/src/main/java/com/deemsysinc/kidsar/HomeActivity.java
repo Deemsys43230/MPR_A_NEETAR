@@ -19,6 +19,7 @@ import com.deemsysinc.kidsar.models.PurchaseModel;
 import com.deemsysinc.kidsar.utils.Constants;
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -48,6 +49,9 @@ public class HomeActivity extends AppCompatActivity {
     List<PurchaseModel> mymodel = new ArrayList<PurchaseModel>();
     private LinearLayoutManager layoutManager;
 
+
+    //private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
-
+        //firebaseAnalytics=FirebaseAnalytics.getInstance(this);
         infosettings = findViewById(R.id.info_settings);
         infosettings.setOnClickListener(new View.OnClickListener() {
             @Override

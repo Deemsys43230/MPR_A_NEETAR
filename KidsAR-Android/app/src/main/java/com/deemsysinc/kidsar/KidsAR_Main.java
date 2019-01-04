@@ -25,9 +25,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.crashlytics.android.Crashlytics;
 import com.deemsysinc.kidsar.utils.Constants;
+import com.deemsysinc.kidsar.utils.EventLoggerFireBase;
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.Locale;
 
@@ -49,6 +53,8 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
     private boolean speak = false;
     private String navigateintent = "";
 
+    EventLoggerFireBase eventLoggerFireBase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +62,7 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.kidsar_main);
+        eventLoggerFireBase=new EventLoggerFireBase(KidsAR_Main.this);
         imageinfoicon = findViewById(R.id.info_image);
         playstopmusicbtn = findViewById(R.id.buttonMusic);
         arkidsname = findViewById(R.id.arkids_name);
@@ -195,6 +202,8 @@ public class KidsAR_Main extends AppCompatActivity implements TextToSpeech.OnIni
                 if (TextUtils.isEmpty(arkidsname.getText().toString())) {
                     Toast.makeText(KidsAR_Main.this, "Please Enter your Name", Toast.LENGTH_SHORT).show();
                 } else {
+                    //Crashlytics.getInstance().crash(); Force Crash For Analytics
+                    eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(0),null);
                     if (speak) {
                         Speak();
                     }
