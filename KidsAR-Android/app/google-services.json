@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "627614230665",
+    "firebase_url": "https://kids-alphabets-ar.firebaseio.com",
+    "project_id": "kids-alphabets-ar",
+    "storage_bucket": "kids-alphabets-ar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627614230665:android:8a53fb84acb1d2a2",
+        "android_client_info": {
+          "package_name": "com.deemsysinc.kidsar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627614230665-787btkk170dk3rvosm3etulkfs4tgm9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deemsysinc.kidsar",
+            "certificate_hash": "5846e543afd3dabd0695585ee608e347d022e50f"
+          }
+        },
+        {
+          "client_id": "627614230665-4aifq9djjlma0ed2jlljv4hj35a5k3ae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAanhRBDrSVXCkH04sx-zPqrddlgoQVYcc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627614230665-4aifq9djjlma0ed2jlljv4hj35a5k3ae.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "627614230665-v20gbpj5636trb2gv3an8h8v3v5ekggc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.deemsysinc.kidsar",
+                "app_store_id": "1387392682"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
