@@ -26,6 +26,7 @@ import com.deemsysinc.kidsar.adapter.PurchaseAdapter;
 import com.deemsysinc.kidsar.models.PurchaseModel;
 import com.deemsysinc.kidsar.utils.BillingManager;
 import com.deemsysinc.kidsar.utils.Constants;
+import com.deemsysinc.kidsar.utils.EventLoggerFireBase;
 import com.deemsysinc.kidsar.utils.MyApplication;
 import com.deemsysinc.kidsar.utils.NetworkDetector;
 import com.deemsysinc.kidsar.utils.PlayAudioService;
@@ -56,6 +57,9 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
     private Button okalert, cancelalert;
     private ProgressBar progressbar;
 
+    EventLoggerFireBase eventLoggerFireBase;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +67,7 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_purchase);
+        eventLoggerFireBase=new EventLoggerFireBase(PurchaseActivity.this);
         progressbar = findViewById(R.id.progressbar);
         prefs = getSharedPreferences(Constants.AppPreferences, Context.MODE_PRIVATE);
         onClickListener = new PurchaseClick(this);
@@ -255,10 +260,67 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
                     prefs.edit().putString(Constants.purchased_product, json).apply();
                     purchaseAdapter.notifyDataSetChanged();
                 }
-                if (!response.equals(""))
+                if (!response.equals("")) {
                     Toast.makeText(PurchaseActivity.this, response, Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if(listposition==-1)
+                    {
+                        if(response.equals("You have already purchased this item. Click RESTORE to update your purchase list.")||response.equals(""))
+                        {
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(18),null);
+                        }
+                    }
+                    else if(listposition==0)
+                    {
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(8),null);
+                    }
+                    else if(listposition==1)
+                    {
+                        eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(12),null);
+                    }
+                }
             } else {
                 Toast.makeText(PurchaseActivity.this, response, Toast.LENGTH_SHORT).show();
+                if(listposition==0)
+                {
+                    switch (response)
+                    {
+                        case "":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(8),null);
+                            break;
+                        case "User cancelled payment":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(9),null);
+                            break;
+                        case "Slow Network connection. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(9),null);
+                            break;
+                        case "Payment failed due to technical error. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(9),null);
+                            break;
+
+                    }
+                }
+                else
+                {
+                    switch (response)
+                    {
+                        case "":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(12),null);
+                            break;
+                        case "User cancelled payment":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(13),null);
+                            break;
+                        case "Slow Network connection. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(13),null);
+                            break;
+                        case "Payment failed due to technical error. Please try again later.":
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(13),null);
+                            break;
+
+                    }
+
+                }
             }
         }
     }
@@ -297,7 +359,17 @@ public class PurchaseActivity extends AppCompatActivity implements BillingManage
     }
 
     public void purchaseClickBuy(int position, String productid) {
+        Log.d("PurchasePos",""+position);
         listposition = position;
+        switch (position)
+        {
+            case 0:
+                eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(7),null);
+                break;
+            case 1:
+                eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(11),null);
+                break;
+        }
         billingManager.initiatePurchaseFlow(productid, BillingClient.SkuType.INAPP);
     }
 

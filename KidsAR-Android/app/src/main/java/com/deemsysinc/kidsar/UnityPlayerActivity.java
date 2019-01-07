@@ -827,6 +827,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                 if (!response.equals(""))
                 {
                     Toast.makeText(UnityPlayerActivity.this, "You have already purchased this item.", Toast.LENGTH_SHORT).show();
+
                 }
                 else
                 {
@@ -840,7 +841,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                     }
                     else if(parentModels.get(0).getLevelId()==3)
                     {
-                        eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(16),null);
+                        eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(8),null);
                     }
                 }
                 UpdateList();
@@ -890,16 +891,16 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                     switch (response)
                     {
                         case "":
-                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(16),null);
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(8),null);
                             break;
                         case "User cancelled payment":
-                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(17),null);
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(9),null);
                             break;
                         case "Slow Network connection. Please try again later.":
-                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(17),null);
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(9),null);
                             break;
                         case "Payment failed due to technical error. Please try again later.":
-                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(17),null);
+                            eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(9),null);
                             break;
 
                     }
@@ -1027,7 +1028,7 @@ public class UnityPlayerActivity extends Activity implements View.OnClickListene
                                     eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(11),null);
                                     break;
                                 case 3:
-                                    eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(15),null);
+                                    eventLoggerFireBase.LogUserEvents(Constants.getFireBaseEventName().get(7),null);
                                     break;
                             }
                             billingManager.initiatePurchaseFlow(productid, BillingClient.SkuType.INAPP);

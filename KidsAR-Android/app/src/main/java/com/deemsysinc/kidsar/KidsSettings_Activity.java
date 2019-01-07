@@ -51,6 +51,7 @@ public class KidsSettings_Activity extends AppCompatActivity implements DialogIn
     private Button savename, cancelname;
     private AlertDialog alertDialog;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
