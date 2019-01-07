@@ -72,6 +72,7 @@ public class Constants {
         eventList.add("Fruits_Iap_Start_Android");
         eventList.add("Fruits_Iap_Success_Android");
         eventList.add("Fruits_Iap_Cancel_Android");
+        eventList.add("Restore_Tapped_Android");
         return eventList;
     }
 
